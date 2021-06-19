@@ -1,23 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './index.css'
+import "./ecom.css"
+import { Routes,Route } from 'react-router-dom';
+import {Home,History,PlayList,Saved,Video} from "./pages/indexOfPages.jsx"
+import {NavLink,useNavigate} from "react-router-dom"
 function App() {
+  const navigate=useNavigate()
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+   
+    {/* navbar */}
+    <nav className="nav">
+        
+        <div className="white-font nav-logo" onClick={()=>{navigate("/")}}>Creators Hub</div>
+        <div >
+          <NavLink to="/"  end     activeClassName="active-btn" className="btn bold" >Home</NavLink>&nbsp;
+          <NavLink to="/products"  activeClassName="active-btn" className="btn bold" >Products</NavLink>&nbsp;
+         
+        </div>
+        <div>
+          <NavLink to="/cart"      activeClassName="active-btn" className="btn" ><i className="fas fa-shopping-cart text-sm"></i></NavLink>&nbsp;
+          <NavLink to="/wishList"  activeClassName="active-btn" className="btn" ><i className="fas fa-heart text-sm"></i></NavLink>
+          <NavLink to="/user"  activeClassName="active-btn" className="btn" ><i className="fas fa-user text-sm "></i></NavLink>
+          
+          
+        </div>
+      </nav>
+
+     
+
+    
+ 
+
+
+   
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/history" element={<History/>}/>
+      <Route path="/playList" element={<PlayList/>}/>
+      <Route path="/saved" element={<Saved/>}/>
+      <Route path="/video" element={<Video/>}/>
+    </Routes>
+ 
+
     </div>
   );
 }
