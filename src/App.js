@@ -17,7 +17,7 @@ function App() {
         <div className="white-font nav-logo" onClick={()=>{navigate("/")}}>Creators Hub</div>
         <div >
           <NavLink to="/"  end     activeClassName="active-btn" className="btn bold" >Home</NavLink>&nbsp;
-          <NavLink to="/products"  activeClassName="active-btn" className="btn bold" >Products</NavLink>&nbsp;
+          <NavLink to="/saved"  activeClassName="active-btn" className="btn bold" >saved</NavLink>&nbsp;
          
         </div>
         <div>
