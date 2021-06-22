@@ -61,6 +61,12 @@
                         justify-content:space-around;
                         align-items: center;
                     }
+                    .center-col{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content:space-between;
+                       
+                    }
                     
                     .margin {
                         margin: 0.5rem 0.5rem;
@@ -275,9 +281,9 @@
                         max-height: 260px;
                         max-width:260px ;
                         margin: 1rem 1rem 1rem 1rem; 
-
-                        /* box-shadow: 1px 5px 5px #ccc; */
+                        /* box-shadow: 1px 5px 4px #ccc; */
                         border-radius: 0.4rem;
+                        border: 1px solid rgb(243, 243, 243);
                        
                     }
 
@@ -294,12 +300,6 @@
                         width: 2rem;
                     }
 
-                    .cd-info{
-                        margin: 0;
-                        /* display: flex;
-                        flex-direction: column;
-                        align-items: center; */
-                    }
                     
                     .cd-text {
                         width: 250px;
@@ -308,7 +308,7 @@
                         align-items: center;
                         border-radius: 0.5rem;
                         text-align: left;
-                        padding: 1rem 1rem 0 1rem;
+                        padding-top: 1rem;
                         margin: 0;
                     }
                     .cd-creator{
@@ -320,55 +320,14 @@
                         display: -webkit-box;
                         -webkit-line-clamp: 2;
                         -webkit-box-orient: vertical;
-                        padding:0rem 1rem 0 1rem;
+                        padding:0rem 0.5rem 0 0.8rem;
                         
                     }
-                   
-                 
-                    
-                  
-                    
-                    .cd-badge {
-                        left: 0rem;
-                        top: 14.1rem;
-                        border-top-right-radius: 0.3rem;
-                        border-bottom-right-radius: 0.3rem;
-                        padding: 0.3rem;
-                        margin: 1rem 1rem 0 0;
-                        position: absolute;
+                    .cd-wrong:hover{
+                        color: red;
                     }
-                    
-                    .cd-horizontal {
-                        width: 31rem;
-                        height: 17rem;
-                        background-color: var(--white-color);
-                        display: flex;
-                        align-items: center;
-                        border-radius: 0.5rem;
-                        text-align: flex-start;
-                        position: relative;
-                        box-shadow: 1px 5px 5px #ccc;
-                        margin:1rem 1rem 1rem 5rem;
-                    }
-                    
-                    .cd-increment-decrement-btns {
-                        display: flex;
-                        justify-content: space-around;
-                        margin: 1rem 0.5rem 0.25rem 0.5rem;
-                        align-items: center;
-                        width: 12.5rem;
-                    }
-
-                    .cd-delete-icon{
-                        position:absolute;
-                        top:1rem;
-                        right:1.5rem;
-                        opacity:0.5
-                    }
-
-                    .cd-name{
-                        margin:0.7rem 1rem 0.1rem 0.1rem ;
-                    }
+              
+                
                     /* input */
                     
                     .input section {

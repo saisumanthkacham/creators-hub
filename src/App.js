@@ -17,12 +17,12 @@ function App() {
         <div className="white-font nav-logo" onClick={()=>{navigate("/")}}>Creators Hub</div>
         <div >
           <NavLink to="/"  end     activeClassName="active-btn" className="btn bold" >Home</NavLink>&nbsp;
-          <NavLink to="/saved"  activeClassName="active-btn" className="btn bold" >saved</NavLink>&nbsp;
+          <NavLink to="/playlists"  activeClassName="active-btn" className="btn bold" >playLists</NavLink>&nbsp;
          
         </div>
         <div>
-          <NavLink to="/cart"      activeClassName="active-btn" className="btn" ><i className="fas fa-shopping-cart text-sm"></i></NavLink>&nbsp;
-          <NavLink to="/wishList"  activeClassName="active-btn" className="btn" ><i className="fas fa-heart text-sm"></i></NavLink>
+          <NavLink to="/history"      activeClassName="active-btn" className="btn" ><i class="fas fa-history"></i></NavLink>&nbsp;
+          <NavLink to="/saved"  activeClassName="active-btn" className="btn" ><i className="far fa-bookmark"></i></NavLink>
           <NavLink to="/user"  activeClassName="active-btn" className="btn" ><i className="fas fa-user text-sm "></i></NavLink>
           
           

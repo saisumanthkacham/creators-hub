@@ -12,7 +12,7 @@ const {videosState,videosDispatch}=useVideo()
 
 
 return (<section className="body">
-    <br/><h1>this element is used to create a space on view</h1>
+    <br/><h1>home page</h1>
     
     <div className="aside">
  
@@ -23,7 +23,7 @@ return (<section className="body">
     <div className="productsListing main">
         {videosState.videosData.map(item=><div key={item.id} className="cd"> 
            
-            <img className="cd-img" onClick={()=>console.log(item.id)} src={item.thumbnail} alt={item.vName} />
+            <img className="cd-img" onClick={()=>videosDispatch({type:"ADD-TO-HISTORY",payLoad:{video:item}})} src={item.thumbnail} alt={item.vName} />
             
            
             <div className="cd-text">

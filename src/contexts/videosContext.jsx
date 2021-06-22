@@ -7,6 +7,7 @@ const VideoContext=createContext()
     export const VideoProvider=({children})=>{
     const intialState={
         videosSaved:[],
+        history:[],
         videosData
     
     }
