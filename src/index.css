@@ -31,6 +31,7 @@ body {
    display: flex;
    justify-content: space-between;
    padding: 0.5rem 1rem;
+   align-items: center;
    }
    
  
@@ -114,9 +115,39 @@ body {
      padding-left:1rem;
    }
 
-   /* wishlist */
-   .wishList{
-     padding: 8rem;
+   /* playList-page */
+   .playList-img-text{
+     position: absolute;
+     top: 8rem;
+     width: 100%;
+     height: 2rem;
+     background-color: black;
+     color: white;
+     opacity: 0.9;
+     padding-top: 0.6rem;
+   }
+
+   .playList-modal{
+     position: absolute;
+     z-index: 7;
+     top: 3rem;
+     background-color: black;
+     color: white;
+     opacity: 0.9;
+     border-radius: 0.4rem;
+     overflow: auto;
+     width: 20rem;
+     min-height: 10rem;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+   }
+
+   .playList-modal-text{
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     
    }
 
    /* history-page */
@@ -133,26 +164,23 @@ body {
      margin: 1rem;
      position: relative;
      border: 1px solid rgb(243, 243, 243);
+     border-radius: 0.4rem;
    }
    .history-cd-text{
     margin: 1rem;
    }
-   .history-cd-wrong{
-     position: absolute;
-     top: 1rem;
-     right:1rem;
-     
-     cursor: pointer;
-   }
-   .history-cd-wrong:hover{
-    color:red;
-    
-   }
+  
+
+  
 
    /* saved-page */
    .saved-page{
      margin: 6rem 0rem 0 0rem;
    }
+   .saved-cd-wrong:hover{
+      color: red;
+   }
+  
   
 
    /* homepage */  

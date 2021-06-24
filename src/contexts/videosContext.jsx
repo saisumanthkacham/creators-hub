@@ -7,7 +7,10 @@ const VideoContext=createContext()
     export const VideoProvider=({children})=>{
     const intialState={
         videosSaved:[],
-        history:[],
+        videosLiked:[],
+        videosDisLiked:[],
+        videosHistory:[],
+        videosPlayList:[{name:"sai",videos:["https://img.youtube.com/vi/WjhVspM4OlU/maxresdefault.jpg"]},{name:"bhai",videos:[]}, ],
         videosData
     
     }

@@ -1,26 +1,26 @@
 import { useVideo } from "../contexts/videosContext"
+import { useNavigate } from "react-router"
 
 
 export const Saved=()=>{
+    // hooks
     const {videosState,videosDispatch}=useVideo()
-
+    const navigate=useNavigate()
     
 
-    return (<>
+return (<>
         <br/>
         <div className="productsListing saved-page">
 
-        {videosState.videosSaved.map(item=><div key={item.id} className="cd"> 
+        {videosState.videosSaved?.map(item=><div key={item.id} className="cd"> 
            
-           <img className="cd-img" onClick={()=>console.log(item.id)} src={item.thumbnail} alt={item.vName} />
+           <img className="cd-img" onClick={()=> navigate(`/video/${item.id}`)} src={item.thumbnail} alt={item.vName} />
            
           
            <div className="cd-text">
                <img className="cd-profile" src={item.profileUrl} alt={item.creator}/>
                <div className="cd-overflow-text">{item.vName}</div>
-               <div style={{cursor:"pointer"}}>
-               <i onClick={()=>videosDispatch({type:"REMOVE-FROM-SAVED-VIDEOS",payLoad:{video:item}})} class="fas fa-times cd-wrong"></i>
-                </div>
+               <i style={{cursor:"pointer"}} onClick={()=>videosDispatch({type:"REMOVE-FROM-SAVED-VIDEOS",payLoad:{video:item}})} className="fas fa-times saved-cd-wrong"></i>
            </div>
 
            <div>

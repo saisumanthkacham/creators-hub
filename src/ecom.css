@@ -278,13 +278,13 @@
                         justify-content: space-between;
                         align-items: center;
                         text-align: center;
-                        max-height: 260px;
+                        height: 230px;
                         max-width:260px ;
                         margin: 1rem 1rem 1rem 1rem; 
                         /* box-shadow: 1px 5px 4px #ccc; */
                         border-radius: 0.4rem;
                         border: 1px solid rgb(243, 243, 243);
-                       
+                       position: relative;
                     }
 
                     
@@ -306,7 +306,6 @@
                         display: flex;
                         justify-content:space-between;
                         align-items: center;
-                        border-radius: 0.5rem;
                         text-align: left;
                         padding-top: 1rem;
                         margin: 0;
@@ -323,6 +322,13 @@
                         padding:0rem 0.5rem 0 0.8rem;
                         
                     }
+                    .cd-wrong{
+                        position: absolute;
+                        top: 1rem;
+                        right:1rem;
+                        cursor: pointer;
+                        color: grey;
+                      }           
                     .cd-wrong:hover{
                         color: red;
                     }

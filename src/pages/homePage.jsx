@@ -2,11 +2,12 @@
 // import ReactPlayer from "react-player/youtube"
 import { useVideo } from "../contexts/videosContext.jsx"
 import { isVideoSaved } from "../utils/isVideoSaved.js"
+import { useNavigate } from "react-router"
 
 export const Home=()=>{
 
 const {videosState,videosDispatch}=useVideo()
-
+const navigate=useNavigate()
 
 
 
@@ -21,11 +22,14 @@ return (<section className="body">
     </div>
 
     <div className="productsListing main">
-        {videosState.videosData.map(item=><div key={item.id} className="cd"> 
+        {videosState.videosData?.map(item=><div key={item.id} className="cd"> 
            
-            <img className="cd-img" onClick={()=>videosDispatch({type:"ADD-TO-HISTORY",payLoad:{video:item}})} src={item.thumbnail} alt={item.vName} />
-            
-           
+            <img className="cd-img" onClick={()=>{
+                    videosDispatch({type:"ADD-TO-HISTORY",payLoad:{video:item}});
+                    navigate(`/video/${item.id}`)
+                }} 
+             src={item.thumbnail} alt={item.vName} />
+
             <div className="cd-text">
                 <img className="cd-profile" src={item.profileUrl} alt={item.creator}/>
                 <div className="cd-overflow-text">{item.vName}</div>
