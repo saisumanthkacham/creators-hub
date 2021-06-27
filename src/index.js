@@ -3,14 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import {VideoProvider} from "./contexts/videosContext"
+import { VideoStatisticsProvider } from './contexts/videosStatisticsContext';
 import {BrowserRouter as Router} from "react-router-dom"
 
 ReactDOM.render(
   <React.StrictMode>
      <Router>
-       <VideoProvider>
-          <App />
-    </VideoProvider>
+        <VideoStatisticsProvider>
+            <VideoProvider>
+                <App />
+            </VideoProvider>
+        </VideoStatisticsProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

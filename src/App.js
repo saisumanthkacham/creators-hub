@@ -18,7 +18,7 @@ function App() {
         <div >
           <NavLink to="/"  end     activeClassName="active-btn" className="btn bold" >Home</NavLink>&nbsp;
           <NavLink to="/playList"  activeClassName="active-btn" className="btn bold" >playLists</NavLink>&nbsp;
-         
+          <NavLink to="/liked"  activeClassName="active-btn" className="btn bold" >Liked</NavLink>&nbsp;
         </div>
         <div>
           <NavLink to="/history"      activeClassName="active-btn" className="btn" ><i class="fas fa-history"></i></NavLink>&nbsp;

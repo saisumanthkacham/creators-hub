@@ -27,9 +27,7 @@ return (<>
            <small className="grey-font cd-creator">{item.creator}</small>
            </div>
 
-           
-
-       </div> )}
+        </div> )}
     
        </div>
     </>)

@@ -128,12 +128,14 @@ body {
    }
 
    .playList-modal{
+     visibility: visible;
      position: absolute;
      z-index: 7;
-     top: 3rem;
-     background-color: black;
+     top: 30%;
+     right: 35%;
+     background-color:var(--secondary-color);
      color: white;
-     opacity: 0.9;
+     opacity: 1;
      border-radius: 0.4rem;
      overflow: auto;
      width: 20rem;
@@ -141,6 +143,7 @@ body {
      display: flex;
      flex-direction: column;
      justify-content: center;
+     align-items: center;
    }
 
    .playList-modal-text{
@@ -148,6 +151,11 @@ body {
      flex-direction: column;
      justify-content: flex-start;
      
+   }
+   .video-page{
+    filter: blur(5px);
+     pointer-events: none;
+     user-select: none;
    }
 
    /* history-page */
