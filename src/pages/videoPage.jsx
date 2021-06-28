@@ -4,6 +4,8 @@ import { useVideo } from "../contexts/videosContext"
 import { PlayListModal } from "../components/playListModal" 
 import { DisLikeButton } from "../components/disLikeButton"
 import { LikeButton } from "../components/likeButton"
+import {Views} from "../components/noOfViews"
+import { AddToPlayListButton } from "../components/addToPlayListButton"
 import {useState} from "react"
 
 
@@ -21,17 +23,18 @@ return (<>
         
         <div className={display?"video-page":"page"}>
             <ReactPlayer url={item?.url} playing={true} controls={true}  />
-            {item.vName}<br/>
-            {/* AddToPlayListButton */}
-            <i style={{cursor:"pointer"}}  onClick={()=>setDisplay(!display)} class="fas fa-plus"></i>
+            {item?.vName}<br/>
+           
             <LikeButton item={item} />
             <DisLikeButton item={item} />
-            <i class="fa fa-eye" aria-hidden="true"></i>
-            <i style={{cursor:"pointer"}} class="fas fa-share-alt"></i>
+            <Views item={item}/>
+            <AddToPlayListButton display={display} setDisplay={setDisplay} />
+            
+            <i style={{cursor:"pointer"}} className="fas fa-share-alt"></i>
             <hr/>
             <div className="center" style={{width:150}}>
-                <img className="cd-profile" src={item.profileUrl} alt={item.creator}/>
-                {item.creator}
+                <img className="cd-profile" src={item?.profileUrl} alt={item?.creator}/>
+                {item?.creator}
             </div>
             
         </div>

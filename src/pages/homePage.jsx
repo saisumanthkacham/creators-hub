@@ -3,13 +3,16 @@
 import { useVideo } from "../contexts/videosContext.jsx"
 import { isVideoSaved } from "../utils/isVideoSaved.js"
 import { useNavigate } from "react-router"
+import { useVideoStatistics } from "../contexts/videosStatisticsContext.jsx"
 
 export const Home=()=>{
 
 const {videosState,videosDispatch}=useVideo()
+const {videoStatisticsDispatch}=useVideoStatistics()
 const navigate=useNavigate()
 
 
+    
 
 
 return (<section className="body">
@@ -26,6 +29,7 @@ return (<section className="body">
            
             <img className="cd-img" onClick={()=>{
                     videosDispatch({type:"ADD-TO-HISTORY",payLoad:{video:item}});
+                    videoStatisticsDispatch({type:"INCREMENT-VIEW",payLoad:{id:item.id}})
                     navigate(`/video/${item.id}`)
                 }} 
              src={item.thumbnail} alt={item.vName} />

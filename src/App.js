@@ -21,7 +21,7 @@ function App() {
           <NavLink to="/liked"  activeClassName="active-btn" className="btn bold" >Liked</NavLink>&nbsp;
         </div>
         <div>
-          <NavLink to="/history"      activeClassName="active-btn" className="btn" ><i class="fas fa-history"></i></NavLink>&nbsp;
+          <NavLink to="/history"      activeClassName="active-btn" className="btn" ><i className="fas fa-history"></i></NavLink>&nbsp;
           <NavLink to="/saved"  activeClassName="active-btn" className="btn" ><i className="far fa-bookmark"></i></NavLink>
           <NavLink to="/video"  activeClassName="active-btn" className="btn" ><i className="fas fa-user text-sm "></i></NavLink>
           

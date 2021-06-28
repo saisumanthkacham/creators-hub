@@ -18,7 +18,8 @@ const VideoContext=createContext()
     videoReducerFn(state,dispatch);
 
 return <VideoContext.Provider 
-        value={{videosState:state,videosDispatch:dispatch}}>{children}
+        value={{videosState:state,videosDispatch:dispatch}}>
+        {children}
         </VideoContext.Provider>
 }
 
