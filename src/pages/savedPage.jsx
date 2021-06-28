@@ -11,7 +11,7 @@ export const Saved=()=>{
 return (<>
         <br/>
         <div className="productsListing saved-page">
-
+        {console.log("saved vids",videosState.videosSaved)}
         {videosState.videosSaved?.map(item=><div key={item.id} className="cd"> 
            
            <img className="cd-img" onClick={()=> navigate(`/video/${item.id}`)} src={item.thumbnail} alt={item.vName} />

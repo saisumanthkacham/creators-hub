@@ -1,9 +1,9 @@
 
 // import ReactPlayer from "react-player/youtube"
 import { useVideo } from "../contexts/videosContext.jsx"
-import { isVideoSaved } from "../utils/isVideoSaved.js"
 import { useNavigate } from "react-router"
 import { useVideoStatistics } from "../contexts/videosStatisticsContext.jsx"
+import { SaveButton } from "../components/saveButton.jsx"
 
 export const Home=()=>{
 
@@ -37,11 +37,7 @@ return (<section className="body">
             <div className="cd-text">
                 <img className="cd-profile" src={item.profileUrl} alt={item.creator}/>
                 <div className="cd-overflow-text">{item.vName}</div>
-                <div style={{cursor:"pointer",color:"red"}}>
-                    {isVideoSaved(videosState,item.id) 
-                    ? <i onClick={()=>videosDispatch({type:"REMOVE-FROM-SAVED-VIDEOS",payLoad:{video:item}})} className="fas fa-bookmark"></i> 
-                    : <i onClick={()=>videosDispatch({type:"ADD-TO-SAVED-VIDEOS",payLoad:{video:item}})} className="far fa-bookmark"></i>}
-                </div>
+                <SaveButton item={item}/>
             </div>
 
             <div>
