@@ -11,20 +11,24 @@ export const LikeButton=({item})=>{
     return <>
             
              
-        {likes?.count}Likes    
+       
         {isVideoLiked(videosState,item?.id)
-        ? <i onClick={()=>{
-                            videosDispatch({type:"REMOVE-FROM-LIKED-VIDEOS",payLoad:{video:item}})
-                            videoStatisticsDispatch({type:"DECREMENT-LIKE",payLoad:{id:item.id}})
-                            }} className="fas fa-thumbs-up" id="activated-btn"></i>
-        : <i onClick={()=>{
-                            isVideoDisLiked(videosState,item.id)&&videoStatisticsDispatch({type:"DECREMENT-DISLIKE",payLoad:{id:item.id}})
-                            videoStatisticsDispatch({type:"INCREMENT-LIKE",payLoad:{id:item.id}})
-                            videosDispatch({type:"ADD-TO-LIKED-VIDEOS",payLoad:{video:item}})
-                            videosDispatch({type:"REMOVE-FROM-DISLIKED-VIDEOS",payLoad:{video:item}})
-                            }} className="far fa-thumbs-up" id="not-activated-btn"></i>}
-
-
+        ? <div className="center">
+                    {likes?.count}&nbsp; 
+                    <i onClick={()=>{
+                                    videosDispatch({type:"REMOVE-FROM-LIKED-VIDEOS",payLoad:{video:item}})
+                                    videoStatisticsDispatch({type:"DECREMENT-LIKE",payLoad:{id:item.id}})
+                                    }} className="fas fa-thumbs-up icon-sm" id="activated-btn"></i>
+                                    </div>
+        : <div className="center">
+                    {likes?.count}&nbsp;
+                    <i onClick={()=>{
+                                    isVideoDisLiked(videosState,item.id)&&videoStatisticsDispatch({type:"DECREMENT-DISLIKE",payLoad:{id:item.id}})
+                                    videoStatisticsDispatch({type:"INCREMENT-LIKE",payLoad:{id:item.id}})
+                                    videosDispatch({type:"ADD-TO-LIKED-VIDEOS",payLoad:{video:item}})
+                                    videosDispatch({type:"REMOVE-FROM-DISLIKED-VIDEOS",payLoad:{video:item}})
+                                    }} className="far fa-thumbs-up red-font icon-sm " id="not-activated-btn"></i>
+                                    </div>}
 
     </>
 }

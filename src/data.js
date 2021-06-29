@@ -5,7 +5,7 @@ import faker from "faker"
 export const videosData= [
     {
       vName:"This could be the future of remote offices. I'm serious.",
-      creator:"varunMayya",
+      creator:"Varun Mayya",
       platform:"Instagram",
       profileUrl:"https://yt3.ggpht.com/ytc/AAUvwnhLAJt4W8-G0thddnopHbvmKOpTD6lbV2pZDEi7ng=s176-c-k-c0x00ffffff-no-rj-mo",
       url:"https://www.youtube.com/watch?v=WjhVspM4OlU",
@@ -94,9 +94,10 @@ export const videosData= [
     },
   
      {
-      vName:"launching neog.camp: roadmap to full stack dev",
+      vName:"launching neog camp: roadmap to full stack dev",
       creator:"NeoG Camp",
       platform:"Instagram",
+      url:"https://www.youtube.com/watch?v=Ezk2AwqgS9Q&list=PLzvhQUIpvvuj5KPnyPyWsvgyzNkX_ACPA",
       profileUrl:"https://yt3.ggpht.com/ytc/AAUvwnibnmzbi8nfRHEAzdI-8lpPGsrD1F6Cg3mAImtQ=s68-c-k-c0x00ffffff-no-rj",
       thumbnail:"https://img.youtube.com/vi/Ezk2AwqgS9Q/maxresdefault.jpg",
       id:faker.datatype.uuid(),
@@ -144,7 +145,7 @@ export const videosData= [
     },
   
     {
-      vName:"CRED curious: Nithin Kamath in conversation with Kunal Shah ",
+      vName:"Nithin Kamath in conversation with Kunal Shah ",
       creator:"Kunal Shah",
       platform:"Instagram",
       profileUrl:"https://yt3.ggpht.com/ytc/AAUvwnhAkqAUKB2XCD4jJHDDkwtovu2jbX9k-LzWgq_m=s176-c-k-c0x00ffffff-no-rj-mo",
@@ -154,7 +155,7 @@ export const videosData= [
     },
   
     {
-      vName:"CRED curious | Paras Chopra in conversation with Kunal Shah | Mental Models for Success ",
+      vName:"Paras Chopra in conversation with Kunal Shah | Mental Models for Success ",
       creator:"Kunal Shah",
       platform:"Instagram",
       profileUrl:"https://yt3.ggpht.com/ytc/AAUvwnhAkqAUKB2XCD4jJHDDkwtovu2jbX9k-LzWgq_m=s176-c-k-c0x00ffffff-no-rj-mo",
@@ -227,7 +228,7 @@ export const videosData= [
   
   // Youtube creators
     {
-      vName:"Intermediate React.js Coding Interview (ft. Clément Mihailescu) ",
+      vName:"Intermediate React js Coding Interview (ft. Clément Mihailescu) ",
       creator:"Ben Awad",
       platform:"Youtube",
       profileUrl:"https://yt3.ggpht.com/ytc/AAUvwng8pSXOY4YZbcXPT7oLVpHDdUU1yOU5YQlcD6NFrg=s176-c-k-c0x00ffffff-no-rj-mo",
@@ -247,7 +248,7 @@ export const videosData= [
     },
   
     {
-      vName:"Welcome to Javascript Course ",
+      vName:"Welcome to Java script Course ",
       creator:"Hitesh Chowdary",
       platform:"Youtube",
       profileUrl:"https://yt3.ggpht.com/ytc/AAUvwnihtV8Mb0JZFkkAEf9KKN4m4WNNeHkxUb6Wuvc_5w=s176-c-k-c0x00ffffff-no-rj-mo",
@@ -278,7 +279,7 @@ export const videosData= [
     },
   
      {
-      vName:"Dayyala Stream | CSB Live",
+      vName:"Dayyala Stream CSB Live",
       creator:"Cool Sand Boy",
       platform:"Youtube",
       profileUrl:"https://yt3.ggpht.com/zjqzZ0QOltHX7WWXsu6wXxRlYwJZ817sqbDiv-lK26qlRXedRF7lAa-WTKv3FNf_jquUpgSZjA=s176-c-k-c0x00ffffff-no-rj-mo",
@@ -308,7 +309,7 @@ export const videosData= [
     },
   
      {
-      vName:"FIRST CLASS FUNCTIONS 🔥ft. Anonymous Functions | Namaste JavaScript ",
+      vName:"FIRST CLASS FN'S 🔥ft. Anonymous Functions | Namaste JavaScript ",
       creator:"Akshay Saini",
       platform:"Youtube",
       profileUrl:"https://yt3.ggpht.com/ytc/AAUvwnin7zykyU20uPntBE42IfNsj9SAL7tKeE7eiNuUYA=s176-c-k-c0x00ffffff-no-rj-mo",
@@ -318,7 +319,7 @@ export const videosData= [
     },
   
      {
-      vName:"Higher-Order Functions ft. Functional Programming | Namaste JavaScript",
+      vName:"Higher-Order Fn's ft. Functional Programming | Namaste JavaScript",
       creator:"Akshay Saini",
       platform:"Youtube",
       profileUrl:"https://yt3.ggpht.com/ytc/AAUvwnin7zykyU20uPntBE42IfNsj9SAL7tKeE7eiNuUYA=s176-c-k-c0x00ffffff-no-rj-mo",

@@ -11,18 +11,24 @@ export const DisLikeButton=({item})=>{
     
  return <>
     
-    {disLikes?.count}disLikes
+    
     {isVideoDisLiked(videosState,item?.id)
-        ? <i onClick={()=>{ 
+        ? <div className="center">
+                {disLikes?.count}&nbsp;
+                <i onClick={()=>{ 
                             videosDispatch({type:"REMOVE-FROM-DISLIKED-VIDEOS",payLoad:{video:item}})
                             videoStatisticsDispatch({type:"DECREMENT-DISLIKE",payLoad:{id:item.id}})
-                            }} className="fas fa-thumbs-down" id="activated-btn"></i> 
-        : <i onClick={()=>{
+                            }} className="fas fa-thumbs-down icon-sm" id="activated-btn"></i>
+                            </div>
+        :<div className="center">
+              {disLikes?.count}&nbsp;
+              <i onClick={()=>{
                             videoStatisticsDispatch({type:"INCREMENT-DISLIKE",payLoad:{id:item.id}})
                             isVideoLiked(videosState,item.id)&& videoStatisticsDispatch({type:"DECREMENT-LIKE",payLoad:{id:item.id}})
                             videosDispatch({type:"ADD-TO-DISLIKED-VIDEOS",payLoad:{video:item}});
                             videosDispatch({type:"REMOVE-FROM-LIKED-VIDEOS",payLoad:{video:item}})
-                            }} className="far fa-thumbs-down" id="not-activated-btn"></i>}
+                            }} className="far fa-thumbs-down red-font icon-sm" id="not-activated-btn"></i>
+                            </div>}
     
     
      </>

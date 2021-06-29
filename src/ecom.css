@@ -58,7 +58,7 @@
                     .center {
                         display: flex;
                         flex-direction: row;
-                        justify-content:space-around;
+                        justify-content:space-between;
                         align-items: center;
                     }
                     .center-col{
@@ -176,15 +176,15 @@
                     }
                     
                     .icon-sm {
-                        margin: 0.5rem;
-                        width: 40px;
-                        height: 40px;
+                        margin: 0rem;
+                        width: 33px;
+                        height: 33px;
                         border-radius: 50%;
                         text-align: center;
-                        margin: 0.5rem;
                         display: flex;
                         justify-content: center;
                         align-items: center;
+                        background-color: #F3F4F6;
                     }
                     
                     .icon-lg {
@@ -197,6 +197,7 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
+                        background-color: #F3F4F6;
                     }
                     
                     .icon {
@@ -209,6 +210,7 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
+                        background-color: #F3F4F6;
                     }
                     
                     .bdg-icon {

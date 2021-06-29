@@ -13,7 +13,7 @@ return (<>
     <br/>
     <h1>historyPage</h1>
     <div className="history-page ">
-
+        <>
         {videosState.videosHistory?.map(item=><div key={item.id} className="history-cd">
             <img onClick={()=> navigate(`/video/${item.id}`)} className="cd-img" src={item.thumbnail} alt="" />
             <i onClick={()=>videosDispatch({type:"REMOVE-FROM-HISTORY",payLoad:{video:item}})} class="fas fa-times cd-wrong"></i>
@@ -22,6 +22,7 @@ return (<>
                 <small>{item.creator}</small>    
             </div>
         </div>)}
+        </>
     </div>
     
     </>)
