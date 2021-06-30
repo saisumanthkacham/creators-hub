@@ -21,7 +21,7 @@ return (<>
                                 videoStatisticsDispatch({type:"INCREMENT-VIEW",payLoad:{id:item.id}})
                                 }} className="cd-img" src={item.thumbnail} alt="" />
                                 
-            <i onClick={()=>videosDispatch({type:"REMOVE-FROM-HISTORY",payLoad:{video:item}})} class="fas fa-times cd-wrong"></i>
+            <i onClick={()=>videosDispatch({type:"REMOVE-FROM-HISTORY",payLoad:{video:item}})} class="fas fa-times cd-wrong icon-sm"></i>
             <div className="center-col history-cd-text">
                 <div >{item.vName}</div>
                 <small>{item.creator}</small>    

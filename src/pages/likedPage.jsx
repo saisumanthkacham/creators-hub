@@ -9,10 +9,9 @@ export const LikedVideos=()=>{
     const navigate=useNavigate()
 
 return <>
-<br/>
-            {console.log(videosState.videosSaved)}
+            
+        <br/>
         <div className="productsListing saved-page">
-        {console.log("liked vids",videosState.videosLiked)}
             {videosState.videosLiked?.map(item=><div key={item.id} className="cd"> 
    
                 <img className="cd-img" onClick={()=> {

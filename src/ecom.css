@@ -176,9 +176,9 @@
                     }
                     
                     .icon-sm {
-                        margin: 0rem;
-                        width: 33px;
-                        height: 33px;
+                        margin: 0;
+                        width: 2rem;
+                        height: 2rem;
                         border-radius: 50%;
                         text-align: center;
                         display: flex;
@@ -362,25 +362,8 @@
                     }
 
 
-                    /* modal */
-                    
-                    .mdl section {
-                        font-size: medium;
-                        margin: 2rem 2rem 2rem 7rem;
-                    }
-                    
-                    .modal {
-                        width: 20rem;
-                        height: 10rem;
-                        border-radius: 0.5rem;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-around;
-                        align-items: center;
-                        text-align: center;
-                        padding: 1rem 1rem;
-                        box-shadow: 1px 5px 5px #ccc;
-                    }
+                 
+                  
                     /* navbar */
                     
                     .nav {

@@ -125,6 +125,7 @@ body {
     border: none;
     width: 10rem;
     height:2rem;
+    margin: 0.5rem;
    }
 
    /* playList-page */
@@ -143,7 +144,7 @@ body {
    .playList-modal{
      visibility: visible;
      position: absolute;
-     z-index: 7;
+     z-index: 4;
      top: 30%;
      right: 35%;
      background-color:var(--secondary-color);
@@ -151,12 +152,13 @@ body {
      opacity: 1;
      border-radius: 0.4rem;
      overflow: auto;
-     width: 20rem;
+     width: 25rem;
      min-height: 10rem;
      display: flex;
      flex-direction: column;
      justify-content: center;
      align-items: center;
+     padding: 1rem 1rem 0 1rem;
    }
 
    .playList-modal-text{
@@ -224,10 +226,11 @@ body {
 
    /* history-page */
    .history-page{
-     margin-top: 3rem;
+     margin-top: 2rem;
      display: flex;
      flex-direction: column;
      align-items: center;
+    
    }
    .history-cd{
      display: flex;
@@ -247,7 +250,7 @@ body {
 
    /* saved-page */
    .saved-page{
-     margin: 6rem 0rem 0 0rem;
+     margin: 5rem 0rem 0 0rem;
    }
    .saved-cd-wrong:hover{
       color: red;

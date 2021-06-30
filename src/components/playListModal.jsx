@@ -26,11 +26,12 @@ return <div className="playList-modal" style={{visibility:display?"visible":"hid
                 )}<br/>
 
                 <div className="center">
-                    <input onChange={(e)=>setInput(e.target.value)} className="input-box" type="text" placeholder=" playlist name"/>
-                  <div className="btn btn-md" 
-                    onClick={()=>{
+                    <input onChange={(e)=>setInput(e.target.value)} className="input-box" type="text" placeholder="enter new playlist name"/>
+                    <div className="btn btn-md" 
+                        onClick={()=>{
                         !isPlayListAlreadyExist(videosState,input)&&(input!=="") &&videosDispatch({type:"CREATE-NEW-PLAYLIST",payLoad:{playList:input,video:video}})
-                                }}>create&add</div>
+                                }}>create&add
+                    </div>
                 </div>
                 <br/>
             </div>

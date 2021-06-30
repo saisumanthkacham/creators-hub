@@ -5,7 +5,7 @@ import {PlayList} from "./playListPage.jsx"
 import {Saved} from "./savedPage.jsx"
 import {VideoPlayer} from "./videoPage.jsx"
 import { LikedVideos } from "./likedPage.jsx"
+import { Channel } from "./channelPage.jsx"
 
 
-
-export {Home,History,PlayLists,PlayList,Saved,VideoPlayer,LikedVideos}
+export {Home,History,PlayLists,PlayList,Saved,VideoPlayer,LikedVideos,Channel}

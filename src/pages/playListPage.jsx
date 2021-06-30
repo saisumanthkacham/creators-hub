@@ -28,7 +28,7 @@ return (<>
            <div className="cd-text">
                <img className="cd-profile" src={item.profileUrl} alt={item.creator}/>
                <div className="cd-overflow-text">{item.vName}</div>
-               <i style={{cursor:"pointer"}} onClick={()=>videosDispatch({type:"REMOVE-FROM-PLAYLIST",payLoad:{video:item,name:name}})} className="fas fa-times saved-cd-wrong"></i>
+               <i style={{cursor:"pointer"}} onClick={()=>videosDispatch({type:"REMOVE-FROM-PLAYLIST",payLoad:{video:item,name:name}})} className="fas fa-times saved-cd-wrong "></i>
            </div>
 
            <div>

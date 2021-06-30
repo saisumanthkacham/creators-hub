@@ -36,6 +36,9 @@ export const videoReducerFn=(prevState,{type,payLoad})=>{
 
         case "CREATE-NEW-PLAYLIST" : 
                 return {...prevState,videosPlayList:[...prevState.videosPlayList,{name:payLoad.playList,videos:[payLoad.video]}]}
+
+        case "REMOVE-PLAYLIST" : 
+                return {...prevState,videosPlayList:prevState.videosPlayList.filter(item=>item.name!==payLoad.name)}
                
         default: return {...prevState}
 
