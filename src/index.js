@@ -5,10 +5,12 @@ import App from './App';
 import {VideoProvider} from "./contexts/videosContext"
 import { VideoStatisticsProvider } from './contexts/videosStatisticsContext';
 import {BrowserRouter as Router} from "react-router-dom"
+import {ScrollToTop} from "./components/scrollToTop"
 
 ReactDOM.render(
   <React.StrictMode>
      <Router>
+       <ScrollToTop/>
         <VideoStatisticsProvider>
             <VideoProvider>
                 <App />

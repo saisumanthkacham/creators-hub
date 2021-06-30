@@ -291,8 +291,8 @@
 
                     
                     .cd-img{
-                        width: 260px;
-                        height: 150px;
+                        width: 16rem;
+                        height: 9rem;
                         border-top-left-radius: 0.4rem;
                         border-top-right-radius: 0.4rem;
                         cursor: pointer;

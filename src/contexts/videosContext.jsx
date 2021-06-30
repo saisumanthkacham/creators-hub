@@ -10,7 +10,8 @@ const VideoContext=createContext()
         videosLiked:[],
         videosDisLiked:[],
         videosHistory:[],
-        videosPlayList:[{name:"sai",videos:["https://img.youtube.com/vi/WjhVspM4OlU/maxresdefault.jpg"]},{name:"bhai",videos:[]}, ],
+        // data structure ref for videosPlaylist [{name:"sai",videos:[]},{name:"bhai",videos:[]}, ],
+        videosPlayList:[],
         videosData
     
     }

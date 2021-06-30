@@ -1,8 +1,11 @@
 import {useVideo} from "../contexts/videosContext"
 import { useNavigate } from "react-router"
+import { useVideoStatistics } from "../contexts/videosStatisticsContext.jsx"
+
 
 export const LikedVideos=()=>{
     const {videosState,videosDispatch}=useVideo()
+    const {videoStatisticsDispatch}=useVideoStatistics()
     const navigate=useNavigate()
 
 return <>
@@ -12,7 +15,11 @@ return <>
         {console.log("liked vids",videosState.videosLiked)}
             {videosState.videosLiked?.map(item=><div key={item.id} className="cd"> 
    
-                <img className="cd-img" onClick={()=> navigate(`/video/${item.id}`)} src={item.thumbnail} alt={item.vName} />
+                <img className="cd-img" onClick={()=> {
+                                navigate(`/video/${item.id}`)
+                                videosDispatch({type:"ADD-TO-HISTORY",payLoad:{video:item}});
+                                videoStatisticsDispatch({type:"INCREMENT-VIEW",payLoad:{id:item.id}})
+                                }} src={item.thumbnail} alt={item.vName} />
    
   
                 <div className="cd-text">

@@ -8,16 +8,24 @@ import {Views} from "../components/noOfViews"
 import { AddToPlayListButton } from "../components/addToPlayListButton"
 import { SaveButton } from "../components/saveButton.jsx"
 import {useState} from "react"
+import { useVideoStatistics } from "../contexts/videosStatisticsContext.jsx"
+
 
 
 export const VideoPlayer=()=>{
     
-    const{id}=useParams()
+// hooks
     const navigate=useNavigate()
-    const {videosState}=useVideo()
+    const {videoStatisticsDispatch}=useVideoStatistics()
+    const {videosState,videosDispatch}=useVideo()
+// extracting video from url
+    const{id}=useParams()
     const item=videosState?.videosData.find(item=>item.id===id)
-    const similarVideos=videosState.videosData.filter(vid=>vid.platform===item.platform)
+// togling the display value of playList Modal
     const [display,setDisplay]=useState(false)
+    const similarVideos=videosState.videosData.filter(vid=>vid.platform===item?.platform)
+   
+   
 
 return (<>
     <br/>
@@ -46,21 +54,29 @@ return (<>
                     </div>
             </div>
 
+
+
             <div className="similar-videos">
                 <h3>similar videos</h3>
                 
-                {similarVideos?.map(item=><div key={item.id} className="similar-videos-cd">
-                    <img onClick={()=> navigate(`/video/${item.id}`)} className="cd-img" src={item.thumbnail} alt="" />
-                    <div className="center-col history-cd-text">
-                    <div >{item.vName}</div>
-                    <small>{item.creator}</small>    
-                    </div>
-                </div>)}
+                    {similarVideos?.map(item=><div key={item.id} className="similar-videos-cd">
+                        <img onClick={()=> {
+                            navigate(`/video/${item.id}`)
+                            videosDispatch({type:"ADD-TO-HISTORY",payLoad:{video:item}});
+                            videoStatisticsDispatch({type:"INCREMENT-VIEW",payLoad:{id:item.id}})
+                            }} className="cd-img" src={item.thumbnail} alt="" />
+                        <div className="center-col history-cd-text">
+                        <div >{item.vName}</div>
+                        <small>{item.creator}</small>    
+                        </div>
+                    </div>)}
             </div>
             
+            
         </div>
- 
-        <PlayListModal display={display} setDisplay={setDisplay}/>
+        
+        {/* this component kept outside div's, to blur bg when modal showed up */}
+        <PlayListModal display={display} setDisplay={setDisplay} video={item}/>
 
     
     </>)

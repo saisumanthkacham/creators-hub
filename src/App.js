@@ -2,7 +2,7 @@
 import './index.css'
 import "./ecom.css"
 import { Routes,Route } from 'react-router-dom';
-import {Home,History,PlayList,Saved,VideoPlayer,LikedVideos} from "./pages/indexOfPages.jsx"
+import {Home,History,PlayLists,PlayList,Saved,VideoPlayer,LikedVideos} from "./pages/indexOfPages.jsx"
 import {NavLink,useNavigate} from "react-router-dom"
 function App() {
   const navigate=useNavigate()
@@ -17,7 +17,7 @@ function App() {
         <div className="white-font nav-logo" onClick={()=>{navigate("/")}}>Creators Hub</div>
         <div >
           <NavLink to="/"  end     activeClassName="active-btn" className="btn bold" >Home</NavLink>&nbsp;
-          <NavLink to="/playList"  activeClassName="active-btn" className="btn bold" >playLists</NavLink>&nbsp;
+          <NavLink to="/playLists"  activeClassName="active-btn" className="btn bold" >playLists</NavLink>&nbsp;
           <NavLink to="/liked"  activeClassName="active-btn" className="btn bold" >Liked</NavLink>&nbsp;
         </div>
         <div>
@@ -34,7 +34,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/history" element={<History/>}/>
-      <Route path="/playList" element={<PlayList/>}/>
+      <Route path="/playLists" element={<PlayLists/>}/>
+      <Route path="/playLists/:name" element={<PlayList/>}/>
       <Route path="/saved" element={<Saved/>}/>
       <Route path="/video/:id" element={<VideoPlayer/>}/>
       <Route path="/liked" element={<LikedVideos/>}/>

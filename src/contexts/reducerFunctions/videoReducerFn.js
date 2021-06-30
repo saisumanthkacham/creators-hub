@@ -28,6 +28,15 @@ export const videoReducerFn=(prevState,{type,payLoad})=>{
         case "REMOVE-FROM-DISLIKED-VIDEOS":
                 return {...prevState,videosDisLiked:[...prevState.videosDisLiked.filter(item=>item.id!==payLoad.video.id)]}
 
+        case "ADD-TO-PLAYLIST" : 
+                return {...prevState,videosPlayList:prevState.videosPlayList.map(item=>item.name===payLoad.name ?{...item,videos:[...item.videos,payLoad.video]} :{...item})}
+
+        case "REMOVE-FROM-PLAYLIST":
+                return {...prevState,videosPlayList:prevState.videosPlayList.map(item=>item.name===payLoad.name ?{...item,videos:item.videos.filter(vid=>vid.id!==payLoad.video.id)}:{...item})}
+
+        case "CREATE-NEW-PLAYLIST" : 
+                return {...prevState,videosPlayList:[...prevState.videosPlayList,{name:payLoad.playList,videos:[payLoad.video]}]}
+               
         default: return {...prevState}
 
 
