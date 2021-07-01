@@ -5,6 +5,7 @@ import { useNavigate} from "react-router"
 import { useVideoStatistics } from "../contexts/videosStatisticsContext.jsx"
 import { SaveButton } from "../components/saveButton.jsx"
 
+
 export const Home=()=>{
 
 const {videosState,videosDispatch}=useVideo()
@@ -15,14 +16,8 @@ const navigate=useNavigate()
 
 
 return (<section className="body">
-    <br/><h1>home page</h1>
-    
-    <div className="aside">
- 
-  
-
-    </div>
-
+    <br/>
+    <h1>home page</h1>
     <div className="productsListing main">
         {videosState.videosData?.map(item=><div key={item.id} className="cd"> 
            
@@ -43,14 +38,15 @@ return (<section className="body">
             <small className="grey-font cd-creator" 
                                     onClick={()=>{
                                                     navigate(`/channel/${item.creator}`)
-                                                    }}>{item.creator}</small>
+                                                    }}>{item.creator}
+            </small>
             </div>
 
             
 
         </div> )}
 
-        
+       
     </div>
 
    

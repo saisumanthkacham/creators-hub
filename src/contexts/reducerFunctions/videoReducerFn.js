@@ -1,4 +1,4 @@
-
+import { isVideoExistInHistory } from "../../utils/isVideoExistInHistory"
 
 export const videoReducerFn=(prevState,{type,payLoad})=>{
    
@@ -11,10 +11,10 @@ export const videoReducerFn=(prevState,{type,payLoad})=>{
             return {...prevState,videosSaved:[...prevState.videosSaved.filter(item=>item.id!==payLoad.video.id)]}
 
         case "ADD-TO-HISTORY" : 
-            return {...prevState,videosHistory:[...prevState.videosHistory,payLoad.video]}
+            return isVideoExistInHistory(prevState,payLoad.video.id)?{...prevState}: {...prevState,videosHistory:[...prevState.videosHistory,payLoad.video]}
 
         case "REMOVE-FROM-HISTORY":
-                return {...prevState,videosHistory:[...prevState.videosHistory.filter(item=>item.id!==payLoad.video.id)]}
+           return  {...prevState,videosHistory:[...prevState.videosHistory.filter(item=>item.id!==payLoad.video.id)]}
 
         case "ADD-TO-LIKED-VIDEOS" : 
             return {...prevState,videosLiked:[...prevState.videosLiked,payLoad.video]}

@@ -19,11 +19,6 @@ const filteredData= videosState.videosData.filter(item=>item.creator===name)
 return (<section className="body">
     <br/><h1>home page</h1>
     
-    <div className="aside">
- 
-  
-
-    </div>
     {console.log({filteredData})}
     <div className="productsListing main">
         {filteredData?.map(item=><div key={item.id} className="cd"> 

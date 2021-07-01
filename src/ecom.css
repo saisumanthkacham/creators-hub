@@ -1,7 +1,7 @@
                 
                     :root {
-                        /* --primary-color: #FF721A; */
-                        --primary-color: #990412;
+                        
+                        --primary-color: #bd0517;
                         --secondary-color: black;
                         --ter-color: #21253E;
                         --white-color: #ffffff;
@@ -13,9 +13,7 @@
                         --snap-yellow: #f7f400;
                         --blue-color: #4375f0;
                         --orange-color: #ffa13c;
-                        --youtube-red:#e90303;
-                        --linkedin-blue:#0072b1;
-                        --twitter-blue:#1DA1F2;
+                        
                         
                     }
                     
@@ -369,7 +367,7 @@
                     .nav {
                         grid-area:nav;
                         display: flex;
-                        justify-content: space-around;
+                        justify-content: space-between;
                         align-items: center;
                         width: 100%;
                         font-size: medium;
@@ -386,7 +384,7 @@
                     }
                     
                     .nav-li-item {
-                        margin: 0.5rem;
+                        margin: 1rem;
                         font-weight: 700;
                     }
                     
@@ -397,6 +395,12 @@
                         font-size: 1.1rem;
                         background-color: var(--primary-color);
                         cursor: pointer;
+                        margin: 0 0 0 7rem;
+                    }
+
+                    .burger-btn-nav{
+                        color: white;
+                        margin: 0.9rem 0 0 0.2rem ;
                     }
                     /* text */
                     
@@ -507,15 +511,4 @@
                     .yellow-font{
                         color:var(--yellow-color)
                     }
-                    .twitter-bg{
-                        background-color: var(--twitter-blue);
-                    }
-                    .youtube-bg{
-                        background-color: var(--youtube-red);
-                    }
-                    .linkedin-bg{
-                        background-color: var(--linkedin-blue);
-                    }
-                    .instagram-bg{
-                        background-image:linear-gradient(to bottom right,#DD2A7B, #8134AF,#515BD4) ;
-                    }
+                  

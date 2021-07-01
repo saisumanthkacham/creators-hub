@@ -35,7 +35,7 @@ return (<>
 
             
             <div className="player-wrapper">
-                    <ReactPlayer url={item?.url} playing={true} controls={true} width="100%" height="100%" />
+                    <ReactPlayer url={item?.url}  controls={true} width="100%" height="100%" />
             
                     {item?.vName}<br/>
                     <div className="center" >

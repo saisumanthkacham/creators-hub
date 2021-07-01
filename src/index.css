@@ -5,7 +5,6 @@
 
 body {
    margin: 0;
-    /* font-family: 'Lato', sans-serif; */
     font-family: 'Montserrat', sans-serif;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
@@ -40,12 +39,12 @@ body {
      text-decoration: none;
      color: rgb(207, 205, 205);
      margin: 1rem 0.2rem 3rem 0.2rem;
-
    }
 
    .active-btn{
      color:var(--primary-color);
      font-size: bold;
+     background-color: rgb(207, 205, 205);
    }
    
    #activated-btn{
@@ -128,6 +127,38 @@ body {
     margin: 0.5rem;
    }
 
+   /* sidebar */
+   .burger-btn{
+    color: white;
+    margin: 2rem 10rem 0 0;
+  }
+  
+
+  .side-bar{
+    background-color: rgb(65, 65, 65);
+    z-index:6;
+    position: fixed;
+    width: 23%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  .App-blur{
+    filter: blur(5px);
+    pointer-events: none;
+    user-select: none;
+    width: 100%;
+   
+  }
+  .logo-wrapper{
+    display: flex;
+    padding: 0 5rem 0 3rem;
+    width: 20rem;
+    align-items: center;
+  }
    /* playList-page */
    .playList-img-text{
      position: absolute;
@@ -252,6 +283,10 @@ body {
    .saved-page{
      margin: 5rem 0rem 0 0rem;
    }
+
+   .saved-cd-wrong{
+    color: grey;
+   }
    .saved-cd-wrong:hover{
       color: red;
    }
@@ -298,7 +333,7 @@ body {
      grid-template-rows:0.1vw 1fr ;
      grid-template-areas:
       "nav nav"
-      "aside main"
+      "main main"
       
      
    }
