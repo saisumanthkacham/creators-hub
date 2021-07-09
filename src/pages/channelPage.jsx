@@ -3,7 +3,7 @@
 import { useVideo } from "../contexts/videosContext.jsx"
 import { useNavigate,useParams } from "react-router"
 import { useVideoStatistics } from "../contexts/videosStatisticsContext.jsx"
-import { SaveButton } from "../components/saveButton.jsx"
+import { SaveButton,VideoCardHome } from "../components/indexOfComponents"
 
 export const Channel=()=>{
 
@@ -14,6 +14,12 @@ const navigate=useNavigate()
 const {name}=useParams()
 const filteredData= videosState.videosData.filter(item=>item.creator===name)
 
+ // custom functions
+ const videoHandler=(item)=>{
+    videosDispatch({type:"ADD-TO-HISTORY",payLoad:{video:item}});
+    videoStatisticsDispatch({type:"INCREMENT-VIEW",payLoad:{id:item.id}})
+    navigate(`/video/${item.id}`)
+}
 
 
 return (<section className="body">
@@ -21,30 +27,8 @@ return (<section className="body">
     
     {console.log({filteredData})}
     <div className="productsListing main">
-        {filteredData?.map(item=><div key={item.id} className="cd"> 
-           
-            <img className="cd-img" onClick={()=>{
-                    videosDispatch({type:"ADD-TO-HISTORY",payLoad:{video:item}});
-                    videoStatisticsDispatch({type:"INCREMENT-VIEW",payLoad:{id:item.id}})
-                    navigate(`/video/${item.id}`)
-                }} 
-             src={item.thumbnail} alt={item.vName} />
-
-            <div className="cd-text">
-                <img className="cd-profile" src={item.profileUrl} alt={item.creator}/>
-                <div className="cd-overflow-text">{item.vName}</div>
-                <SaveButton item={item}/>
-
-                
-            </div>
-            <div>
-            <small className="grey-font cd-creator">{item.creator}</small>
-            </div>
-            
-
-        </div> )}
-
-        
+        {filteredData?.map(item=> 
+        <VideoCardHome item={item} function1={videoHandler} Button={SaveButton} />)}  
     </div>
 
    

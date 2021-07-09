@@ -1,7 +1,7 @@
 import { useVideo } from "../contexts/videosContext"
 import { useNavigate } from "react-router"
 import { useVideoStatistics } from "../contexts/videosStatisticsContext.jsx"
-
+import { VideoCardHistory } from "../components/videoCardHistory"
 
 export const History=()=>{
 
@@ -10,23 +10,23 @@ export const History=()=>{
     const {videoStatisticsDispatch}=useVideoStatistics()
     const navigate=useNavigate()
 
+    // custom functions
+    const videoHandler=(item)=>{
+        navigate(`/video/${item.id}`)
+        videoStatisticsDispatch({type:"INCREMENT-VIEW",payLoad:{id:item.id}})
+    }
+    const removeButton=(item)=>{
+        videosDispatch({type:"REMOVE-FROM-HISTORY",payLoad:{video:item}})
+    }
+    
+
 return (<>
     <br/>
     <h1>historyPage</h1>
     <div className="history-page ">
         
-        {videosState.videosHistory?.map(item=><div key={item.id} className="history-cd">
-            <img onClick={()=> {
-                                navigate(`/video/${item.id}`)
-                                videoStatisticsDispatch({type:"INCREMENT-VIEW",payLoad:{id:item.id}})
-                                }} className="cd-img" src={item.thumbnail} alt="" />
-                                
-            <i onClick={()=>videosDispatch({type:"REMOVE-FROM-HISTORY",payLoad:{video:item}})} class="fas fa-times cd-wrong icon-sm"></i>
-            <div className="center-col history-cd-text">
-                <div >{item.vName}</div>
-                <small>{item.creator}</small>    
-            </div>
-        </div>)}
+        {videosState.videosHistory?.map(item=>
+        <VideoCardHistory item={item} function1={videoHandler} Button={removeButton} />)}
         
     </div>
     
