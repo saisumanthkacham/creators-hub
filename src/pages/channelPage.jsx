@@ -31,7 +31,5 @@ return (<section className="body">
         <VideoCardHome item={item} function1={videoHandler} Button={SaveButton} />)}  
     </div>
 
-   
-    
     </section>)
 }

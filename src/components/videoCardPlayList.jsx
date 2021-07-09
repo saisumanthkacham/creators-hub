@@ -1,5 +1,3 @@
-
-
 export const VideoCardPlayList=({item,function1,Button})=>{
 
 

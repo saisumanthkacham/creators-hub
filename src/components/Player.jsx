@@ -1,15 +1,12 @@
-import { DisLikeButton } from "./disLikeButton"
-import { LikeButton } from "./likeButton"
-import {Views} from "./noOfViews"
-import { AddToPlayListButton } from "./addToPlayListButton"
-import { SaveButton } from "./saveButton.jsx"
+
 import ReactPlayer from "react-player/youtube"
+import {SaveButton,LikeButton,DisLikeButton, AddToPlayListButton,Views} from "./indexOfComponents"
 
 
 
 export const Player=({item,display,setDisplay})=>{
 
-return <div className="player-wrapper">
+    return <div className="player-wrapper">
     
     <ReactPlayer url={item?.url}  controls={true} width="100%" height="100%" />
 

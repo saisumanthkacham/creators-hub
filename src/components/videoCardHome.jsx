@@ -1,5 +1,3 @@
-
-
 export const VideoCardHome= ({item,function1,function2,Button}) =>{
 
 return <div key={item.id} className="cd"> 
