@@ -375,17 +375,21 @@
                         position: fixed;
                         z-index:5;
                         box-shadow: 1px 7px 7px #ccc;
+                    
                         
                     }
                     
                     .nav-li {
                         display: flex;
-                        list-style: none;
+                        margin-right: 3rem;
                     }
-                    
-                    .nav-li-item {
-                        margin: 1rem;
-                        font-weight: 700;
+                    .nav-search-wrapper{
+                        margin-right: 10rem;
+                        justify-content: center;
+                    }
+
+                    .nav-search-bar{ 
+                        width: 26rem;
                     }
                     
                     .nav-logo {
@@ -396,6 +400,7 @@
                         background-color: var(--primary-color);
                         cursor: pointer;
                         margin: 0 0 0 7rem;
+                        border-radius: 0.25rem;
                     }
 
                     .burger-btn-nav{

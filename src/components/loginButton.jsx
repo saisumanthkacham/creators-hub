@@ -2,7 +2,7 @@ import { useAuth } from "../contexts/authContext"
 import { useNavigate } from "react-router"
 
 
-export const LoginButton=({name,pass})=>{
+export const LoginButton=({name,pass,state})=>{
 
     // hooks
     const {setLogin,authState:{usersCredentials}}=useAuth()
@@ -15,7 +15,7 @@ export const LoginButton=({name,pass})=>{
         if(name===user?.userName && pass===user?.password){
             setLogin(true)
             localStorage.setItem("login",JSON.stringify({login:true}))
-            navigate("/")}
+            navigate(state?.state?.path?state.previousPath:"/")}
 
         else{console.log("error in login")}
     
