@@ -5,6 +5,7 @@ import { isVideoLiked } from "../utils/isVideoLiked"
 
 export const DisLikeButton=({item})=>{
 
+    // hooks
     const {videosState,videosDispatch}=useVideo()
     const {videoStatisticsState,videoStatisticsDispatch}= useVideoStatistics()
     const disLikes= videoStatisticsState.disLikes?.find(vid=>vid?.id===item?.id)
@@ -20,9 +21,10 @@ export const DisLikeButton=({item})=>{
         videosDispatch({type:"ADD-TO-DISLIKED-VIDEOS",payLoad:{video:item}});
         videosDispatch({type:"REMOVE-FROM-LIKED-VIDEOS",payLoad:{video:item}})
     }
+
+
  return <>
-    
-    
+     
     {isVideoDisLiked(videosState,item?.id)
         ? <div className="center">
                 {disLikes?.count}&nbsp;
