@@ -30,7 +30,7 @@ return (<section className="body">
     <br/>
     <h1>home page</h1>
     <div className="productsListing main">
-        {videosState.videosData?.map(item=>
+        {videosState.videosData?.map((item)=>
         <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
     </div>
  

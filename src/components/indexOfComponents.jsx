@@ -15,6 +15,8 @@ import {VideoCardHistory} from "./videoCardHistory";
 import {VideoCardHome} from "./videoCardHome";
 import {VideoCardPlayList} from "./videoCardPlayList"
 import {VideoCardSaved} from "./videoCardSaved"
+import { LoginButton } from "./loginButton";
+
 
 export {
         AddToPlayListButton,
@@ -31,5 +33,7 @@ export {
         VideoCardHistory,
         VideoCardHome,
         VideoCardPlayList,
-        VideoCardSaved
+        VideoCardSaved,
+        LoginButton,
+       
     }
