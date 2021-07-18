@@ -20,16 +20,17 @@
                     /* scrollbar-styling */
                     body::-webkit-scrollbar {
                         width: 10px;               /* width of the entire scrollbar */
+                      
                         
                       }
                       body::-webkit-scrollbar-track {
                         background:var(--secondary-color);        /* color of the tracking area */
-                        padding: 1rem;
+                        margin: 0 2rem ;
                       }
                       body::-webkit-scrollbar-thumb {
                         background-color: red;    /* color of the scroll thumb */
                         border-radius: 8px;       /* roundness of the scroll thumb */
-                       
+                        margin: 0 2rem ;
                       }
                     
                     

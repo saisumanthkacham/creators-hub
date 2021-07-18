@@ -15,13 +15,13 @@ export const VideoStatisticsProvider=({children})=>{
         views: videosData.map(item=> {return {id:item.id,count:0}}),
         saved:[],
     }
-    const samu="sambu"
+  
 
     const[state,dispatch]=useReducer(statisticsReducerFn,initialData)
     statisticsReducerFn(state,dispatch)
 
 return <VideoStatisticsContext.Provider 
-        value={{videoStatisticsState:state,videoStatisticsDispatch:dispatch,samu}}>
+        value={{videoStatisticsState:state,videoStatisticsDispatch:dispatch}}>
         {children}
         </VideoStatisticsContext.Provider>
 }
