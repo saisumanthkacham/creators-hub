@@ -3,12 +3,16 @@ import './index.css'
 import "./ecom.css"
 import {useState} from "react"
 import { Routes,Route } from 'react-router-dom';
-import {Home,History,PlayLists,PlayList,Saved,VideoPlayer,LikedVideos,Channel,LoginPage,User} from "./pages/indexOfPages.jsx"
+import {Home,History,PlayLists,PlayList,Saved,VideoPlayer,
+        LikedVideos,Channel,LoginPage,User,PageNotFound,
+        Explore} from "./pages/indexOfPages.jsx"
 import {NavLink,useNavigate} from "react-router-dom"
 import {SideBar} from "./components/sideBar"
 import {SignUpPage} from "./pages/auth/signUpPage"
 import { useAuth } from './contexts/authContext';
 import {PrivateRoute} from "./components/privateRoute.jsx"
+
+
 
 function App() {
 
@@ -27,7 +31,7 @@ return (<div className="App">
 
           <div className="logo-wrapper">
             <div className="burger-btn-nav" onClick={()=>{setSideBarDisplay(true)}}><i className="fas fa-bars fa-2x " ></i></div> 
-            <div className="white-font nav-logo" onClick={()=>{navigate("/")}}>Creators Hub</div>
+            <div className="white-font nav-logo" onClick={()=>{navigate("/home")}}>Creators Hub</div>
           </div>
 
           <div className="nav-search-wrapper">
@@ -48,7 +52,8 @@ return (<div className="App">
       
    
         <Routes>
-          <Route path="/" element={<Home/>}/>
+          <Route path="/" element={<Explore/>}/>
+          <Route path="/home" element={<Home/>}/>
           <Route path="/channel/:name" element={<Channel/>}/>
           <PrivateRoute path="/video/:id" element={<VideoPlayer/>}/>
           <PrivateRoute path="/liked" element={<LikedVideos/>}/>
@@ -59,6 +64,7 @@ return (<div className="App">
           <Route path="/login" element={<LoginPage/>}/>
           <Route path="/signup" element={<SignUpPage/>}/>
           <Route path="/user" element={<User/>}/>
+          <Route path="/*" element={<PageNotFound/>} />
         </Routes>
     </div>
 

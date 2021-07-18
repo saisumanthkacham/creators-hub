@@ -6,11 +6,12 @@ const VideoContext=createContext()
 
     export const VideoProvider=({children})=>{
     const intialState={
+        userName:"",
         videosSaved:[],
         videosLiked:[],
         videosDisLiked:[],
         videosHistory:[],
-        // data structure ref for videosPlaylist [{name:"sai",videos:[]},{name:"bhai",videos:[]}, ],
+        // data structure ref for videosPlaylist [{name:"playlist1",videos:[]},{name:"playlist2",videos:[]}, ],
         videosPlayList:[],
         videosData
     

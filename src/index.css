@@ -33,6 +33,13 @@ body {
    align-items: center;
    }
 
+   .wide-row-margin-zero{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    align-items: center;
+   }
+
    .margin-zero{
      margin: 0;
    }
@@ -67,7 +74,33 @@ body {
      font-size: bold;
    }
   
-   
+   /* explore-page */
+   .explore-page{
+    margin: 0 2rem;
+   }
+
+   .productsListingExplore {
+    display: flex;
+    flex-direction: row !important; 
+    overflow-x: scroll;
+    }
+
+    .explore-img{
+      width: 95%;
+      height: 10%;
+      margin: 0 2rem;
+    }
+
+    /* .productsListingExplore::-webkit-scrollbar-track {
+      background:var(--primary-color);
+    }
+
+    .productsListingExplore::-webkit-scrollbar-thumb {
+      background-color: red !;    
+      border-radius: 8px;      
+       } */
+
+
    /* cart page */
    .bill-section{
      width:25rem ;
@@ -301,25 +334,7 @@ body {
   
   
 
-   /* homepage */  
-   
-   .home-footer{
-     position: absolute;
-     bottom: 0;
-     width: 100%;
-     display: flex;
-     flex-direction: column;
-     top: 60rem;
-     align-items: center;
-     background-color: var(--secondary-color);
-     height: 9rem;
-     text-align: center;
-     justify-content: center;
-     margin: 10rem 0 0 0 ;
-   }
-   .wide-icons{
-     width: 30rem;
-   }
+
 
    /* user-page */
    .user-page{

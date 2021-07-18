@@ -8,8 +8,8 @@ export const SideBar=({setSideBarDisplay})=>{
     <div className="side-bar center-col">
     <div className="burger-btn" onClick={()=>{setSideBarDisplay(false)}}><i className="fas fa-times icon-sm saved-cd-wrong fa-1x " ></i></div> 
     <hr/>
-    <NavLink to="/" end className="btn btn-lg" activeClassName="active-btn bold">Home</NavLink>
-    <NavLink to="/explore"  activeClassName="active-btn bold" className="btn btn-lg">Explore</NavLink>
+    <NavLink to="/home"  className="btn btn-lg" activeClassName="active-btn bold">Home</NavLink>
+    <NavLink to="/" end  activeClassName="active-btn bold" className="btn btn-lg">Explore</NavLink>
     <NavLink to="/history"  activeClassName="active-btn bold" className="btn btn-lg">History</NavLink>
     <hr/>
     <NavLink to="/playLists"  activeClassName="active-btn bold" className="btn btn-lg" >PlayLists</NavLink>
