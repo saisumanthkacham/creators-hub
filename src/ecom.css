@@ -21,8 +21,6 @@
                     
                     body::-webkit-scrollbar {
                         width: 10px;               /* width of the entire scrollbar */
-                      
-                        
                       }
                       body::-webkit-scrollbar-track {
                         background:var(--secondary-color);        /* color of the tracking area */

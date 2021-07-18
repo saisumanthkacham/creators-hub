@@ -31,7 +31,7 @@ return (<div className="App">
 
           <div className="logo-wrapper">
             <div className="burger-btn-nav" onClick={()=>{setSideBarDisplay(true)}}><i className="fas fa-bars fa-2x " ></i></div> 
-            <div className="white-font nav-logo" onClick={()=>{navigate("/home")}}>Creators Hub</div>
+            <div className="white-font nav-logo" onClick={()=>{navigate("/")}}>Creators Hub</div>
           </div>
 
           <div className="nav-search-wrapper">
@@ -64,7 +64,7 @@ return (<div className="App">
           <Route path="/login" element={<LoginPage/>}/>
           <Route path="/signup" element={<SignUpPage/>}/>
           <Route path="/user" element={<User/>}/>
-          <Route path="/*" element={<PageNotFound/>} />
+          <Route path="/*" element={<PageNotFound text={"page Not Found"}/>} />
         </Routes>
     </div>
 

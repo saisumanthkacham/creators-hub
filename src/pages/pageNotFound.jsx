@@ -1,11 +1,11 @@
 import { NavLink } from "react-router-dom"
 
-export const PageNotFound=()=>{
+export const PageNotFound=({text})=>{
 
     return (<div className="empty-bin">  
                 <br/>
                 <h1 className="primary-font margin-zero">Error!!</h1>
-                <p>Page Not Found</p>
-                <NavLink to="/"  activeClassName="active-btn" className="btn" >Home</NavLink>
+                <p>{text}</p>
+                <NavLink to="/"  className="btn primary-bg white-font" >Home</NavLink>
             </div>)
 }

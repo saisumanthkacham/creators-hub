@@ -5,7 +5,8 @@ import { useNavigate} from "react-router"
 import { useVideoStatistics } from "../contexts/videosStatisticsContext.jsx"
 import { SaveButton,VideoCardHome } from "../components/indexOfComponents"
 import { useAuth } from "../contexts/authContext.jsx"
-import { NavLink } from "react-router-dom"
+
+
 
 export const Explore=()=>{
 
@@ -39,8 +40,18 @@ return (<section className="body">
     <h1>home page</h1>
     <div className="explore-page main">
 
-    <img className="explore-img" src="https://www.groovypost.com/wp-content/uploads/2019/07/sunset-beach-phone-photos-featured.jpg" alt="" />
-    <h1 className="primary-font">Instagram</h1><hr/>
+    <div>
+    <img className="explore-img" src="https://www.varunmayya.com/content/images/2021/05/vm.jpg" alt="" />
+    <div className="text-over-explore-img">
+        <h1 style={{fontSize:50}}>welcome to Creators-Hub </h1>
+        <p style={{fontSize:20}}>watch the latest videos of your 
+         favourite creators <br/> from all over the social Media</p><br/>
+       <div className="white-font primary-bg btn" onClick={()=>navigate("/home")}>Explore</div>
+    </div>
+   
+    </div>
+    
+    <h1 className="primary-font" id="instagram">Instagram</h1><hr/>
     <div className="productsListingExplore">
         {instagramData?.map((item)=>
         <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
@@ -55,30 +66,38 @@ return (<section className="body">
     </div>
 
     <h1 className="primary-font">Twitter</h1><hr/>
-    <div className="productsListingExplore">
+    <div className="productsListingExplore ">
         {twitterData?.map((item)=>
         <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
     </div>
 
-    {login&&<><h1 className="primary-font">History</h1><hr/>
-    <div className="productsListingExplore">
-        {historyData?.map((item)=>
-        <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
+    {(login&&historyData.length)
+    
+            ?<><h1 className="primary-font">History</h1><hr/>
+                <div className="productsListingExplore">
+                    {historyData?.map((item)=>
+                    <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
+                </div>
+
+                <h1 className="primary-font">Saved</h1><hr/>
+                <div className="productsListingExplore">
+                    {savedData?.map((item)=>
+                    <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
+                </div>
+
+                <h1 className="primary-font">Liked</h1><hr/>
+                <div className="productsListingExplore">
+                    {likedData?.map((item)=>
+                    <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
+                </div>
+              </>
+              
+            : " "
+    }
+
     </div>
 
-    <h1 className="primary-font">Saved</h1><hr/>
-    <div className="productsListingExplore">
-        {savedData?.map((item)=>
-        <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
-    </div>
-
-    <h1 className="primary-font">Liked</h1><hr/>
-    <div className="productsListingExplore">
-        {likedData?.map((item)=>
-        <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
-    </div></>}
-
-    </div>
+    
  
     </section>)
 }

@@ -74,6 +74,23 @@ body {
      font-size: bold;
    }
   
+   /* home-page */
+  .filtering-btn{
+    border-radius: 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem;
+    text-align: center;
+    margin: 0.5rem;
+    cursor: pointer;
+ }
+ .filtersListing{
+   display: flex;
+   justify-content:flex-start ;
+   margin: 0 3em;
+   
+ }
+ 
    /* explore-page */
    .explore-page{
     margin: 0 2rem;
@@ -86,10 +103,22 @@ body {
     }
 
     .explore-img{
-      width: 95%;
-      height: 10%;
-      margin: 0 2rem;
+      width: 100%;
+      height: 23rem;
+      margin: 0 0rem;
+      filter:blur(2px) contrast(200%) brightness(25%);
+      position: relative;
+      opacity: 95%;
     }
+
+    .text-over-explore-img{
+      position: absolute;
+      top: 7rem;
+      left: 5rem;
+      color: white;
+    }
+
+
 
     /* .productsListingExplore::-webkit-scrollbar-track {
       background:var(--primary-color);
@@ -101,23 +130,7 @@ body {
        } */
 
 
-   /* cart page */
-   .bill-section{
-     width:25rem ;
-     height: 16rem;
-     border-radius: 0.5rem;
-     box-shadow: 1px 5px 5px #ccc;
-     position: absolute;
-     top:10.5rem;
-     right: 5rem;
-   }
-   .bill-section >.btn{
-     margin-left:1rem ;
-   }
-
-   .bottom-border{
-     border-bottom: 4px solid var(--primary-color);
-   }
+  
 
    /* this class is for whenever the cart or wishlist is empty */
    .empty-bin{
@@ -174,7 +187,6 @@ body {
     margin: 2rem 10rem 0 0;
   }
   
-
   .side-bar{
     background-color: rgb(65, 65, 65);
     z-index:6;
@@ -200,6 +212,7 @@ body {
     width: 20rem;
     align-items: center;
   }
+
    /* playList-page */
    .playList-img-text{
      position: absolute;
