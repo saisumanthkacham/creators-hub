@@ -41,7 +41,7 @@ return (<section className="body">
     <div className="explore-page main">
 
     <div>
-    <img className="explore-img" src={home} alt="" />
+    <img className="explore-img" src={home} alt="homepage-img" />
     <div className="text-over-explore-img">
         <h1 style={{fontSize:50}}>welcome to Creators-Hub </h1>
         <p style={{fontSize:20}}>watch the latest videos of your 
