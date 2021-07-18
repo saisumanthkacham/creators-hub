@@ -5,7 +5,7 @@ import { useNavigate} from "react-router"
 import { useVideoStatistics } from "../contexts/videosStatisticsContext.jsx"
 import { SaveButton,VideoCardHome } from "../components/indexOfComponents"
 import { useAuth } from "../contexts/authContext.jsx"
-
+import home from "../images/home.jpg"
 
 
 export const Explore=()=>{
@@ -41,7 +41,7 @@ return (<section className="body">
     <div className="explore-page main">
 
     <div>
-    <img className="explore-img" src="https://www.varunmayya.com/content/images/2021/05/vm.jpg" alt="" />
+    <img className="explore-img" src={home} alt="" />
     <div className="text-over-explore-img">
         <h1 style={{fontSize:50}}>welcome to Creators-Hub </h1>
         <p style={{fontSize:20}}>watch the latest videos of your 
