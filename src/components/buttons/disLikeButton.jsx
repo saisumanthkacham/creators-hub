@@ -1,7 +1,7 @@
-import { isVideoDisLiked } from "../utils/isVideoDisLiked"
-import { useVideo } from "../contexts/videosContext"
-import { useVideoStatistics } from "../contexts/videosStatisticsContext"
-import { isVideoLiked } from "../utils/isVideoLiked"
+import { isVideoDisLiked } from "../../utils/isVideoDisLiked"
+import { useVideo } from "../../contexts/videosContext"
+import { useVideoStatistics } from "../../contexts/videosStatisticsContext"
+import { isVideoLiked } from "../../utils/isVideoLiked"
 
 export const DisLikeButton=({item})=>{
 

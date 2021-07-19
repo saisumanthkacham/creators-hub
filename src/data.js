@@ -4,6 +4,16 @@ import faker from "faker"
 
 export const videosData= [
     {
+      vName:"Welcome to new JavaScript course ",
+      creator:"Hitesh Chowdary",
+      platform:"Youtube",
+      profileUrl:"https://yt3.ggpht.com/ytc/AAUvwnihtV8Mb0JZFkkAEf9KKN4m4WNNeHkxUb6Wuvc_5w=s176-c-k-c0x00ffffff-no-rj-mo",
+      url:"https://www.youtube.com/watch?v=2md4HQNRqJA&list=PLRAV69dS1uWSxUIk5o3vQY2-_VKsOpXLD",
+      thumbnail:"https://img.youtube.com/vi/2md4HQNRqJA/maxresdefault.jpg",
+      id:faker.datatype.uuid(),
+    },
+
+    {
       vName:"This could be the future of remote offices. I'm serious.",
       creator:"Varun Mayya",
       platform:"Instagram",
@@ -254,16 +264,6 @@ export const videosData= [
       profileUrl:"https://yt3.ggpht.com/ytc/AAUvwnihtV8Mb0JZFkkAEf9KKN4m4WNNeHkxUb6Wuvc_5w=s176-c-k-c0x00ffffff-no-rj-mo",
       url:"https://www.youtube.com/watch?v=papg2tsoFzg&list=PLRAV69dS1uWSxUIk5o3vQY2-_VKsOpXLD&index=2",
       thumbnail:"https://img.youtube.com/vi/papg2tsoFzg/maxresdefault.jpg",
-      id:faker.datatype.uuid(),
-    },
-  
-     {
-      vName:"Welcome to new JavaScript course ",
-      creator:"Hitesh Chowdary",
-      platform:"Youtube",
-      profileUrl:"https://yt3.ggpht.com/ytc/AAUvwnihtV8Mb0JZFkkAEf9KKN4m4WNNeHkxUb6Wuvc_5w=s176-c-k-c0x00ffffff-no-rj-mo",
-      url:"https://www.youtube.com/watch?v=2md4HQNRqJA&list=PLRAV69dS1uWSxUIk5o3vQY2-_VKsOpXLD",
-      thumbnail:"https://img.youtube.com/vi/2md4HQNRqJA/maxresdefault.jpg",
       id:faker.datatype.uuid(),
     },
   

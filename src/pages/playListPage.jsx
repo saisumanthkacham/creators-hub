@@ -1,7 +1,7 @@
 import { useVideo } from "../contexts/videosContext"
 import { useNavigate,useParams } from "react-router"
 import { useVideoStatistics } from "../contexts/videosStatisticsContext.jsx"
-import { VideoCardPlayList } from "../components/videoCardPlayList"
+import { VideoCardPlayList } from "../components/indexOfComponents"
 
 
 export const PlayList=()=>{

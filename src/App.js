@@ -4,13 +4,11 @@ import "./ecom.css"
 import {useState} from "react"
 import { Routes,Route } from 'react-router-dom';
 import {Home,History,PlayLists,PlayList,Saved,VideoPlayer,
-        LikedVideos,Channel,LoginPage,User,PageNotFound,
-        Explore,About} from "./pages/indexOfPages.jsx"
+        LikedVideos,Channel,LoginPage,SignUpPage,User,
+        PageNotFound,Explore,About} from "./pages/indexOfPages.jsx"
 import {NavLink,useNavigate} from "react-router-dom"
-import {SideBar} from "./components/sideBar"
-import {SignUpPage} from "./pages/auth/signUpPage"
 import { useAuth } from './contexts/authContext';
-import {PrivateRoute} from "./components/privateRoute.jsx"
+import {PrivateRoute,SideBar} from "./components/indexOfComponents"
 
 
 

@@ -1,8 +1,8 @@
-import { useAuth } from "../contexts/authContext"
+import { useAuth } from "../../contexts/authContext"
 import { useNavigate } from "react-router"
 
 
-export const LoginButton=({name,pass,state})=>{
+export const LoginButton=({name,pass})=>{
 
     // hooks
     const {setLogin,authState:{usersCredentials}}=useAuth()
@@ -10,12 +10,12 @@ export const LoginButton=({name,pass,state})=>{
 
     // custom function
     const loginHandler=(name,pass,usersCredentials)=>{
-
         const user=usersCredentials.find(item=>item.userName===name)
         if(name===user?.userName && pass===user?.password){
             setLogin(true)
             localStorage.setItem("login",JSON.stringify({login:true}))
-            navigate(state?.state?.path?state.previousPath:"/")}
+            navigate("/")    
+        }
 
         else{console.log("error in login")}
     
@@ -24,7 +24,6 @@ export const LoginButton=({name,pass,state})=>{
     return (<>
     
     <div className="btn btn-lg primary-bg white-font" onClick={()=>loginHandler(name,pass,usersCredentials)}>Login</div>
-    
     
     </>)
 }

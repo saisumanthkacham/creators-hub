@@ -42,8 +42,8 @@ return (<section className="body">
         <div className=" main">
 
             <div className="filtersListing">
-                {filterStates.map(item=><div className="filtering-btn" onClick={()=>setFilter(item)}>{item}</div>)}
-                <div  onClick={()=>setFilter("videosData")} className="btn btn-md white-bg primary-font">clear filter</div>
+                <div  onClick={()=>setFilter("videosData")} className="filtering-btn">All</div>
+                {filterStates.map(item=><div className="filtering-btn" onClick={()=>setFilter(item)}>{item}</div>)}   
             </div><br/>
 
             <div className="productsListing">

@@ -36,7 +36,7 @@ const liked=videosState.videosLiked
 const saved=videosState.videosSaved
 const history=videosState.videosHistory
 const userData=[liked,saved,history]
-const userDataStrings=["Liked videos","Saved videos","History videos"]
+const userDataHeadings=["Liked videos","Saved videos","History videos"]
  
 return (<section className="body">
     
@@ -69,7 +69,7 @@ return (<section className="body">
                                 ?<>
                                     {userData?.map((category,idx)=>
                                      <>
-                                        <h1 className="primary-font">{userDataStrings[idx]}</h1><hr/>
+                                        <h1 className="primary-font">{userDataHeadings[idx]}</h1><hr/>
                                         <div key={idx} className="productsListingExplore">
                                             {category?.map((item)=>
                                             <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
@@ -85,30 +85,3 @@ return (<section className="body">
 
     </section>)
 }
-
-// {userData.map(category=><>
-//     <h1 className="primary-font">{category}</h1><hr/>
-// <div className="productsListingExplore">
-// {category?.map((item)=>
-// <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
-// </div>
-// </>)}
-
-
-/* <h1 className="primary-font">History</h1><hr/>
-                <div className="productsListingExplore">
-                    {historyData?.map((item)=>
-                    <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
-                </div>
-
-                <h1 className="primary-font">Saved</h1><hr/>
-                <div className="productsListingExplore">
-                    {savedData?.map((item)=>
-                    <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
-                </div>
-
-                <h1 className="primary-font">Liked</h1><hr/>
-                <div className="productsListingExplore">
-                    {likedData?.map((item)=>
-                    <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
-                </div> */

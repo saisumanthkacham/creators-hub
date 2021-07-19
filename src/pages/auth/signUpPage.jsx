@@ -1,5 +1,5 @@
 import {useState} from "react"
-import { SignUpButton } from "../../components/signUpButton"
+import { SignUpButton } from "../../components/buttons/signUpButton"
 
 export const SignUpPage=()=>{
               

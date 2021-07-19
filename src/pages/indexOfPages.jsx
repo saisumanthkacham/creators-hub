@@ -11,6 +11,7 @@ import { LoginPage } from "./auth/loginPage.jsx"
 import {User} from "./auth/userPage.jsx"
 import {PageNotFound} from "./pageNotFound.jsx"
 import { About } from "./aboutPage.jsx"
+import { SignUpPage } from "./auth/signUpPage.jsx"
 
 export {Home,History,PlayLists,PlayList,Saved,VideoPlayer,
-        LikedVideos,Channel,LoginPage,User,PageNotFound,Explore,About}
+        LikedVideos,Channel,LoginPage,User,PageNotFound,Explore,About,SignUpPage}

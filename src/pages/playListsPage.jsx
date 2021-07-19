@@ -1,7 +1,7 @@
 
 import {useVideo} from "../contexts/videosContext.jsx"
 import{useNavigate} from "react-router-dom"
-import { PlayListCard } from "../components/playListCard.jsx"
+import { PlayListCard } from "../components/indexOfComponents"
 
 export const PlayLists=()=>{
     // hooks

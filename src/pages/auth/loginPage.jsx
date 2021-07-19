@@ -15,7 +15,7 @@ const navigate=useNavigate()
 useEffect(()=>{
             const response=JSON.parse(localStorage.getItem("login"))
             setLogin(response?.login&&response.login)
-            navigate(state?.state?.path?state.previousPath:"/")
+            navigate(state?.state?.previousPath ?state.previousPath :"/login")
 },[])
 
 
@@ -24,11 +24,11 @@ useEffect(()=>{
                 <h1 className="primary-font margin-zero">Creators Hub</h1><br/>
                 <input placeholder="username" className="login-input-box"  type="text" onChange={(e)=>setUserName(e.target.value)} /><br/>
                 <input placeholder="Password" className="login-input-box" type="password" onChange={(e)=>setPassword(e.target.value)}/><br/>
-               <LoginButton name={userName} pass={password} state={state}/>
-               <div className="center">
+                <LoginButton name={userName} pass={password}/>
+                <div className="center">
                     <small>Forgot password?</small> &nbsp;&nbsp;&nbsp;
                     <small ><NavLink to="/signup"  activeClassName="active-btn" className=" primary-font" >Signup</NavLink></small>
                 </div> <br/>
                  
-    </div>)
+            </div>)
 }

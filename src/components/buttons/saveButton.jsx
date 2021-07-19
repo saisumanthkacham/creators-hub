@@ -1,6 +1,6 @@
-import { isVideoSaved } from "../utils/isVideoSaved"
-import { useVideo } from "../contexts/videosContext"
-import {useAuth} from "../contexts/authContext"
+import { isVideoSaved } from "../../utils/isVideoSaved"
+import { useVideo } from "../../contexts/videosContext"
+import {useAuth} from "../../contexts/authContext"
 import { useNavigate } from "react-router"
 
 export const SaveButton=({item})=>{

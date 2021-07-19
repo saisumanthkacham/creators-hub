@@ -1,22 +1,22 @@
 
 
-import { AddToPlayListButton } from "./addToPlayListButton";
-import { DisLikeButton } from "./disLikeButton";
-import { LikeButton } from "./likeButton";
+import { AddToPlayListButton } from "./buttons/addToPlayListButton";
+import { DisLikeButton } from "./buttons/disLikeButton";
+import { LikeButton } from "./buttons/likeButton";
 import {Views} from "./noOfViews";
 import {Player} from "./Player";
-import { PlayListCard } from "./playListCard";
+import { PlayListCard } from "./cards/playListCard";
 import { PlayListModal } from "./playListModal";
-import { SaveButton } from "./saveButton";
+import { SaveButton } from "./buttons/saveButton";
 import {ScrollToTop} from "./scrollToTop";
 import {SideBar} from "./sideBar";
-import { SimilarVideosCard } from "./similarVideoCard";
-import {VideoCardHistory} from "./videoCardHistory";
-import {VideoCardHome} from "./videoCardHome";
-import {VideoCardPlayList} from "./videoCardPlayList"
-import {VideoCardSaved} from "./videoCardSaved"
-import { LoginButton } from "./loginButton";
-
+import { SimilarVideosCard } from "./cards/similarVideoCard";
+import {VideoCardHistory} from "./cards/videoCardHistory";
+import {VideoCardHome} from "./cards/videoCardHome";
+import {VideoCardPlayList} from "./cards/videoCardPlayList"
+import {VideoCardSaved} from "./cards/videoCardSaved"
+import { LoginButton } from "./auth/loginButton";
+import { PrivateRoute } from "./auth/privateRoute";
 
 export {
         AddToPlayListButton,
@@ -35,5 +35,5 @@ export {
         VideoCardPlayList,
         VideoCardSaved,
         LoginButton,
-       
+        PrivateRoute,
     }

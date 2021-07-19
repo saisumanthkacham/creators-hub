@@ -1,7 +1,7 @@
 import { useVideo } from "../contexts/videosContext"
 import { useNavigate } from "react-router"
 import { useVideoStatistics } from "../contexts/videosStatisticsContext.jsx"
-import { VideoCardHistory } from "../components/videoCardHistory"
+import { VideoCardHistory } from "../components/indexOfComponents"
 
 export const History=()=>{
 
