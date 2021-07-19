@@ -5,7 +5,7 @@ import {useState} from "react"
 import { Routes,Route } from 'react-router-dom';
 import {Home,History,PlayLists,PlayList,Saved,VideoPlayer,
         LikedVideos,Channel,LoginPage,User,PageNotFound,
-        Explore} from "./pages/indexOfPages.jsx"
+        Explore,About} from "./pages/indexOfPages.jsx"
 import {NavLink,useNavigate} from "react-router-dom"
 import {SideBar} from "./components/sideBar"
 import {SignUpPage} from "./pages/auth/signUpPage"
@@ -64,6 +64,7 @@ return (<div className="App">
           <Route path="/login" element={<LoginPage/>}/>
           <Route path="/signup" element={<SignUpPage/>}/>
           <Route path="/user" element={<User/>}/>
+          <Route path="/about" element={<About/>}/>
           <Route path="/*" element={<PageNotFound text={"page Not Found"}/>} />
         </Routes>
     </div>

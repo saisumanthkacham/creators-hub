@@ -75,20 +75,28 @@ body {
    }
   
    /* home-page */
+
   .filtering-btn{
     border-radius: 1.5rem;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 0.8rem;
+    background-color: rgb(207, 205, 205);
+    color: var(--primary-color);
+    padding: 0.5rem;
     text-align: center;
     margin: 0.5rem;
     cursor: pointer;
  }
+
+ .filtering-btn:hover{
+    background-color: var(--primary-color);
+    color: white;
+  }
+
  .filtersListing{
    display: flex;
    justify-content:flex-start ;
+   align-items: center;
+   flex-wrap: wrap;
    margin: 0 3em;
-   
  }
  
    /* explore-page */

@@ -10,5 +10,7 @@ import { Channel } from "./channelPage.jsx"
 import { LoginPage } from "./auth/loginPage.jsx"
 import {User} from "./auth/userPage.jsx"
 import {PageNotFound} from "./pageNotFound.jsx"
+import { About } from "./aboutPage.jsx"
 
-export {Home,History,PlayLists,PlayList,Saved,VideoPlayer,LikedVideos,Channel,LoginPage,User,PageNotFound,Explore}
+export {Home,History,PlayLists,PlayList,Saved,VideoPlayer,
+        LikedVideos,Channel,LoginPage,User,PageNotFound,Explore,About}

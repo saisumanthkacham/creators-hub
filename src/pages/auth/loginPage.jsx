@@ -1,6 +1,7 @@
-import {useState} from "react"
+import {useEffect, useState} from "react"
 import { LoginButton } from "../../components/indexOfComponents"
-import { NavLink, useLocation } from "react-router-dom"
+import { useNavigate, NavLink, useLocation } from "react-router-dom"
+import { useAuth } from "../../contexts/authContext"
 
 export const LoginPage=()=>{
               
@@ -8,6 +9,14 @@ export const LoginPage=()=>{
 const[userName,setUserName]=useState("")
 const[password,setPassword]=useState("")
 const {state}=useLocation()
+const {setLogin}=useAuth()
+const navigate=useNavigate()
+
+useEffect(()=>{
+            const response=JSON.parse(localStorage.getItem("login"))
+            setLogin(response?.login&&response.login)
+            navigate(state?.state?.path?state.previousPath:"/")
+},[])
 
 
     return (<div className="login-page">  

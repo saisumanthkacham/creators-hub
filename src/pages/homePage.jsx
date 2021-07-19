@@ -7,6 +7,8 @@ import { SaveButton,VideoCardHome } from "../components/indexOfComponents"
 import { useState } from "react"
 import { PageNotFound } from "./pageNotFound.jsx"
 
+
+
 export const Home=()=>{
 
 // hooks
@@ -24,7 +26,10 @@ const videoHandler=(item)=>{
 const channelFilterHandler=(item)=>{
     navigate(`/channel/${item.creator}`)
 }
-const filterStates=["Youtube","Instagram","Twitter","videosLiked","videosSaved","videosHistory"]
+
+// data filtering
+const platforms= [...new Set(videosState.videosData.map(item=>item.platform))]
+const filterStates=[...platforms,"videosLiked","videosSaved","videosHistory"]
 const filteredData=videosState[filter]||videosState.videosData.filter(item=>item.platform===filter)
 
 
@@ -38,6 +43,7 @@ return (<section className="body">
 
             <div className="filtersListing">
                 {filterStates.map(item=><div className="filtering-btn" onClick={()=>setFilter(item)}>{item}</div>)}
+                <div  onClick={()=>setFilter("videosData")} className="btn btn-md white-bg primary-font">clear filter</div>
             </div><br/>
 
             <div className="productsListing">

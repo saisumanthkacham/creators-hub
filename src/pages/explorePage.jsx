@@ -26,54 +26,76 @@ const videoHandler=(item)=>{
 const channelFilterHandler=(item)=>{
     navigate(`/channel/${item.creator}`)
 }
-const youtubeData=videosState.videosData.filter(item=>item.platform==="Youtube")
-const instagramData=videosState.videosData.filter(item=>item.platform==="Instagram")
-const twitterData=videosState.videosData.filter(item=>item.platform==="Twitter")
-const likedData=videosState.videosLiked
-const savedData=videosState.videosSaved
-const historyData=videosState.videosHistory
 
 
+
+// data filtering
+const platforms= [...new Set(videosState.videosData.map(item=>item.platform))]
+
+const liked=videosState.videosLiked
+const saved=videosState.videosSaved
+const history=videosState.videosHistory
+const userData=[liked,saved,history]
+const userDataStrings=["Liked videos","Saved videos","History videos"]
+ 
 return (<section className="body">
     
     <br/>
     <h1>home page</h1>
     <div className="explore-page main">
 
-    <div>
-    <img className="explore-img" src={home} alt="homepage-img" />
-    <div className="text-over-explore-img">
-        <h1 style={{fontSize:50}}>welcome to Creators-Hub </h1>
-        <p style={{fontSize:20}}>watch the latest videos of your 
-         favourite creators <br/> from all over the social Media</p><br/>
-       <div className="white-font primary-bg btn" onClick={()=>navigate("/home")}>Explore</div>
-    </div>
-   
-    </div>
-    
-    <h1 className="primary-font" id="instagram">Instagram</h1><hr/>
-    <div className="productsListingExplore">
-        {instagramData?.map((item)=>
-        <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
-    </div>
-    
-    
-    <h1 className="primary-font">Youtube</h1>
-    <hr/>
-    <div className="productsListingExplore">
-        {youtubeData?.map((item)=>
-        <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
-    </div>
+        <>
+            <img className="explore-img" src={home} alt="homepage-img" />
+            <div className="text-over-explore-img">
+                <h1 style={{fontSize:50}}>welcome to Creators-Hub </h1>
+                <p style={{fontSize:20}}>watch the latest videos of your 
+                favourite creators <br/> from all over the social Media</p><br/>
+            <div className="white-font primary-bg btn" onClick={()=>navigate("/home")}>Explore</div>
+            </div>
+        </>
 
-    <h1 className="primary-font">Twitter</h1><hr/>
-    <div className="productsListingExplore ">
-        {twitterData?.map((item)=>
-        <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
-    </div>
 
-    {(login&&historyData.length)
+        {platforms?.map((category,idx)=>
+                            <>
+                                <h1 className="primary-font" id={idx}>{category}</h1><hr/>
+                                <div className="productsListingExplore">
+                                    {videosState?.videosData?.filter(item=>item.platform===category).map(item=>
+                                        <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
+                                </div>
+                            </>)}
+
+        {(login&&history.length)
     
-            ?<><h1 className="primary-font">History</h1><hr/>
+                                ?<>
+                                    {userData?.map((category,idx)=>
+                                     <>
+                                        <h1 className="primary-font">{userDataStrings[idx]}</h1><hr/>
+                                        <div key={idx} className="productsListingExplore">
+                                            {category?.map((item)=>
+                                            <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
+                                        </div>
+                                     </>)}
+
+                                </>
+              
+                                : " "
+                            }
+
+        </div>
+
+    </section>)
+}
+
+// {userData.map(category=><>
+//     <h1 className="primary-font">{category}</h1><hr/>
+// <div className="productsListingExplore">
+// {category?.map((item)=>
+// <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
+// </div>
+// </>)}
+
+
+/* <h1 className="primary-font">History</h1><hr/>
                 <div className="productsListingExplore">
                     {historyData?.map((item)=>
                     <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
@@ -89,15 +111,4 @@ return (<section className="body">
                 <div className="productsListingExplore">
                     {likedData?.map((item)=>
                     <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
-                </div>
-              </>
-              
-            : " "
-    }
-
-    </div>
-
-    
- 
-    </section>)
-}
+                </div> */
