@@ -50,7 +50,7 @@ return (<section className="body">
                 {filteredData
                             ?filteredData.map((item)=>
                             <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/>)
-                            :<PageNotFound text="please Login"/>} 
+                            :<p>empty</p>} 
             </div> 
 
         </div>
