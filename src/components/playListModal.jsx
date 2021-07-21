@@ -15,14 +15,17 @@ return <div className="playList-modal" style={{visibility:display?"visible":"hid
              
             <h2>playlists</h2>
             <div className="playList-modal-text">
+
                <div className="overFlow-text">video:selected</div><br/>
                 {videosState.videosPlayList.map((item,idx)=>
-                <div key={idx}><input type="checkBox"
+                <div key={idx}>
+                    <input type="checkBox"
                     onChange={()=>{
                         !isVideoExistInPlayList(videosState,item.name,video)&& videosDispatch({type:"ADD-TO-PLAYLIST",payLoad:{video:video,name:item.name}})
                             console.log(videosState.videosPlayList)
                             }} />
-                <label> {item.name}</label><br/></div>
+                    <label> {item.name}</label><br/>
+                </div>
                 )}<br/>
 
                 <div className="center">
@@ -32,8 +35,8 @@ return <div className="playList-modal" style={{visibility:display?"visible":"hid
                         !isPlayListAlreadyExist(videosState,input)&&(input!=="") &&videosDispatch({type:"CREATE-NEW-PLAYLIST",payLoad:{playList:input,video:video}})
                                 }}>create&add
                     </div>
-                </div>
-                <br/>
+                </div><br/>
+                
             </div>
         </div>  
 }

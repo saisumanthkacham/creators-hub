@@ -162,9 +162,10 @@ body {
      display: flex;
      flex-direction: column;
      align-items: center;
+     justify-content: center;
      position: absolute;
      top: 30%;
-     right:39%;
+     right:35%;
    }
   
 
@@ -358,9 +359,11 @@ body {
    /* user-page */
    .user-page{
      position: absolute;
-     top: 30vh;
-     left: 90vh;
+     top: 30%;
+     right:43%;
      display: flex;
+     justify-content: center;
+     align-items: center;
    }
    .user-text{
      display: flex;

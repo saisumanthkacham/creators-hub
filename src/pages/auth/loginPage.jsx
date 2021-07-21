@@ -29,6 +29,7 @@ useEffect(()=>{
 
 
     return (<div className="login-page">  
+            
                 <br/>
                 <ToastContainer/>
                 <h1 className="primary-font margin-zero">Creators Hub</h1><br/>
@@ -39,6 +40,6 @@ useEffect(()=>{
                     <small>Forgot password?</small> &nbsp;&nbsp;&nbsp;
                     <small ><NavLink to="/signup"  activeClassName="active-btn" className=" primary-font" >Signup</NavLink></small>
                 </div> <br/>
-               
+            
             </div>)
 }

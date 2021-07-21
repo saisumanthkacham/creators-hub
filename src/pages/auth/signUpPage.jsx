@@ -3,9 +3,9 @@ import { SignUpButton } from "../../components/buttons/signUpButton"
 
 export const SignUpPage=()=>{
               
-// hooks
-const[userName,setUserName]=useState("")
-const[password,setPassword]=useState("")
+    // hooks
+    const[userName,setUserName]=useState("")
+    const[password,setPassword]=useState("")
 
 
 
@@ -14,8 +14,6 @@ const[password,setPassword]=useState("")
                 <h1 className="primary-font margin-zero">Creators Hub</h1><br/>
                 <input placeholder="username" className="login-input-box"  type="text" onChange={(e)=>setUserName(e.target.value)} /><br/>
                 <input placeholder="new Password" className="login-input-box" type="password" onChange={(e)=>setPassword(e.target.value)}/><br/>
-                <SignUpButton name={userName} pass={password}/>
-                 
-                 
-    </div>)
+                <SignUpButton name={userName} pass={password}/>        
+            </div>)
 }

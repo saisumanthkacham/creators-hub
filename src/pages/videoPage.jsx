@@ -19,7 +19,7 @@ export const VideoPlayer=()=>{
     const [display,setDisplay]=useState(false)
     const similarVideos=videosState.videosData.filter(vid=>vid.platform===item?.platform)
 // custom functions
-const videoHandler=(item)=>{
+    const videoHandler=(item)=>{
     navigate(`/video/${item.id}`)
     videosDispatch({type:"ADD-TO-HISTORY",payLoad:{video:item}});
     videoStatisticsDispatch({type:"INCREMENT-VIEW",payLoad:{id:item.id}})
