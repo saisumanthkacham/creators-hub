@@ -117,7 +117,6 @@ body {
       margin: 0 0rem;
       filter:blur(2px) contrast(200%) brightness(30%);
       position: relative;
-     
     }
 
     .text-over-explore-img{
@@ -164,10 +163,8 @@ body {
      flex-direction: column;
      align-items: center;
      position: absolute;
-     /* top:9rem;
-     left:28rem; */
      top: 30%;
-     right: 32%;
+     right:39%;
    }
   
 
