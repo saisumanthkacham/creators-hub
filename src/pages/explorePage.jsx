@@ -5,7 +5,7 @@ import { useVideoStatistics } from "../contexts/videosStatisticsContext.jsx"
 import { SaveButton,VideoCardHome } from "../components/indexOfComponents"
 import { useAuth } from "../contexts/authContext.jsx"
 import home from "../images/home.jpg"
-import tanay from "../images/tanay.jpg"
+
 
 
 export const Explore=()=>{
@@ -43,8 +43,10 @@ return (<section className="body">
     <br/>
     <h1>home page</h1>
     <div className="explore-page main">
+
+
         <>
-            <img className="explore-img" src={tanay} alt="homepage-img" />
+            <img className="explore-img" src={home} alt="homepage-img" />
             <div className="text-over-explore-img">
                 <h1 style={{fontSize:50}}>welcome to Creators-Hub </h1>
                 <p style={{fontSize:20}}>watch the latest videos of your 
@@ -61,7 +63,8 @@ return (<section className="body">
                                     {videosState?.videosData?.filter(item=>item.platform===category).map(item=>
                                         <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
                                 </div>
-                            </>)}
+                            </>)
+        }
 
         {(login&&history.length)
     
@@ -73,14 +76,15 @@ return (<section className="body">
                                             {category?.map((item)=>
                                             <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
                                         </div>
-                                     </>)}
+                                     </>)
+                                    }
 
                                 </>
               
                                 : " "
-                            }
+        }
 
-        </div>
+    </div>
        
 
     </section>)
