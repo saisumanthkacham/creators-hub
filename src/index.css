@@ -2,6 +2,7 @@
 /* @import url("https://dunzo-ui.netlify.app/Ecom-components.css"); */
   
 /* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap'); */
+@import 'react-toastify/dist/ReactToastify.css';
 
 body {
    margin: 0;

@@ -9,7 +9,7 @@ import {Home,History,PlayLists,PlayList,Saved,VideoPlayer,
 import {NavLink,useNavigate} from "react-router-dom"
 import { useAuth } from './contexts/authContext';
 import {PrivateRoute,SideBar} from "./components/indexOfComponents"
-
+import {ToastContainer} from "react-toastify"
 
 
 function App() {
@@ -66,6 +66,10 @@ return (<div className="App">
           <Route path="/*" element={<PageNotFound text={"page Not Found"}/>} />
         </Routes>
     </div>
+
+
+
+    <ToastContainer/>
 
   </div>
   );

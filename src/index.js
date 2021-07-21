@@ -8,19 +8,22 @@ import { AuthProvider } from './contexts/authContext';
 import {BrowserRouter as Router} from "react-router-dom"
 import {ScrollToTop} from "./components/scrollToTop"
 
+
 ReactDOM.render(
-  <React.StrictMode>
-    <AuthProvider>
-      <Router>
-       <ScrollToTop/>
-        <VideoStatisticsProvider>
-            <VideoProvider>
+    <React.StrictMode>
+      
+        <AuthProvider>
+          <Router>
+          <ScrollToTop/>
+            <VideoStatisticsProvider>
+              <VideoProvider>
                 <App />
-            </VideoProvider>
-        </VideoStatisticsProvider>
-      </Router>
-    </AuthProvider>
-  </React.StrictMode>,
+              </VideoProvider>
+            </VideoStatisticsProvider>
+          </Router>
+        </AuthProvider>
+      
+    </React.StrictMode>,
   document.getElementById('root')
 );
 

@@ -1,5 +1,6 @@
 import { useAuth } from "../../contexts/authContext"
 import { useNavigate } from "react-router"
+import { toast} from "react-toastify"
 
 
 export const LoginButton=({name,pass})=>{
@@ -10,14 +11,20 @@ export const LoginButton=({name,pass})=>{
 
     // custom function
     const loginHandler=(name,pass,usersCredentials)=>{
+
         const user=usersCredentials.find(item=>item.userName===name)
         if(name===user?.userName && pass===user?.password){
-            setLogin(true)
+            setLogin(true) 
             localStorage.setItem("login",JSON.stringify({login:true}))
+            toast.success(`login success!!`,{position:"bottom-right",autoClose: 4000,})
             navigate("/")    
         }
 
-        else{console.log("error in login")}
+        else
+            {
+                console.log("error in login")
+                toast.error(`error in login!!`,{position:"bottom-right",autoClose: 4000,})
+            }
     
     }
 

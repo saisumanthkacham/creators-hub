@@ -1,6 +1,6 @@
 import { useAuth } from "../../contexts/authContext"
 import { useNavigate } from "react-router"
-
+import { toast } from "react-toastify"
 
 export const SignUpButton=({name,pass})=>{
 
@@ -12,6 +12,7 @@ export const SignUpButton=({name,pass})=>{
     const signUpHandler=(name,pass)=>{
         authDispatch({type:"SIGN-UP-USER",payLoad:{userName:name,password:pass}})
         setLogin(true)
+        toast.success("you are signed in ",{position:toast.POSITION.BOTTOM_RIGHT})
         navigate("/")
     }
 
