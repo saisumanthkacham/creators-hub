@@ -193,17 +193,26 @@ body {
     color: white;
     margin: 2rem 10rem 0 0;
   }
+
+  .side-bar-wrapper{
+    background-color: rgb(65, 65, 65);
+    width: 23%;
+    height: 100%;
+    z-index:6;
+    position: fixed;
+  }
   
   .side-bar{
     background-color: rgb(65, 65, 65);
-    z-index:6;
+    z-index:7;
     position: fixed;
     width: 23%;
-    height: 100vh;
+    height: 90%;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    padding: 0;
+    
   }
 
   .App-blur{
@@ -418,7 +427,7 @@ body {
 
  .aside hr{
    border: 2px solid var(--primary-color);
-   width: 99%;
+   width: 100%;
    
    }
    
