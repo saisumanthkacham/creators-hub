@@ -14,14 +14,14 @@ export const LogoutButton=()=>{
 
         if(login){
             setLogin(false)
-            localStorage.removeItem("login") 
-            toast.info("you are logged out!",{position:toast.POSITION.BOTTOM_RIGHT})
+            localStorage.removeItem("user") 
+            toast.info("you are logged out!",{position:"bottom-right",autoClose:2000})
             navigate("/")
         }
            
         else{
             console.log("already logged out")
-            toast.error("error in logging out!",{position:toast.POSITION.BOTTOM_RIGHT})
+            toast.error("error in logging out!",{position:"bottom-right"})
         }
     
     }
