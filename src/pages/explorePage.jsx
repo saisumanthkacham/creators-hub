@@ -22,7 +22,6 @@ const videoHandler=(item)=>{
     videoStatisticsDispatch({type:"INCREMENT-VIEW",payLoad:{id:item.id}})
     navigate(`/video/${item.id}`)
 }
-
 const channelFilterHandler=(item)=>{
     navigate(`/channel/${item.creator}`)
 }
@@ -31,12 +30,12 @@ const channelFilterHandler=(item)=>{
 
 // data filtering
 const platforms= [...new Set(videosState.videosData.map(item=>item.platform))]
-
 const liked=videosState.videosLiked
 const saved=videosState.videosSaved
 const history=videosState.videosHistory
 const userData=[liked,saved,history]
 const userDataHeadings=["Liked videos","Saved videos","History videos"]
+
  
 return (<section className="body">
     
@@ -56,12 +55,13 @@ return (<section className="body">
         </>
 
 
-        {platforms?.map((category,idx)=>
+        {platforms?.map((category)=>
                             <>
-                                <h1 className="primary-font" id={idx}>{category}</h1><hr/>
-                                <div className="productsListingExplore">
-                                    {videosState?.videosData?.filter(item=>item.platform===category).map(item=>
-                                        <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
+                                <h1 className="primary-font">{category}</h1><hr/>
+                                <div className="productsListingExplore" >
+                                    {videosState?.videosData?.filter(item=>item.platform===category).map((item)=>
+                                        <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton} key={item.id} />
+                                         )} 
                                 </div>
                             </>)
         }
@@ -74,7 +74,8 @@ return (<section className="body">
                                         <h1 className="primary-font">{userDataHeadings[idx]}</h1><hr/>
                                         <div key={idx} className="productsListingExplore">
                                             {category?.map((item)=>
-                                            <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/> )} 
+                                                <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/>
+                                             )} 
                                         </div>
                                      </>)
                                     }

@@ -7,8 +7,7 @@ import { useVideo } from "../../contexts/videosContext"
 
 export const LoginPage=()=>{
 
-
-              
+    
     // hooks
     const[userName,setUserName]=useState("")
     const[password,setPassword]=useState("")

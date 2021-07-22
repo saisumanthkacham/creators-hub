@@ -34,7 +34,7 @@ return (<div className="App">
 
           <div className="nav-search-wrapper">
             <input className="input-box nav-search-bar" placeholder=" Search "/>
-            <i class="fas fa-search  white-font"></i>
+            <i className="fas fa-search  white-font"></i>
           </div>
 
           <div className="nav-li">

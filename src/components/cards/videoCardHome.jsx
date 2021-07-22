@@ -1,6 +1,6 @@
 export const VideoCardHome= ({item,function1,function2,Button}) =>{
 
-return <div key={item.id} className="cd"> 
+return <div  className="cd" key={item.id}> 
            
     <img className="cd-img" onClick={()=>function1(item)} src={item.thumbnail} alt={item.vName} />
 
