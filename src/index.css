@@ -216,7 +216,7 @@ body {
   }
 
   .App-blur{
-    filter: blur(5px);
+    opacity:0.5 ;
     pointer-events: none;
     user-select: none;
     width: 100%;
@@ -281,7 +281,7 @@ body {
    /* video-page */
 
    .video-page-blur{
-    filter: blur(5px);
+     opacity:0.5 ;
      pointer-events: none;
      user-select: none;
      width: 100%;
