@@ -36,10 +36,10 @@ return (<>
             <Player item={item} display={display} setDisplay={setDisplay} />
         
                 <div className="similar-videos">
-                <h3>similar videos</h3>
-                {similarVideos?.map(item=>
-                <SimilarVideosCard item={item} function1={videoHandler} />)}
-            </div>
+                    <h3>similar videos</h3>
+                    {similarVideos?.map(item=>
+                    <SimilarVideosCard item={item} function1={videoHandler} />)}
+                </div>
                 
         </div>
         

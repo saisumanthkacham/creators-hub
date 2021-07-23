@@ -18,7 +18,7 @@ export const SaveButton=({item})=>{
        login? videosDispatch({type:"ADD-TO-SAVED-VIDEOS",payLoad:{video:item}}):navigate("/login")
     }
 
-    return  <div style={{cursor:"pointer",color:"red"}}>
+    return  <div style={{cursor:"pointer",color:"#bd0517"}}>
                     {isVideoSaved(videosState,item?.id) 
                     ? <i onClick={activeSaveButtonHandler} className="fas fa-bookmark icon-sm"></i> 
                     : <i onClick={nonActiveSaveButtonHandler} className="far fa-bookmark icon-sm"></i>}

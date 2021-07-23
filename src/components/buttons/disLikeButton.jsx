@@ -32,7 +32,7 @@ export const DisLikeButton=({item})=>{
           </div>
         : <div className="center">
               {disLikes?.count}&nbsp;
-              <i onClick={nonActiveDisLikeButtonHandler} className="far fa-thumbs-down red-font icon-sm" id="not-activated-btn"></i>
+              <i onClick={nonActiveDisLikeButtonHandler} className="far fa-thumbs-down primary-font icon-sm" id="not-activated-btn"></i>
           </div>}
     
     

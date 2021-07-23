@@ -33,7 +33,7 @@ export const LikeButton=({item})=>{
                     </div>
         : <div className="center">
                     {likes?.count}&nbsp;
-                    <i onClick={nonActiveLikeButtonHandler} className="far fa-thumbs-up red-font icon-sm " id="not-activated-btn"></i>
+                    <i onClick={nonActiveLikeButtonHandler} className="far fa-thumbs-up primary-font icon-sm " id="not-activated-btn"></i>
                     </div>}
 
     </>

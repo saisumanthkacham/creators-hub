@@ -12,7 +12,7 @@ return <div  className="cd" key={item.id}>
 
     <div> 
         <small 
-            className= {function2?" cd-creator red-font":" cd-creator grey-font"} 
+            className= {function2?" cd-creator primary-font":" cd-creator grey-font"} 
             onClick={()=>function2 ?function2(item) :"" }>
             {item.creator}
         </small> 

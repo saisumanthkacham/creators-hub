@@ -60,7 +60,7 @@ body {
    }
    
    #activated-btn{
-     color: red;
+     color:#bd0517;
    }
 
 
@@ -321,7 +321,7 @@ body {
   }
 
   hr{
-    border: 2px solid red;
+    border: 2px solid #bd0517;
     width: 99%;
   }
 
@@ -358,7 +358,7 @@ body {
     color: grey;
    }
    .saved-cd-wrong:hover{
-      color: red;
+      color: #bd0517;
    }
   
   
