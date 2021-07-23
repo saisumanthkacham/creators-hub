@@ -334,7 +334,7 @@
                         top: 1rem;
                         right:1rem;
                         cursor: pointer;
-                        color: #F3F4F6;
+                        color: grey;
                       }           
                     .cd-wrong:hover{
                         color: red;

@@ -32,7 +32,7 @@ const channelFilterHandler=(item)=>{
 const platforms= [...new Set(videosState.videosData.map(item=>item.platform))]
 const liked=videosState.videosLiked
 const saved=videosState.videosSaved
-const history=videosState.videosHistory
+const history=videosState.videosHistory.reverse()
 const userData=[liked,saved,history]
 const userDataHeadings=["Liked videos","Saved videos","History videos"]
 
@@ -55,29 +55,29 @@ return (<section className="body">
         </>
 
 
-        {platforms?.map((category)=>
-                            <>
+        {platforms?.map((category,idx)=>
+                            <div key={idx}>
                                 <h1 className="primary-font">{category}</h1><hr/>
                                 <div className="productsListingExplore" >
                                     {videosState?.videosData?.filter(item=>item.platform===category).map((item)=>
                                         <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton} key={item.id} />
                                          )} 
                                 </div>
-                            </>)
+                            </div>)
         }
 
         {(login&&history.length)
     
                                 ?<>
                                     {userData?.map((category,idx)=>
-                                     <>
+                                     <div key={idx}>
                                         <h1 className="primary-font">{userDataHeadings[idx]}</h1><hr/>
                                         <div key={idx} className="productsListingExplore">
                                             {category?.map((item)=>
                                                 <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton}/>
                                              )} 
                                         </div>
-                                     </>)
+                                     </div>)
                                     }
 
                                 </>
