@@ -2,14 +2,15 @@
 import './index.css'
 import "./ecom.css"
 import {useState} from "react"
-import { Routes,Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import {Home,History,PlayLists,PlayList,Saved,VideoPlayer,
         LikedVideos,Channel,LoginPage,SignUpPage,User,
         PageNotFound,Explore,About} from "./pages/indexOfPages.jsx"
 import {NavLink,useNavigate} from "react-router-dom"
 import { useAuth } from './contexts/authContext';
-import {PrivateRoute,SideBar} from "./components/indexOfComponents"
+import {SideBar,PrivateRoute} from "./components/indexOfComponents"
 import {ToastContainer} from "react-toastify"
+
 
 
 function App() {
@@ -32,10 +33,10 @@ return (<div className="App">
             <div className="white-font nav-logo" onClick={()=>{navigate("/")}}>Creators Hub</div>
           </div>
 
-          <div className="nav-search-wrapper">
+          {/* <div className="nav-search-wrapper">
             <input className="input-box nav-search-bar" placeholder=" Search "/>
             <i className="fas fa-search  white-font"></i>
-          </div>
+          </div> */}
 
           <div className="nav-li">
             {login 

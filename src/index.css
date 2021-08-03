@@ -1,134 +1,128 @@
-
 /* @import url("https://dunzo-ui.netlify.app/Ecom-components.css"); */
-  
+
 /* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap'); */
-@import 'react-toastify/dist/ReactToastify.css';
+@import "react-toastify/dist/ReactToastify.css";
 
 body {
-   margin: 0;
-    font-family: 'Montserrat', sans-serif;
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
- }
- 
- code {
-   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-     monospace;
-   }
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  .productsListing {
-   display: flex;
-   flex-direction: row !important;
-   flex-wrap: wrap;
-   justify-content:center; 
-   }
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
 
-   .bold{
-   font-weight: bold;
-   }
+.productsListing {
+  display: flex;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-   .wide-row{
-   display: flex;
-   justify-content: space-between;
-   padding: 0.5rem 1rem;
-   align-items: center;
-   }
+.bold {
+  font-weight: bold;
+}
 
-   .wide-row-margin-zero{
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
-    align-items: center;
-   }
+.wide-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  align-items: center;
+}
 
-   .margin-zero{
-     margin: 0;
-   }
-   
- 
-   .btn{ 
-     padding: 0.5rem;
-     text-decoration: none;
-     color: rgb(207, 205, 205);
-     margin: 1rem 0.2rem 3rem 0.2rem;
-   }
+.wide-row-margin-zero {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  align-items: center;
+}
 
-   .active-btn{
-     color:var(--primary-color);
-     font-size: bold;
-     background-color: rgb(207, 205, 205);
-   }
-   
-   #activated-btn{
-     color:#bd0517;
-   }
+.margin-zero {
+  margin: 0;
+}
 
+.btn {
+  padding: 0.5rem;
+  text-decoration: none;
+  color: rgb(207, 205, 205);
+  margin: 1rem 0.2rem 3rem 0.2rem;
+}
 
-   .name-link{ 
-     text-decoration: none;
-     color: black;
-     
-   }
+.active-btn {
+  color: var(--primary-color);
+  font-size: bold;
+  background-color: rgb(207, 205, 205);
+}
 
-   .active-name-link{
-     color:var(--primary-color);
-     font-size: bold;
-   }
-  
-   /* home-page */
+#activated-btn {
+  color: #bd0517;
+}
 
-  .filtering-btn{
-    border-radius: 1.5rem;
-    background-color: #F3F4F6;
-    color: var(--primary-color);
-    padding: 0.5rem;
-    text-align: center;
-    margin: 0.5rem;
-    cursor: pointer;
- }
+.name-link {
+  text-decoration: none;
+  color: black;
+}
 
- .filtering-btn:hover{
-    background-color: var(--primary-color);
-    color: white;
-  }
+.active-name-link {
+  color: var(--primary-color);
+  font-size: bold;
+}
 
- .filtersListing{
-   display: flex;
-   justify-content:flex-start ;
-   align-items: center;
-   flex-wrap: wrap;
-   margin: 0 3em;
- }
- 
-   /* explore-page */
-   .explore-page{
-    margin: 0 2rem;
-   }
+/* home-page */
 
-   .productsListingExplore {
-    display: flex;
-    flex-direction: row !important; 
-    overflow-x: scroll;
-    }
+.filtering-btn {
+  border-radius: 1.5rem;
+  background-color: #f3f4f6;
+  color: var(--primary-color);
+  padding: 0.5rem;
+  text-align: center;
+  margin: 0.5rem;
+  cursor: pointer;
+}
 
-    .explore-img{
-      width: 100%;
-      height: 23rem;
-      margin: 0 0rem;
-      filter:blur(2px) contrast(200%) brightness(30%);
-      position: relative;
-    }
+.filtering-btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
 
-    .text-over-explore-img{
-      position: absolute;
-      top: 7rem;
-      left: 5rem;
-      color: white;
-    }
+.filtersListing {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 3em;
+}
 
+/* explore-page */
+.explore-page {
+  margin: 0 2rem;
+}
 
+.productsListingExplore {
+  display: flex;
+  flex-direction: row !important;
+  overflow-x: scroll;
+}
 
-    /* .productsListingExplore::-webkit-scrollbar-track {
+.explore-img {
+  width: 100%;
+  height: 23rem;
+  margin: 0 0rem;
+  filter: blur(2px) contrast(200%) brightness(30%);
+  position: relative;
+}
+
+.text-over-explore-img {
+  position: absolute;
+  top: 7rem;
+  left: 5rem;
+  color: white;
+}
+
+/* .productsListingExplore::-webkit-scrollbar-track {
       background:var(--primary-color);
     }
 
@@ -137,299 +131,272 @@ body {
       border-radius: 8px;      
        } */
 
-
-  
-
-   /* this class is for whenever the cart or wishlist is empty */
-   .empty-bin{
-     width:25rem ;
-     padding: 1rem;
-     border-radius: 0.5rem;
-     box-shadow: 0px 5px 10px  #ccc;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     position: absolute;
-     top:12rem;
-     left:28rem;
-   }
-
-   .login-page{
-     width:22rem ;
-     padding: 1rem;
-     border-radius: 0.5rem;
-     box-shadow: 0px 5px 10px  #ccc;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     justify-content: center;
-     position: absolute;
-     top: 30%;
-     right:35%;
-   }
-  
-
-   .login-input-box{
-     box-shadow: 0px 5px 10px  #ccc;
-     border-radius: 0.5rem;
-     border: none;
-     width: 13rem;
-     height:2rem;
-     padding-left:1rem;
-   }
-
-   .input-box{
-    border-radius: 0.25rem;
-    border: none;
-    width: 10rem;
-    height:2rem;
-    margin: 0.5rem;
-   }
-
- 
-
-   /* sidebar */
-   .burger-btn{
-    color: white;
-    margin: 2rem 10rem 0 0;
-  }
-
-  .side-bar-wrapper{
-    background-color: rgb(65, 65, 65);
-    width: 23%;
-    height: 100%;
-    z-index:6;
-    position: fixed;
-  }
-  
-  .side-bar{
-    background-color: rgb(65, 65, 65);
-    z-index:7;
-    position: fixed;
-    width: 23%;
-    height: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    
-  }
-
-  .App-blur{
-    opacity:0.5 ;
-    pointer-events: none;
-    user-select: none;
-    width: 100%;
-   
-  }
-  .logo-wrapper{
-    display: flex;
-    padding: 0 5rem 0 3rem;
-    width: 20rem;
-    align-items: center;
-  }
-
-   /* playList-page */
-   .playList-img-text{
-     position: absolute;
-     top: 8rem;
-     width: 100%;
-     height: 2rem;
-     background-color: black;
-     color: white;
-     opacity: 0.9;
-     padding-top: 0.6rem;
-     cursor:pointer;
-   }
-
-   .playList-modal{
-     visibility: visible;
-     position: absolute;
-     z-index: 4;
-     top: 30%;
-     right: 35%;
-     background-color:var(--secondary-color);
-     color: white;
-     opacity: 1;
-     border-radius: 0.4rem;
-     overflow: auto;
-     width: 25rem;
-     min-height: 10rem;
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-     padding: 1rem 1rem 0 1rem;
-   }
-
-   .playList-modal-text{
-     display: flex;
-     flex-direction: column;
-     justify-content: flex-start;
-     
-   }
-
-   .overflow-text {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    padding:0rem 0.5rem 0 0.5rem;
-    
+/* this class is for whenever the cart or wishlist is empty */
+.empty-bin {
+  width: 25rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 5px 10px #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 12rem;
+  left: 28rem;
 }
 
-   /* video-page */
+.login-page {
+  width: 22rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 5px 10px #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 30%;
+  right: 35%;
+}
 
-   .video-page-blur{
-     opacity:0.5 ;
-     pointer-events: none;
-     user-select: none;
-     width: 100%;
-     display: flex;
-     justify-content: center;
-   }
+.login-input-box {
+  box-shadow: 0px 5px 10px #ccc;
+  border-radius: 0.5rem;
+  border: none;
+  width: 13rem;
+  height: 2rem;
+  padding-left: 1rem;
+}
 
-  .video-page{
-   margin:0;
-   width: 100%;
-   display: flex;
-   justify-content: center;
-  }
+.input-box {
+  border-radius: 0.25rem;
+  border: none;
+  width: 10rem;
+  height: 2rem;
+  margin: 0.5rem;
+}
 
-  .video-bar{
-    width: 30%;
-  }
+/* sidebar */
+.burger-btn {
+  color: white;
+  margin: 2rem 10rem 0 0;
+}
 
-  .player-wrapper{
-    height: 22rem;
-    width: 50%;
-    margin-right:3rem ;
-  }
+.side-bar-wrapper {
+  background-color: rgb(65, 65, 65);
+  width: 23%;
+  height: 100%;
+  z-index: 6;
+  position: fixed;
+}
 
-  .similar-videos{
-    width: 38%;
-    padding: 0;
-  }
+.side-bar {
+  background-color: rgb(65, 65, 65);
+  z-index: 7;
+  position: fixed;
+  width: 23%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
 
-  .similar-videos-cd{
-    display: flex;
-    align-items: center;
-    width:100%;
-    margin: 1rem 0 1rem 0;
-    border: 1px solid rgb(243, 243, 243);
-    border-radius: 0.4rem;
-  }
+.App-blur {
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+  width: 100%;
+}
+.logo-wrapper {
+  display: flex;
+  padding: 0 5rem 0 3rem;
+  width: 20rem;
+  align-items: center;
+}
 
-  hr{
-    border: 2px solid #bd0517;
-    width: 99%;
-  }
+/* playList-page */
+.playList-img-text {
+  position: absolute;
+  top: 8rem;
+  width: 100%;
+  height: 2rem;
+  background-color: black;
+  color: white;
+  opacity: 0.9;
+  padding-top: 0.6rem;
+  cursor: pointer;
+}
 
-   /* history-page */
-   .history-page{
-     margin-top: 2rem;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-    
-   }
-   .history-cd{
-     display: flex;
-     align-items: center;
-     width: 50vw;
-     margin: 1rem;
-     position: relative;
-     border: 1px solid rgb(243, 243, 243);
-     border-radius: 0.4rem;
-   }
-   .history-cd-text{
-    margin: 1rem;
-   }
-  
+.playList-modal {
+  visibility: visible;
+  position: absolute;
+  z-index: 4;
+  top: 30%;
+  right: 35%;
+  background-color: var(--secondary-color);
+  color: white;
+  opacity: 1;
+  border-radius: 0.4rem;
+  overflow: auto;
+  width: 25rem;
+  min-height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1rem 0 1rem;
+}
 
-  
+.playList-modal-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 
-   /* saved-page */
-   .saved-page{
-     margin: 5rem 0rem 0 0rem;
-   }
+.overflow-text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  padding: 0rem 0.5rem 0 0.5rem;
+}
 
-   .saved-cd-wrong{
-    color: grey;
-   }
-   .saved-cd-wrong:hover{
-      color: #bd0517;
-   }
-  
-  
+/* video-page */
 
+.video-page-blur {
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
+.video-page {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
-   /* user-page */
-   .user-page{
-     position: absolute;
-     top: 30%;
-     right:43%;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-   }
-   .user-text{
-     display: flex;
-     flex-direction: column;
-     justify-content: flex-start;
-   }
+.video-bar {
+  width: 30%;
+}
 
-   /* grids */
-   .body{
-     display: grid;
-     grid-template-columns:  0.05fr 1fr;
-     grid-template-rows:0.1vw 1fr ;
-     grid-template-areas:
-      "nav nav"
-      "main main"
-      
-     
-   }
+.player-wrapper {
+  height: 22rem;
+  width: 50%;
+  margin-right: 3rem;
+}
 
-   /* nav style is taken from component library */
+.similar-videos {
+  width: 38%;
+  padding: 0;
+}
 
-   .aside{
-     grid-area:aside;
-     text-align:left;
-     align-items: flex-start;
-     border-radius: 0.5rem;
-     background-color: white;
-     box-shadow: 1px 5px 5px #ccc;
-     display: flex;
-     flex-direction: column;
-     margin-top:6rem ;
-   }
+.similar-videos-cd {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 1rem 0 1rem 0;
+  border: 1px solid rgb(243, 243, 243);
+  border-radius: 0.4rem;
+}
 
-   .main {
-     grid-area: main;
-     
-     margin-top:6rem ;
-   }
+hr {
+  border: 2px solid #bd0517;
+  width: 99%;
+}
 
-   
-   .aside .btn{
-       margin: 0 0 0 1rem;
-   }
+/* history-page */
+.history-page {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.history-cd {
+  display: flex;
+  align-items: center;
+  width: 50vw;
+  margin: 1rem;
+  position: relative;
+  border: 1px solid rgb(243, 243, 243);
+  border-radius: 0.4rem;
+}
+.history-cd-text {
+  margin: 1rem;
+}
 
-  
-   
-   .aside li{
-     display: flex;
-     justify-content: flex-start;
-     align-items: center;
-   }
+/* saved-page */
+.saved-page {
+  margin: 5rem 0rem 0 0rem;
+}
 
- .aside hr{
-   border: 2px solid var(--primary-color);
-   width: 100%;
-   
-   }
-   
+.saved-cd-wrong {
+  color: grey;
+}
+.saved-cd-wrong:hover {
+  color: #bd0517;
+}
 
-  
+/* user-page */
+.user-page {
+  position: absolute;
+  top: 30%;
+  right: 43%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* grids */
+.body {
+  display: grid;
+  grid-template-columns: 0.05fr 1fr;
+  grid-template-rows: 0.1vw 1fr;
+  grid-template-areas:
+    "nav nav"
+    "main main";
+}
+
+/* nav style is taken from component library */
+
+.aside {
+  grid-area: aside;
+  text-align: left;
+  align-items: flex-start;
+  border-radius: 0.5rem;
+  background-color: white;
+  box-shadow: 1px 5px 5px #ccc;
+  display: flex;
+  flex-direction: column;
+  margin-top: 6rem;
+}
+
+.main {
+  grid-area: main;
+
+  margin-top: 6rem;
+}
+
+.aside .btn {
+  margin: 0 0 0 1rem;
+}
+
+.aside li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.aside hr {
+  border: 2px solid var(--primary-color);
+  width: 100%;
+}
