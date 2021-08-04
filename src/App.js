@@ -40,10 +40,15 @@ return (<div className="App">
 
           <div className="nav-li">
             {login 
-                  ? <div><NavLink to="/user"  activeClassName="active-btn" className="btn" ><i className="fas fa-user text-sm "></i></NavLink></div>
+                  ? <div><NavLink to="/user"  activeClassName="active-btn" className="btn" ><i className="fas fa-user text-sm "></i></NavLink>
+                         <a href="https://github.com/saisumanthkacham/creators-hub"  className="btn btn-sm"><i class="fab fa-github text-sm"></i></a>
+                    </div>
+
                   : <div><NavLink to="/login"  activeClassName="active-btn" className="btn" >Login</NavLink>
                          <NavLink to="/signup"  activeClassName="active-btn" className="btn" >SignUp</NavLink>
+                         <a href="https://github.com/saisumanthkacham/creators-hub"  className="btn btn-sm"><i class="fab fa-github text-sm"></i></a>
                     </div>}
+                   
           </div>
      
         </nav>
