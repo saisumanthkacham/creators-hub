@@ -17,6 +17,7 @@ import {VideoCardPlayList} from "./cards/videoCardPlayList"
 import {VideoCardSaved} from "./cards/videoCardSaved"
 import { LoginButton } from "./auth/loginButton";
 import { PrivateRoute } from "./auth/privateRoute";
+import { TestCredentialsButton } from "./auth/testCredentialsButton";
 
 export {
         AddToPlayListButton,
@@ -36,4 +37,5 @@ export {
         VideoCardSaved,
         LoginButton,
         PrivateRoute,
+        TestCredentialsButton
     }

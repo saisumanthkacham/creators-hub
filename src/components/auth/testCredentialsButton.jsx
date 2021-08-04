@@ -1,14 +1,15 @@
 import { useAuth } from "../../contexts/authContext"
 import { useNavigate } from "react-router"
-import { toast} from "react-toastify"
+import { toast } from "react-toastify"
 
 
-export const LoginButton=({name,pass,videosDispatch})=>{
+
+export const TestCredentialsButton=({name,pass,videosDispatch})=>{
 
     // hooks
     const {setLogin,authState:{usersCredentials}}=useAuth()
     const navigate=useNavigate()
-
+  
     // custom function
     const loginHandler=(name,pass,usersCredentials)=>{
 
@@ -30,8 +31,10 @@ export const LoginButton=({name,pass,videosDispatch})=>{
     }
 
     return (<>
-    
-    <div className="login-btn primary-bg white-font" onClick={()=>loginHandler(name,pass,usersCredentials)}>Login</div>
-    
+        <div className="login-btn secondary-bg"
+            onClick={()=>loginHandler(name,pass,usersCredentials)}
+            >
+            <small>Login with test credentials</small>
+        </div><br/>
     </>)
 }

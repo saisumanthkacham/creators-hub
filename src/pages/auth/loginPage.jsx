@@ -1,9 +1,10 @@
 import {useEffect, useState} from "react"
-import { LoginButton } from "../../components/indexOfComponents"
+import { LoginButton,TestCredentialsButton} from "../../components/indexOfComponents"
 import { useNavigate, NavLink, useLocation } from "react-router-dom"
 import { useAuth } from "../../contexts/authContext"
 import { toast} from "react-toastify"
 import { useVideo } from "../../contexts/videosContext"
+
 
 export const LoginPage=()=>{
 
@@ -21,7 +22,7 @@ export const LoginPage=()=>{
             const response=JSON.parse(localStorage.getItem("user"))
             setLogin(response?.login&&response.login)
             videosDispatch({type:"SET-USERS-USERNAME",payLoad:{userName}})
-            response?.login&&toast.success(`Hey ${response.userName},we logged you in sucessfully!!`,{position:"bottom-right"})
+            response?.login&&toast.sucess(`Hey ${response.userName},we logged you in sucessfully!!`,{position:"bottom-right"})
             navigate(state?.state?.previousPath ?state.previousPath :"/login")         
         },[])
 
@@ -35,6 +36,7 @@ export const LoginPage=()=>{
                 <input placeholder="username" className="login-input-box"  type="text" onChange={(e)=>setUserName(e.target.value)} /><br/>
                 <input placeholder="Password" className="login-input-box" type="password" onChange={(e)=>setPassword(e.target.value)}/><br/>
                 <LoginButton name={userName} pass={password} videosDispatch={videosDispatch}/>
+                <TestCredentialsButton name={"sai"} pass={"sai"} videosDispatch={videosDispatch} />
                 <div className="center">
                     <small>Dont have an account?</small> &nbsp;&nbsp;&nbsp;
                     <small ><NavLink to="/signup"  activeClassName="active-btn" className=" primary-font" >Signup</NavLink></small>

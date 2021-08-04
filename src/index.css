@@ -168,6 +168,18 @@ code {
   padding-left: 1rem;
 }
 
+.login-btn{ 
+  padding: 0.5rem;
+  text-decoration: none;
+  color: white;
+  margin: 1rem 0.2rem 0.2rem 0.2rem;
+  border-radius: 0.5rem;
+  width: 11.7rem;
+  height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+}
+
 .input-box {
   border-radius: 0.25rem;
   border: none;
