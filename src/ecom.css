@@ -387,7 +387,7 @@ p {
   background-color: var(--primary-color);
   cursor: pointer;
   margin: 0 0 0 7rem;
-  border-radius: 0.25rem;
+  border-radius: 0.2rem;
   font-size: large;
   font-weight: bold;
 }
