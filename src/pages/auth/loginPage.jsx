@@ -36,7 +36,7 @@ export const LoginPage=()=>{
                 <input placeholder="username" className="login-input-box"  type="text" onChange={(e)=>setUserName(e.target.value)} /><br/>
                 <input placeholder="Password" className="login-input-box" type="password" onChange={(e)=>setPassword(e.target.value)}/><br/>
                 <LoginButton name={userName} pass={password} videosDispatch={videosDispatch}/>
-                <TestCredentialsButton name={"sai"} pass={"sai"} videosDispatch={videosDispatch} />
+                {/* <TestCredentialsButton name={"sai"} pass={"sai"} videosDispatch={videosDispatch} /> */}
                 <div className="center">
                     <small>Dont have an account?</small> &nbsp;&nbsp;&nbsp;
                     <small ><NavLink to="/signup"  activeClassName="active-btn" className=" primary-font" >Signup</NavLink></small>
