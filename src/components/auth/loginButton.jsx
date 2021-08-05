@@ -24,7 +24,7 @@ export const LoginButton=({name,pass,videosDispatch})=>{
         else
             {
                 console.log("error in login")
-                toast.error(`error in login!!`,{position:"bottom-right"})
+                toast.error(`invalid username or password!!`,{position:"bottom-right"})
             }
     
     }
