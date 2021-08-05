@@ -10,7 +10,7 @@ export const Player=({item,display,setDisplay})=>{
     
     <ReactPlayer url={item?.url}  controls={true} width="100%" height="100%" />
 
-    {item?.vName} <br/>
+    <span className="bold video-name">{item?.vName}</span> <br/>
     <div className="center" >
         <Views item={item}/>
         <div className="video-bar center">
