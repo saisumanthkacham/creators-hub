@@ -1,38 +1,38 @@
 import { useAuth } from "../../contexts/authContext"
 import { useNavigate } from "react-router"
-import { toast } from "react-toastify"
+import { logInUserInServerFn } from "../../apiCalls"
 
 
 
-export const TestCredentialsButton=({name,pass,videosDispatch})=>{
+export const TestCredentialsButton= ({name,pass})=>{
 
     // hooks
-    const {setLogin,authState:{usersCredentials}}=useAuth()
+    const {setLogin,authDispatch}=useAuth()
     const navigate=useNavigate()
-  
-    // custom function
-    const loginHandler=(name,pass,usersCredentials)=>{
 
-        const user=usersCredentials.find(item=>item.userName===name)
-        if(name===user?.userName && pass===user?.password){
+    // custom function
+    const loginHandler=async(name,pass)=>{
+
+        const{status,id}=await logInUserInServerFn(name,pass)
+        if(status===200)
+        {
             setLogin(true) 
-            localStorage.setItem("user",JSON.stringify({login:true,userName:name}))
-            videosDispatch({type:"SET-USERS-USERNAME",payLoad:{name}})
-            toast.success(`Hey ${name},you logged in succesfully!!`,{position:"bottom-right"})
+            authDispatch({type:"SAVE-USER-DETAILS",payLoad:{name,id}})
+            localStorage.setItem("user",JSON.stringify({login:true,userName:name,userId:id}))
             navigate("/")    
         }
 
         else
             {
                 console.log("error in login")
-                toast.error(`error in login!!`,{position:"bottom-right"})
             }
     
     }
+    
 
     return (<>
         <div className="login-btn secondary-bg"
-            onClick={()=>loginHandler(name,pass,usersCredentials)}
+            onClick={()=>loginHandler(name,pass)}
             >
             <small>Login with test credentials</small>
         </div><br/>

@@ -15,7 +15,7 @@ export const VideoPlayer=()=>{
 // extracting video from url
     const{id}=useParams()
     const item=videosState?.videosData.find(item=>item.id===id)
-// togling the display value of playList Modal
+// toggling the display value of playList Modal
     const [display,setDisplay]=useState(false)
     const similarVideos=videosState.videosData.filter(vid=>vid.platform===item?.platform)
 // custom functions

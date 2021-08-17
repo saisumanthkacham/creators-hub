@@ -1,28 +1,30 @@
 import { useAuth } from "../../contexts/authContext"
 import { useNavigate } from "react-router"
-import { toast } from "react-toastify"
-import { useVideo } from "../../contexts/videosContext"
+// import { useVideo } from "../../contexts/videosContext"
+import { signUpUserInServerFn } from "../../apiCalls"
 
-export const SignUpButton=({name,pass})=>{
+export const SignUpButton=({name,pass,email})=>{
 
     // hooks
     const {setLogin,authDispatch}=useAuth()
     const navigate=useNavigate()
-    const {videosDispatch}=useVideo()
+    // const {videosDispatch}=useVideo()
 
     // custom function
-    const signUpHandler=(name,pass)=>{
-        authDispatch({type:"SIGN-UP-USER",payLoad:{userName:name,password:pass}})
-        videosDispatch({type:"SET-USERS-USERNAME",payLoad:{name}})
-        localStorage.setItem("user",JSON.stringify({login:true,userName:name}))
+    const signUpHandler=async(name,pass,email)=>{
+
+        // authDispatch({type:"SIGN-UP-USER-LOCAL",payLoad:{userName:name,password:pass}})
+        const id= await signUpUserInServerFn(name,pass,email)
+        authDispatch({type:"SAVE-USER-DETAILS",payLoad:{name,id}})
+        localStorage.setItem("user",JSON.stringify({login:true,userName:name,userId:id}))
+        // videosDispatch({type:"SET-USERS-USERNAME",payLoad:{name}})
         setLogin(true)
-        toast.success("you are signed in ",{position:toast.POSITION.BOTTOM_RIGHT})
         navigate("/")
     }
 
     return (<>
     
-    <div className="btn btn-lg primary-bg white-font" onClick={()=>signUpHandler(name,pass)}>SignUp</div>
+    <div className="btn btn-lg primary-bg white-font" onClick={()=>signUpHandler(name,pass,email)}>SignUp</div>
     
     
     </>)

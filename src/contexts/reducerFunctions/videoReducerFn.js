@@ -42,7 +42,12 @@ export const videoReducerFn=(prevState,{type,payLoad})=>{
         
         case "SET-USERS-USERNAME":
                 return {...prevState,userName:payLoad.name}
-               
+
+        // api-calls
+        case "FETCH-VIDEOS-DATA-FROM-SERVER":
+            return {...prevState,videosData:[...payLoad.data]}
+        
+            
         default: return {...prevState}
 
 

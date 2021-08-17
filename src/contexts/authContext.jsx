@@ -5,20 +5,12 @@ const AuthContext=createContext()
 
 export const AuthProvider=({children})=>{
 
-    // hook
+    //custom hook
     const [login,setLogin]=useState(false)
-
-    const intialState={
-
-        usersCredentials:[
-            {userName:"sai",password:"sai"},
-            {userName:"admin",password:"admin"}
-           ]
-    }
-
-    const [state,dispatch]=useReducer(authReducerFn,intialState)
+    const usersCredentials={}
+          
+    const [state,dispatch]=useReducer(authReducerFn,usersCredentials)
     authReducerFn(state,dispatch)
-
 
 
 return <AuthContext.Provider value={{login,setLogin,authState:state,authDispatch:dispatch}}>

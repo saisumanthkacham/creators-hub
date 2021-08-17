@@ -1,37 +1,36 @@
 import { useAuth } from "../../contexts/authContext"
+import { logInUserInServerFn } from "../../apiCalls"
 import { useNavigate } from "react-router"
-import { toast} from "react-toastify"
 
 
-export const LoginButton=({name,pass,videosDispatch})=>{
+export const LoginButton=({name,pass})=>{
 
     // hooks
-    const {setLogin,authState:{usersCredentials}}=useAuth()
+    const {setLogin,authDispatch}=useAuth()
     const navigate=useNavigate()
 
     // custom function
-    const loginHandler=(name,pass,usersCredentials)=>{
+    const loginHandler=async(name,pass)=>{
 
-        const user=usersCredentials.find(item=>item.userName===name)
-        if(name===user?.userName && pass===user?.password){
+        const{status,id}=await logInUserInServerFn(name,pass)
+        if(status===200)
+        {
             setLogin(true) 
-            localStorage.setItem("user",JSON.stringify({login:true,userName:name}))
-            videosDispatch({type:"SET-USERS-USERNAME",payLoad:{name}})
-            toast.success(`Hey ${name},you logged in succesfully!!`,{position:"bottom-right"})
+            authDispatch({type:"SAVE-USER-DETAILS",payLoad:{name,id}})
+            localStorage.setItem("user",JSON.stringify({login:true,userName:name,userId:id}))
             navigate("/")    
         }
 
         else
             {
                 console.log("error in login")
-                toast.error(`invalid username or password!!`,{position:"bottom-right"})
             }
     
     }
 
     return (<>
     
-    <div className="login-btn primary-bg white-font" onClick={()=>loginHandler(name,pass,usersCredentials)}>Login</div>
+    <div className="login-btn primary-bg white-font" onClick={()=>loginHandler(name,pass)}>Login</div>
     
     </>)
 }
