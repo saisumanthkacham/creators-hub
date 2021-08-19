@@ -17,7 +17,7 @@ export const SignUpButton=({name,pass,email})=>{
         console.log("response after sign in func line 17 ", response)
         const id=response?.data?._id
         if(response?.status===201){
-            videosDispatch({type:"SET-NEW-USER-ENVIRONMENT"})   
+            videosDispatch({type:"SET-NEW-USER-ENVIRONMENT-AFTER-SIGNUP"})   
             authDispatch({type:"SAVE-USER-DETAILS",payLoad:{name,id}})
             localStorage.setItem("user",JSON.stringify({login:true,userName:name,userId:id}))
             setLogin(true)

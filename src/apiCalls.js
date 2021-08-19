@@ -87,7 +87,7 @@ import {toast} from "react-toastify"
       })
       console.log("intial user data",data,status)
       const {vidsSaved,vidsLiked,vidsHistory,vidsDisLiked,playLists}= data
-      videosDispatch({type:"FETCH-INTIAL-USER-DATA",payLoad:{vidsSaved,vidsLiked,vidsHistory,vidsDisLiked,playLists}})
+      videosDispatch({type:"FETCH-INTIAL-USER-DATA-FROM-SERVER",payLoad:{vidsSaved,vidsLiked,vidsHistory,vidsDisLiked,playLists}})
       return 
     }
     catch(err){
@@ -105,7 +105,7 @@ import {toast} from "react-toastify"
 //             url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/videosLiked`
 //          })
 //          status===200
-//                      ?videosDispatch({type:"FETCH-LIKED-VIDEOS",payLoad:{vidsLiked}})
+//                      ?videosDispatch({type:"FETCH-LIKED-VIDEOS-FROM-SERVER",payLoad:{vidsLiked}})
 //                      :toast.error("error in fetching liked videos data",{position:"bottom-right"})
 //          return {status}
 //       }
@@ -124,7 +124,7 @@ import {toast} from "react-toastify"
 //          url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/videosDisLiked`
 //       })
 //       status===200
-//                   ?videosDispatch({type:"FETCH-DISLIKED-VIDEOS",payLoad:{data:videosDisLiked}})
+//                   ?videosDispatch({type:"FETCH-DISLIKED-VIDEOS-FROM-SERVER",payLoad:{data:videosDisLiked}})
 //                   :toast.error("error in fetching disliked videos data",{position:"bottom-right"})
 //    }
 //    catch(err){
@@ -141,7 +141,7 @@ import {toast} from "react-toastify"
 //          url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/videosHistory`
 //       })
 //       status===200
-//                   ?videosDispatch({type:"FETCH-HISTORY-VIDEOS",payLoad:{data:videosHistory}})
+//                   ?videosDispatch({type:"FETCH-HISTORY-VIDEOS-FROM-SERVER",payLoad:{data:videosHistory}})
 //                   :toast.error("error in fetching history videos data",{position:"bottom-right"})
 //    }
 //    catch(err){
@@ -158,7 +158,7 @@ import {toast} from "react-toastify"
 //          url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/playLists`
 //       })
 //       status===200
-//                   ?videosDispatch({type:"FETCH-PLAYLISTS-NAMES",payLoad:{names:playListsNames}})
+//                   ?videosDispatch({type:"FETCH-PLAYLISTS-NAMES-FROM-SERVER",payLoad:{names:playListsNames}})
 //                   :toast.error("error in fetching playLists names",{position:"bottom-right"})
 //    }
 //    catch(err){
@@ -175,7 +175,7 @@ import {toast} from "react-toastify"
 //          url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/playLists/${playListName}`
 //       })
 //       status===200
-//                   ?videosDispatch({type:"FETCH-PLAYLIST-VIDEOS",payLoad:{playListVideos:videos}})
+//                   ?videosDispatch({type:"FETCH-PLAYLIST-VIDEOS-FROM-SERVER",payLoad:{playListVideos:videos}})
 //                   :toast.error("error in fetching playList videos",{position:"bottom-right"})
 //    }
 //    catch(err){
@@ -192,7 +192,7 @@ import {toast} from "react-toastify"
 //          url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/videosSaved`
 //       })
 //       status===200
-//                   ?videosDispatch({type:"FETCH-SAVED-VIDEOS",payLoad:{videos:videosSaved}})
+//                   ?videosDispatch({type:"FETCH-SAVED-VIDEOS-FROM-SERVER",payLoad:{videos:videosSaved}})
 //                   :toast.error("error in fetching saved videos",{position:"bottom-right"})
 //    }
 //    catch(err){
