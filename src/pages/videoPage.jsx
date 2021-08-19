@@ -4,6 +4,8 @@ import { useVideo } from "../contexts/videosContext"
 import {useState} from "react"
 import { useVideoStatistics } from "../contexts/videosStatisticsContext.jsx"
 import { Player,SimilarVideosCard,PlayListModal } from "../components/indexOfComponents"
+import { useAuth } from "../contexts/authContext"
+import { addVideoToHistoryVidsOnServerFn } from "../apiCalls"
 
 
 export const VideoPlayer=()=>{
@@ -12,17 +14,20 @@ export const VideoPlayer=()=>{
     const navigate=useNavigate()
     const {videoStatisticsDispatch}=useVideoStatistics()
     const {videosState,videosDispatch}=useVideo()
+    const {authState:{userId}}=useAuth()
 // extracting video from url
     const{id}=useParams()
-    const item=videosState?.videosData.find(item=>item.id===id)
+    const item=videosState?.videosData.find(item=>item._id===id)
+    console.log("extracted id from vid page line 18",id)
 // toggling the display value of playList Modal
     const [display,setDisplay]=useState(false)
     const similarVideos=videosState.videosData.filter(vid=>vid.platform===item?.platform)
 // custom functions
-    const videoHandler=(item)=>{
-    navigate(`/video/${item.id}`)
+    const videoHandler=async(item)=>{
+    await addVideoToHistoryVidsOnServerFn(item,userId)
     videosDispatch({type:"ADD-TO-HISTORY",payLoad:{video:item}});
-    videoStatisticsDispatch({type:"INCREMENT-VIEW",payLoad:{id:item.id}})
+    videoStatisticsDispatch({type:"INCREMENT-VIEW",payLoad:{id:item._id}})
+    navigate(`/video/${item._id}`)
 }
 
    

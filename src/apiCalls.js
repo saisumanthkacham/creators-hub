@@ -202,6 +202,8 @@ import {toast} from "react-toastify"
 // }
 
 
+
+// add and remove video from saved videos 
 export const addVideoToSavedVidsOnServerFn=async(item,userId)=>{
       try{
          toast.info("saving video...",{position:"bottom-right",autoClose:2000})
@@ -225,7 +227,7 @@ export const addVideoToSavedVidsOnServerFn=async(item,userId)=>{
 }
 
 
-export const removeVideoFromSavedVidsOnServerFn=async(item,userId)=>{
+export const removeVideoFromSavedVidsOnServerFn= async(item,userId)=>{
    try{
       toast.info("removing video...",{position:"bottom-right",autoClose:2000})
       const {data,status}= await axios({
@@ -238,11 +240,45 @@ export const removeVideoFromSavedVidsOnServerFn=async(item,userId)=>{
          console.log("removed video",data)
          status
             ?toast.success("removed video :)",{position:"bottom-right",autoClose:3000})
-            :toast.error("error in removing video :(",{position:"bottom-right"})
+            :toast.error("error in removing video from saved videos :(",{position:"bottom-right"})
       return
    }
    catch(err){
-      console.log("error in removing video :(")
-      toast.error("error in removing video :(",{position:"bottom-right"})
+      console.log("error in removing video from saved videos :(")
+      toast.error("error in removing video from saved videos :(",{position:"bottom-right"})
+   }  
+}
+
+// add and remove from history
+export const addVideoToHistoryVidsOnServerFn=async(item,userId)=>{
+   try{
+      await axios({
+         method:"post",
+         url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/videosHistory`,
+         data:{
+            id:item._id,
+         }
+      })
+      return
+   }
+   catch(err){
+      console.log("error in adding video to history :(")
+   }  
+}
+
+
+export const removeVideoFromHistoryVidsOnServerFn= async(item,userId)=>{
+   try{
+      await axios({
+         method:"delete",
+         url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/videosHistory`,
+         data:{
+            id:item._id,
+         }
+      })
+   return
+   }
+   catch(err){
+   console.log("error in removing video from history :(")
    }  
 }

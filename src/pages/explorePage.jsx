@@ -4,6 +4,7 @@ import { useNavigate} from "react-router"
 import { useVideoStatistics } from "../contexts/videosStatisticsContext.jsx"
 import { SaveButton,VideoCardHome } from "../components/indexOfComponents"
 import { useAuth } from "../contexts/authContext.jsx"
+import { addVideoToHistoryVidsOnServerFn } from "../apiCalls.js"
 import home from "../images/home.jpg"
 
 
@@ -13,14 +14,15 @@ export const Explore=()=>{
 // hooks
 const {videosState,videosDispatch}=useVideo()
 const {videoStatisticsDispatch}=useVideoStatistics()
-const {login}=useAuth()
+const {login,authState:{userId}}=useAuth()
 const navigate=useNavigate()
 
 // custom functions
-const videoHandler=(item)=>{
+const videoHandler=async(item)=>{
+    await addVideoToHistoryVidsOnServerFn(item,userId)
     videosDispatch({type:"ADD-TO-HISTORY",payLoad:{video:item}});
-    videoStatisticsDispatch({type:"INCREMENT-VIEW",payLoad:{id:item.id}})
-    navigate(`/video/${item.id}`)
+    videoStatisticsDispatch({type:"INCREMENT-VIEW",payLoad:{id:item._id}})
+    navigate(`/video/${item._id}`)
 }
 const channelFilterHandler=(item)=>{
     navigate(`/channel/${item.creator}`)
@@ -60,7 +62,7 @@ return (<section className="body">
                                 <h1 className="primary-font">{category}</h1><hr/>
                                 <div className="productsListingExplore" >
                                     {videosState?.videosData?.filter(item=>item.platform===category).map((item)=>
-                                        <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton} key={item.id} />
+                                        <VideoCardHome item={item} function1={videoHandler} function2={channelFilterHandler} Button={SaveButton} key={item._id} />
                                          )} 
                                 </div>
                             </div>)

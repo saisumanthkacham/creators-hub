@@ -4,21 +4,25 @@ import { useVideo } from "../contexts/videosContext.jsx"
 import { useNavigate,useParams } from "react-router"
 import { useVideoStatistics } from "../contexts/videosStatisticsContext.jsx"
 import { SaveButton,VideoCardHome } from "../components/indexOfComponents"
+import { addVideoToHistoryVidsOnServerFn } from "../apiCalls.js"
+import { useAuth } from "../contexts/authContext.jsx"
 
 export const Channel=()=>{
 
 const {videosState,videosDispatch}=useVideo()
 const {videoStatisticsDispatch}=useVideoStatistics()
+const {authState:{userId}}=useAuth()
 const navigate=useNavigate()
 
 const {name}=useParams()
 const filteredData= videosState.videosData.filter(item=>item.creator===name)
 
  // custom functions
- const videoHandler=(item)=>{
+ const videoHandler=async(item)=>{
+    await addVideoToHistoryVidsOnServerFn(item,userId)
     videosDispatch({type:"ADD-TO-HISTORY",payLoad:{video:item}});
-    videoStatisticsDispatch({type:"INCREMENT-VIEW",payLoad:{id:item.id}})
-    navigate(`/video/${item.id}`)
+    videoStatisticsDispatch({type:"INCREMENT-VIEW",payLoad:{id:item._id}})
+    navigate(`/video/${item._id}`)
 }
 
 
