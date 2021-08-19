@@ -8,6 +8,7 @@ export const LoginButton=({name,pass})=>{
     // hooks
     const {setLogin,authDispatch}=useAuth()
     const navigate=useNavigate()
+    
 
     // custom function
     const loginHandler=async(name,pass)=>{

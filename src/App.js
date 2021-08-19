@@ -1,25 +1,31 @@
 
 import './index.css'
 import "./ecom.css"
-import {useState} from "react"
+import {useEffect, useState} from "react"
 import { Routes, Route } from 'react-router-dom';
 import {Home,History,PlayLists,PlayList,Saved,VideoPlayer,
         LikedVideos,Channel,LoginPage,SignUpPage,User,
         PageNotFound,Explore,About} from "./pages/indexOfPages.jsx"
 import {NavLink,useNavigate} from "react-router-dom"
 import { useAuth } from './contexts/authContext';
+import { useVideo } from './contexts/videosContext';
 import {SideBar,PrivateRoute} from "./components/indexOfComponents"
 import {ToastContainer} from "react-toastify"
+import {getIntialUserDataFromServerFn} from "./apiCalls"
 
 
 
 function App() {
 
   const navigate=useNavigate()
-  const {login} = useAuth()
+  const {login,authState} = useAuth()
   const [sideBarDisplay,setSideBarDisplay]=useState(false)
+  const {videosDispatch}= useVideo()
+  const id= authState.userId
 
-
+  useEffect(()=>{
+    login&& getIntialUserDataFromServerFn(id,videosDispatch)
+  },[])
 
 return (<div className="App">
     {sideBarDisplay&& <SideBar setSideBarDisplay={setSideBarDisplay}/>}

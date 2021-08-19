@@ -2,6 +2,7 @@ import axios from "axios"
 import {toast} from "react-toastify"
 
 
+
  export const  getVideosDataFromServerFn= async(videosDispatch)=>{
 
     try{
@@ -69,19 +70,20 @@ import {toast} from "react-toastify"
             return {status,id}
       }
       catch(err){
-         console.log("error in logging in the user",{error:err})
+         console.log("error in logging the user",{error:err})
       }
  }
 
  export const getIntialUserDataFromServerFn=async(userId,videosDispatch)=>{
 
     try{
-      const intialUserData= axios({
+      const {data}= await axios({
          method:"get",
          url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/intialUserData`
       })
-      console.log("intial user data",intialUserData)
-      videosDispatch({type:"FETCH-INTIAL-USER-DATA",payLoad:intialUserData})
+      console.log("intial user data",data)
+      const {vidsSaved,vidsLiked,vidsHistory,vidsDisLiked}= data
+      videosDispatch({type:"FETCH-INTIAL-USER-DATA",payLoad:{vidsSaved,vidsLiked,vidsHistory,vidsDisLiked}})
     }
     catch(err){
       console.log("error in fetching intial user data from server",{error:err.message})

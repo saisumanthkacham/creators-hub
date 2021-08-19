@@ -27,7 +27,6 @@ return (<>
        
         {videosState.videosSaved?.map(item=>
         <VideoCardSaved item={item} function1={videoHandler} Button={removeButton}/> )}
-    
        </div>
     </>)
 }

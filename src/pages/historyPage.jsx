@@ -27,7 +27,6 @@ return (<>
         
         {videosState.videosHistory?.map(item=>
         <VideoCardHistory item={item} function1={videoHandler} Button={removeButton} />)}
-        
     </div>
     
     </>)
