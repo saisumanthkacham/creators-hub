@@ -41,7 +41,7 @@ export const LoginPage=()=>{
                 <input placeholder="Password" className="login-input-box" type="password" onChange={(e)=>setPassword(e.target.value)}/><br/>
 
                 <LoginButton name={userName} pass={password}   />
-                <TestCredentialsButton name={"sibba"} pass={"sibbuu"} />
+                <TestCredentialsButton name={"namasthe kaka"} pass={"kaka123"} />
                 <div className="center">
                     <small>Dont have an account?</small> &nbsp;&nbsp;&nbsp;
                     <small ><NavLink to="/signup"  activeClassName="active-btn" className=" primary-font" >Signup</NavLink></small>

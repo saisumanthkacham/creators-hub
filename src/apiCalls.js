@@ -41,17 +41,18 @@ import {toast} from "react-toastify"
       })
       console.log("user signup response ",data)
       status===201
-                  ? toast.success("you are signed in ",{position:"bottom-right"})
+                  ? toast.success(`${name} you are signed in :) `,{position:"bottom-right"})
                   : toast.error("error in signing the user ",{position:"bottom-right"})
-      return data._id
+      return {data,status}
     }
     catch(err){
       console.log("error in signing up the user",{error:err})
+      toast.error("error in signing the user ",{position:"bottom-right"})
     }
  }
 
 
-
+// logging in the user
  export const logInUserInServerFn=async(name,pass)=>{
       try{
          toast.info("Logging in... ",{position:"bottom-right"})
@@ -65,28 +66,33 @@ import {toast} from "react-toastify"
          })
             const id=data._id
             status===200
-                        ?toast.success(`Hey ${name},you logged in succesfully :)`,{position:"bottom-right"})
+                        ?toast.success(`${name},you logged in succesfully :)`,{position:"bottom-right"})
                         :toast.error(`invalid username or password, please try again!!`,{position:"bottom-right"})
             return {status,id}
       }
       catch(err){
          console.log("error in logging the user",{error:err})
+         toast.error(`error in logging the user!!`,{position:"bottom-right"})
       }
  }
+
+
 
  export const getIntialUserDataFromServerFn=async(userId,videosDispatch)=>{
 
     try{
-      const {data}= await axios({
+      const {data,status}= await axios({
          method:"get",
          url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/intialUserData`
       })
-      console.log("intial user data",data)
-      const {vidsSaved,vidsLiked,vidsHistory,vidsDisLiked}= data
-      videosDispatch({type:"FETCH-INTIAL-USER-DATA",payLoad:{vidsSaved,vidsLiked,vidsHistory,vidsDisLiked}})
+      console.log("intial user data",data,status)
+      const {vidsSaved,vidsLiked,vidsHistory,vidsDisLiked,playLists}= data
+      videosDispatch({type:"FETCH-INTIAL-USER-DATA",payLoad:{vidsSaved,vidsLiked,vidsHistory,vidsDisLiked,playLists}})
+      return 
     }
     catch(err){
       console.log("error in fetching intial user data from server",{error:err.message})
+      toast.error("error in fetching intial user data from server",{position:"bottom-right"})
     }
       
  }
@@ -94,19 +100,21 @@ import {toast} from "react-toastify"
 
 //  export const fetchLikedVideosDataFromServerFn=async(userId,videosDispatch)=>{
 //       try{
-//          const {videosLiked,status}= axios({
+//          const {vidsLiked,status}= axios({
 //             method:"get",
 //             url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/videosLiked`
 //          })
 //          status===200
-//                      ?videosDispatch({type:"FETCH-LIKED-VIDEOS",payLoad:{data:videosLiked}})
+//                      ?videosDispatch({type:"FETCH-LIKED-VIDEOS",payLoad:{vidsLiked}})
 //                      :toast.error("error in fetching liked videos data",{position:"bottom-right"})
+//          return {status}
 //       }
 //       catch(err){
 //             console.log("error in fetching liked videos data from server",{error:err.message})
+//             toast.error("error in fetching liked videos data",{position:"bottom-right"})
 //       }
 
-// }
+//    }
 
 
 // export const fetchDisLikedVideosDataFromServerFn=async(userId,videosDispatch)=>{
@@ -193,3 +201,28 @@ import {toast} from "react-toastify"
 
 // }
 
+
+export const addVideoToSavedVidsOnServerFn=async(item,userId)=>{
+      try{
+         toast.info("saving video...",{position:"bottom-right"})
+         const {data,status}= await axios({
+            method:"post",
+            url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/videosSaved`,
+            data:{
+               id:item._id,
+            }
+         })
+            console.log("saved video",data)
+            status
+               ?toast.success("saved video :)",{position:"bottom-right"})
+               :toast.error("error in saving video :(",{position:"bottom-right"})
+         return
+      }
+      catch(err){
+         console.log("error in saving video :(")
+         toast.error("error in saving video :(",{position:"bottom-right"})
+      }
+      
+   
+
+}

@@ -52,8 +52,13 @@ export const videoReducerFn=(prevState,{type,payLoad})=>{
             console.log("line 50 vreducer state",prevState)
             return {...prevState,videosSaved:[...payLoad.vidsSaved],
                     videosLiked:[...payLoad.vidsLiked],videosDisLiked:[...payLoad.vidsDisLiked],
-                    videosHistory:[...payLoad.vidsHistory],}
-        
+                    videosHistory:[...payLoad.vidsHistory],videosPlayList:[...payLoad.playLists]}
+
+        case "SET-NEW-USER-ENVIRONMENT":
+            return {...prevState,videosSaved:[],videosLiked:[],videosDisLiked:[],videosHistory:[],videosPlayList:[]}
+
+        case "FETCH-LIKED-VIDEOS":
+            return {...prevState,videosLiked:[payLoad.vidsLiked]}
             
         default: return {...prevState}
 

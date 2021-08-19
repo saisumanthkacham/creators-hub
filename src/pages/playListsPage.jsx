@@ -21,7 +21,7 @@ export const PlayLists=()=>{
     <h1>playListPage</h1>
     
     <div className="productsListing ">
-        {videosState.videosPlayList?.filter(item=>item.videos.length>0).map((item,idx)=>
+        {videosState.videosPlayList?.filter(item=>item?.videos?.length>0).map((item,idx)=>
         <PlayListCard item={item} Button={removePlayListButton} function1={openPlayListFn} idx={idx}/>)}
 
     </div>
