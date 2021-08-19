@@ -204,7 +204,7 @@ import {toast} from "react-toastify"
 
 export const addVideoToSavedVidsOnServerFn=async(item,userId)=>{
       try{
-         toast.info("saving video...",{position:"bottom-right"})
+         toast.info("saving video...",{position:"bottom-right",autoClose:2000})
          const {data,status}= await axios({
             method:"post",
             url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/videosSaved`,
@@ -214,15 +214,35 @@ export const addVideoToSavedVidsOnServerFn=async(item,userId)=>{
          })
             console.log("saved video",data)
             status
-               ?toast.success("saved video :)",{position:"bottom-right"})
+               ?toast.success("saved video :)",{position:"bottom-right",autoClose:3000})
                :toast.error("error in saving video :(",{position:"bottom-right"})
          return
       }
       catch(err){
          console.log("error in saving video :(")
          toast.error("error in saving video :(",{position:"bottom-right"})
-      }
-      
-   
+      }  
+}
 
+
+export const removeVideoFromSavedVidsOnServerFn=async(item,userId)=>{
+   try{
+      toast.info("removing video...",{position:"bottom-right",autoClose:2000})
+      const {data,status}= await axios({
+         method:"delete",
+         url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/videosSaved`,
+         data:{
+            id:item._id,
+         }
+      })
+         console.log("removed video",data)
+         status
+            ?toast.success("removed video :)",{position:"bottom-right",autoClose:3000})
+            :toast.error("error in removing video :(",{position:"bottom-right"})
+      return
+   }
+   catch(err){
+      console.log("error in removing video :(")
+      toast.error("error in removing video :(",{position:"bottom-right"})
+   }  
 }

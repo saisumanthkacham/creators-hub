@@ -2,8 +2,8 @@ import { isVideoSaved } from "../../utils/isVideoSaved"
 import { useVideo } from "../../contexts/videosContext"
 import {useAuth} from "../../contexts/authContext"
 import { useNavigate } from "react-router"
-import { addVideoToSavedVidsOnServerFn } from "../../apiCalls"
-import { toast } from "react-toastify"
+import { addVideoToSavedVidsOnServerFn,removeVideoFromSavedVidsOnServerFn } from "../../apiCalls"
+
 
 export const SaveButton=({item})=>{
     
@@ -14,16 +14,15 @@ export const SaveButton=({item})=>{
 
 
     // custom functions
-    const activeSaveButtonHandler=()=>{
+    const activeSaveButtonHandler=async()=>{
+        await removeVideoFromSavedVidsOnServerFn(item,userId)
         videosDispatch({type:"REMOVE-FROM-SAVED-VIDEOS",payLoad:{video:item}})
     }
     const nonActiveSaveButtonHandler=()=>{
        login
             ? (async()=>{
-                    toast("saving video...",{position:"bottom-right"})
                     await addVideoToSavedVidsOnServerFn(item,userId)
                     videosDispatch({type:"ADD-TO-SAVED-VIDEOS",payLoad:{video:item}})
-                    toast("saved video :)",{position:"bottom-right"})
                    })()         
             : navigate("/login")
     }
