@@ -14,6 +14,7 @@ export const SignUpButton=({name,pass,email})=>{
     const signUpHandler=async(name,pass,email)=>{
         
         const response= await signUpUserInServerFn(name,pass,email)
+        console.log("response from sign in",response)
         const id=response?.data?._id
         if(response?.status===201){
             videosDispatch({type:"SET-NEW-USER-ENVIRONMENT-AFTER-SIGNUP"})   

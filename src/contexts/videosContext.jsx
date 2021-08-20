@@ -4,6 +4,7 @@ import { getVideosDataFromServerFn } from "../apiCalls.js";
 
 const VideoContext = createContext();
 
+
 export const VideoProvider = ({ children }) => {
   let intialState = {
     videosSaved: [],
