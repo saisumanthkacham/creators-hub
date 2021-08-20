@@ -10,8 +10,6 @@ import {toast} from "react-toastify"
             method:"get",
             url:`https://creators-hub-backend.sumanth5234.repl.co/videos`
         })
-
-        console.log("data from server line 14",data.videosData)
         status===200
                      ? videosDispatch({type:"FETCH-VIDEOS-DATA-FROM-SERVER",payLoad:{data:data.videosData}})
                      :toast.error("error in fetching data from server",{position:"bottom-right"})
@@ -38,7 +36,6 @@ import {toast} from "react-toastify"
            email:email
          }
       })
-      console.log("user signup response ",data)
       status===201
                   ? toast.success(`${name} you are signed in :) `,{position:"bottom-right"})
                   : toast.error("error in signing the user ",{position:"bottom-right"})
@@ -80,11 +77,10 @@ import {toast} from "react-toastify"
  export const getIntialUserDataFromServerFn=async(userId,videosDispatch)=>{
 
     try{
-      const {data,status}= await axios({
+      const {data}= await axios({
          method:"get",
          url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/intialUserData`
       })
-      console.log("intial user data",data,status)
       const {vidsSaved,vidsLiked,vidsHistory,vidsDisLiked,playLists}= data
       videosDispatch({type:"FETCH-INTIAL-USER-DATA-FROM-SERVER",payLoad:{vidsSaved,vidsLiked,vidsHistory,vidsDisLiked,playLists}})
       return 
@@ -108,7 +104,6 @@ export const addVideoToSavedVidsOnServerFn=async(item,userId)=>{
                id:item._id,
             }
          })
-            console.log("saved video",data)
             status===201
                ?toast.success("saved video :)",{position:"bottom-right",autoClose:3000})
                :toast.error("error in saving video :(",{position:"bottom-right"})
@@ -131,7 +126,6 @@ export const removeVideoFromSavedVidsOnServerFn= async(item,userId)=>{
             id:item._id,
          }
       })
-         console.log("removed video",data)
          status===201
             ?toast.success("removed video :)",{position:"bottom-right",autoClose:3000})
             :toast.error("error in removing video from saved videos :(",{position:"bottom-right"})

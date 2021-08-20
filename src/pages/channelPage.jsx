@@ -29,7 +29,6 @@ const filteredData= videosState.videosData.filter(item=>item.creator===name)
 return (<section className="body">
     <br/><h1>home page</h1>
     
-    {console.log({filteredData})}
     <div className="productsListing main">
         {filteredData?.map(item=> 
         <VideoCardHome item={item} function1={videoHandler} Button={SaveButton} />)}  

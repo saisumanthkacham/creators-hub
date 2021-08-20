@@ -49,7 +49,6 @@ export const videoReducerFn=(prevState,{type,payLoad})=>{
 
             
         case "FETCH-INTIAL-USER-DATA-FROM-SERVER":
-            console.log("line 50 vreducer state",prevState)
             return {...prevState,videosSaved:[...payLoad.vidsSaved],
                     videosLiked:[...payLoad.vidsLiked],videosDisLiked:[...payLoad.vidsDisLiked],
                     videosHistory:[...payLoad.vidsHistory],videosPlayList:[...payLoad.playLists]}
