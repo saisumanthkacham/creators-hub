@@ -26,6 +26,7 @@ return <div className="playList-modal" style={{visibility:display?"visible":"hid
                 <div key={idx}>
                     <input type="checkBox"
                     onChange={()=>{
+                        console.log(isVideoExistInPlayList(videosState,item.name,video))
                         !isVideoExistInPlayList(videosState,item.name,video)
                                                 && (async()=>{
                                                     videosDispatch({type:"ADD-TO-PLAYLIST",payLoad:{video:video,name:item.name}})

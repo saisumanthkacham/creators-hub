@@ -296,6 +296,7 @@ export const createNewPlayListOnServerFn=async(item,name,userId)=>{
 export const removePlayListOnServerFn=async(name,userId)=>{
 
       try{
+            toast.info("removing playlist...",{position:"bottom-right",autoClose:2000})
             const{status}=await axios({
                method:"delete",
                url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/playLists`,
@@ -343,6 +344,7 @@ export const addingVideoToPlayListOnServerFn=async(name,id,userId)=>{
 
 export const removeVideoFromPlayListOnServerFn=async(name,id,userId)=>{
       try{
+            toast.info("removing video...",{position:"bottom-right",autoClose:2000})
             const{status}=await axios({
                method:"delete",
                url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/playLists/${name}`,

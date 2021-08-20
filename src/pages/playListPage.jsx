@@ -19,10 +19,10 @@ export const PlayList=()=>{
 
     // custom functions
     const videoHandler=async(item)=>{
+        navigate(`/video/${item._id}`)
         await addVideoToHistoryVidsOnServerFn(item,userId)
         videosDispatch({type:"ADD-TO-HISTORY",payLoad:{video:item}});
-        videoStatisticsDispatch({type:"INCREMENT-VIEW",payLoad:{id:item._id}})
-        navigate(`/video/${item._id}`)
+        videoStatisticsDispatch({type:"INCREMENT-VIEW",payLoad:{id:item._id}}) 
     }
     const removePlayListButton=(item)=>{
         videosDispatch({type:"REMOVE-FROM-PLAYLIST",payLoad:{video:item,name:name}})

@@ -17,8 +17,8 @@ export const Saved=()=>{
     
     // custom functions
     const videoHandler=async(item)=>{
-        await addVideoToHistoryVidsOnServerFn(item,userId)
         navigate(`/video/${item._id}`)
+        await addVideoToHistoryVidsOnServerFn(item,userId)
         videosDispatch({type:"ADD-TO-HISTORY",payLoad:{video:item}});
         videoStatisticsDispatch({type:"INCREMENT-VIEW",payLoad:{id:item._id}})
     }
