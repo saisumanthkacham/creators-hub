@@ -47,15 +47,17 @@ export const videoReducerFn=(prevState,{type,payLoad})=>{
         case "FETCH-VIDEOS-DATA-FROM-SERVER":
             return {...prevState,videosData:[...payLoad.data]}
 
-
+            
         case "FETCH-INTIAL-USER-DATA-FROM-SERVER":
             console.log("line 50 vreducer state",prevState)
             return {...prevState,videosSaved:[...payLoad.vidsSaved],
                     videosLiked:[...payLoad.vidsLiked],videosDisLiked:[...payLoad.vidsDisLiked],
                     videosHistory:[...payLoad.vidsHistory],videosPlayList:[...payLoad.playLists]}
 
+
         case "SET-NEW-USER-ENVIRONMENT-AFTER-SIGNUP":
             return {...prevState,videosSaved:[],videosLiked:[],videosDisLiked:[],videosHistory:[],videosPlayList:[]}
+
 
         case "FETCH-LIKED-VIDEOS-FROM-SERVER":
             return {...prevState,videosLiked:[payLoad.vidsLiked]}

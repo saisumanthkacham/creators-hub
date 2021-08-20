@@ -2,7 +2,6 @@ import axios from "axios"
 import {toast} from "react-toastify"
 
 
-
  export const  getVideosDataFromServerFn= async(videosDispatch)=>{
 
     try{
@@ -98,111 +97,6 @@ import {toast} from "react-toastify"
  }
 
 
-//  export const fetchLikedVideosDataFromServerFn=async(userId,videosDispatch)=>{
-//       try{
-//          const {vidsLiked,status}= axios({
-//             method:"get",
-//             url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/videosLiked`
-//          })
-//          status===200
-//                      ?videosDispatch({type:"FETCH-LIKED-VIDEOS-FROM-SERVER",payLoad:{vidsLiked}})
-//                      :toast.error("error in fetching liked videos data",{position:"bottom-right"})
-//          return {status}
-//       }
-//       catch(err){
-//             console.log("error in fetching liked videos data from server",{error:err.message})
-//             toast.error("error in fetching liked videos data",{position:"bottom-right"})
-//       }
-
-//    }
-
-
-// export const fetchDisLikedVideosDataFromServerFn=async(userId,videosDispatch)=>{
-//    try{
-//       const {videosDisLiked,status}= axios({
-//          method:"get",
-//          url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/videosDisLiked`
-//       })
-//       status===200
-//                   ?videosDispatch({type:"FETCH-DISLIKED-VIDEOS-FROM-SERVER",payLoad:{data:videosDisLiked}})
-//                   :toast.error("error in fetching disliked videos data",{position:"bottom-right"})
-//    }
-//    catch(err){
-//          console.log("error in fetching disliked videos data from server",{error:err.message})
-//    }
-
-// }
-
-
-// export const fetchHistoryVideosDataFromServerFn=async(userId,videosDispatch)=>{
-//    try{
-//       const {videosHistory,status}= axios({
-//          method:"get",
-//          url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/videosHistory`
-//       })
-//       status===200
-//                   ?videosDispatch({type:"FETCH-HISTORY-VIDEOS-FROM-SERVER",payLoad:{data:videosHistory}})
-//                   :toast.error("error in fetching history videos data",{position:"bottom-right"})
-//    }
-//    catch(err){
-//          console.log("error in fetching history videos data from server",{error:err.message})
-//    }
-
-// }
-
-
-// export const fetchPlayListNamesFromServerFn=async(userId,videosDispatch)=>{
-//    try{
-//       const {playListsNames,status}= axios({
-//          method:"get",
-//          url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/playLists`
-//       })
-//       status===200
-//                   ?videosDispatch({type:"FETCH-PLAYLISTS-NAMES-FROM-SERVER",payLoad:{names:playListsNames}})
-//                   :toast.error("error in fetching playLists names",{position:"bottom-right"})
-//    }
-//    catch(err){
-//          console.log("error in fetching playLists names",{error:err.message})
-//    }
-
-// }
-
-
-// export const fetchPlayListVideosFromServerFn=async(userId,playListName,videosDispatch)=>{
-//    try{
-//       const {videos,status}= axios({
-//          method:"get",
-//          url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/playLists/${playListName}`
-//       })
-//       status===200
-//                   ?videosDispatch({type:"FETCH-PLAYLIST-VIDEOS-FROM-SERVER",payLoad:{playListVideos:videos}})
-//                   :toast.error("error in fetching playList videos",{position:"bottom-right"})
-//    }
-//    catch(err){
-//          console.log("error in fetching playList videos from server",{error:err.message})
-//    }
-
-// }
-
-
-// export const fetchSavedVideosDataFromServerFn=async(userId,videosDispatch)=>{
-//    try{
-//       const {videosSaved,status}= axios({
-//          method:"get",
-//          url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/videosSaved`
-//       })
-//       status===200
-//                   ?videosDispatch({type:"FETCH-SAVED-VIDEOS-FROM-SERVER",payLoad:{videos:videosSaved}})
-//                   :toast.error("error in fetching saved videos",{position:"bottom-right"})
-//    }
-//    catch(err){
-//          console.log("error in fetching saved videos from server",{error:err.message})
-//    }
-
-// }
-
-
-
 // add and remove video from saved videos 
 export const addVideoToSavedVidsOnServerFn=async(item,userId)=>{
       try{
@@ -215,7 +109,7 @@ export const addVideoToSavedVidsOnServerFn=async(item,userId)=>{
             }
          })
             console.log("saved video",data)
-            status
+            status===201
                ?toast.success("saved video :)",{position:"bottom-right",autoClose:3000})
                :toast.error("error in saving video :(",{position:"bottom-right"})
          return
@@ -238,7 +132,7 @@ export const removeVideoFromSavedVidsOnServerFn= async(item,userId)=>{
          }
       })
          console.log("removed video",data)
-         status
+         status===201
             ?toast.success("removed video :)",{position:"bottom-right",autoClose:3000})
             :toast.error("error in removing video from saved videos :(",{position:"bottom-right"})
       return
@@ -282,3 +176,190 @@ export const removeVideoFromHistoryVidsOnServerFn= async(item,userId)=>{
    console.log("error in removing video from history :(")
    }  
 }
+
+
+// add and remove video to liked videos
+
+export const addVideoToLikedVidsOnServerFn=async(item,userId)=>{
+   try{
+      toast.info("like processing...",{position:"bottom-right",autoClose:2000})
+      const {status}= await axios({
+         method:"post",
+         url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/videosLiked`,
+         data:{
+            id:item._id,
+         }
+      })
+         status===201
+            ?toast.success("video liked :)",{position:"bottom-right",autoClose:3000})
+            :toast.error("error in adding like to video :(",{position:"bottom-right"})
+      return
+   }
+   catch(err){
+      console.log("error in adding like to video :(")
+      toast.error("error in adding like to video :(",{position:"bottom-right"})
+   }  
+}
+
+
+export const removeVideoFromLikedVidsOnServerFn= async(item,userId)=>{
+      try{
+            const {status}= await axios({
+            method:"delete",
+            url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/videosLiked`,
+            data:{
+               id:item._id,
+            }
+         })
+            status===201
+                  ?toast.success("removed like :)",{position:"bottom-right",autoClose:3000})
+                  :toast.error("error in removing like :(",{position:"bottom-right"})
+         return
+         }
+
+         catch(err){
+               console.log("error in removing like :(")
+               toast.error("error in removing like :(",{position:"bottom-right"})
+            }  
+}
+
+
+// add and remove video to disliked videos
+
+export const addVideoToDisLikedVidsOnServerFn=async(item,userId)=>{
+   try{
+      toast.info("adding dislike...",{position:"bottom-right",autoClose:2000})
+      const {status}= await axios({
+         method:"post",
+         url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/videosDisLiked`,
+         data:{
+            id:item._id,
+         }
+      })
+         status===201
+            ?toast.success("video disliked :)",{position:"bottom-right",autoClose:3000})
+            :toast.error("error in adding video to videosDisLiked :(",{position:"bottom-right"})
+      return
+   }
+   catch(err){
+      console.log("error in adding video to videosDisLiked :(")
+      toast.error("error in adding video to videosDisLiked :(",{position:"bottom-right"})
+   }  
+}
+
+
+export const removeVideoFromDisLikedVidsOnServerFn= async(item,userId)=>{
+      try{
+            const {status}= await axios({
+            method:"delete",
+            url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/videosDisLiked`,
+            data:{
+               id:item._id,
+            }
+         })
+            status===500
+                  &&toast.error("error in removing video from disLikedVideos :(",{position:"bottom-right"})
+         return
+         }
+
+         catch(err){
+               console.log("error in removing video from disLikedVideos :(")
+               toast.error("error in removing video from disLikedVideos :(",{position:"bottom-right"})
+            }  
+}
+
+
+// creating new playlist on server
+export const createNewPlayListOnServerFn=async(item,name,userId)=>{
+
+      try{
+           const {status}= await axios({
+               method:"post",
+               url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/playLists`,
+               data:{
+                  playListName:name,
+                  id:item._id
+               }
+            })
+            status===201
+                        ?toast.success(`${name} playList created :)`,{position:"bottom-right",autoClose:3000})
+                        :toast.error("error in creating new playList",{position:"bottom-right"})
+            return
+      }
+      catch(err){
+         console.log("error in creating new playList :(")
+         toast.error("error in creating new playList :(",{position:"bottom-right"})
+   }
+
+}
+
+export const removePlayListOnServerFn=async(name,userId)=>{
+
+      try{
+            const{status}=await axios({
+               method:"delete",
+               url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/playLists`,
+               data:{
+                  playListName:name
+               }
+            })
+            status===201
+                        ?toast.success(`video removed from playList-${name} :)`,{position:"bottom-right",autoClose:3000})
+                        :toast.error("error in removing video from playList",{position:"bottom-right"})
+            return
+      }
+      catch(err){
+         console.log("error in removing video from playList :(")
+         toast.error("rror in removing video from playList :(",{position:"bottom-right"})
+      }
+
+}
+
+
+
+// adding video to playlist on server
+export const addingVideoToPlayListOnServerFn=async(name,id,userId)=>{
+
+      try{
+            const{status}=await axios({
+               method:"post",
+               url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/playLists/${name}`,
+               data:{
+                  id:id
+               }
+            })
+            status===201
+                        ?toast.success(`video added to playList-${name} :)`,{position:"bottom-right",autoClose:3000})
+                        :toast.error("error in adding video to playList",{position:"bottom-right"})
+            return
+      }
+      catch(err){
+         console.log("error in adding video to playList")
+         toast.error("error in adding video to playList",{position:"bottom-right"})
+      }
+
+}
+
+
+export const removeVideoFromPlayListOnServerFn=async(name,id,userId)=>{
+      try{
+            const{status}=await axios({
+               method:"delete",
+               url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/playLists/${name}`,
+               data:{
+                  id:id
+               }
+            })
+            status===201
+                        ?toast.success(`video removed from playList-${name} :)`,{position:"bottom-right",autoClose:3000})
+                        :toast.error("error in removing video from playList",{position:"bottom-right"})
+            return
+      }
+      catch(err){
+         console.log("error in removing video from playList :(")
+         toast.error("rror in removing video from playList :(",{position:"bottom-right"})
+      }
+
+}
+
+

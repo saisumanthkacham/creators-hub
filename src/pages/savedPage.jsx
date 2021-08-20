@@ -3,7 +3,7 @@ import { useNavigate } from "react-router"
 import { useVideoStatistics } from "../contexts/videosStatisticsContext.jsx"
 import { VideoCardSaved } from "../components/indexOfComponents"
 import { useAuth } from "../contexts/authContext"
-import { addVideoToHistoryVidsOnServerFn } from "../apiCalls"
+import { addVideoToHistoryVidsOnServerFn, removeVideoFromSavedVidsOnServerFn } from "../apiCalls"
 
 
 export const Saved=()=>{
@@ -24,6 +24,7 @@ export const Saved=()=>{
     }
     const removeButton=(item)=>{
         videosDispatch({type:"REMOVE-FROM-SAVED-VIDEOS",payLoad:{video:item}})
+        removeVideoFromSavedVidsOnServerFn(item,userId)
     }
     
 

@@ -2,7 +2,7 @@ import {useVideo} from "../contexts/videosContext"
 import { useNavigate } from "react-router"
 import { useVideoStatistics } from "../contexts/videosStatisticsContext.jsx"
 import { VideoCardSaved } from "../components/indexOfComponents"
-import { addVideoToHistoryVidsOnServerFn } from "../apiCalls"
+import { addVideoToHistoryVidsOnServerFn, removeVideoFromLikedVidsOnServerFn } from "../apiCalls"
 import { useAuth } from "../contexts/authContext"
 // import { fetchLikedVideosDataFromServerFn } from "../apiCalls"
 // import { useEffect } from "react"
@@ -25,6 +25,7 @@ export const LikedVideos=()=>{
     }
     const removeButton=(item)=>{
         videosDispatch({type:"REMOVE-FROM-LIKED-VIDEOS",payLoad:{video:item}})
+        removeVideoFromLikedVidsOnServerFn(item,userId)
     }
 
     // useEffect(()=>{

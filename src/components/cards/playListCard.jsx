@@ -5,7 +5,7 @@ export const PlayListCard=({item,function1,Button,idx})=>{
 
     <img className="cd-img" src={item.videos[0]?.thumbnail} alt="" />
     <i style={{cursor:"pointer"}} onClick={()=>Button(item)} className="fas fa-trash cd-wrong"></i>
-    <div  className="wide-row"> <h4>{item.name}</h4> <i style={{marginLeft:10}} className="fas fa-pen"></i> </div>
+    <div  className="wide-row"> <h4>{item.name}</h4> </div>
     <div  className="playList-img-text ">
         <div style={{color:"white",textDecoration:"none"}} onClick={()=>function1(item) }>view playList ({item.videos.length?item.videos.length:0}) </div>        
     </div>

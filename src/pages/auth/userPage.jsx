@@ -10,7 +10,7 @@ export function User(){
         <br/>
         <i className="fas fa-user-circle fa-6x primary-font"></i>
         <div className="user-text">
-          &nbsp; hello {authState.userName?authState.userName:"admin"}
+          &nbsp; Hello {authState.userName?authState.userName:"user"}
           <LogoutButton/>
         </div>
        

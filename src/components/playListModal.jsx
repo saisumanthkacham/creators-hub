@@ -1,12 +1,17 @@
 import { useVideo } from "../contexts/videosContext"
 import { useState } from "react"
+import {useAuth} from "../contexts/authContext"
 import { isVideoExistInPlayList } from "../utils/isVideoExistInPlayList"
 import { isPlayListAlreadyExist } from "../utils/isPlayListAlreadyExist"
+import { addingVideoToPlayListOnServerFn, createNewPlayListOnServerFn } from "../apiCalls"
+
+
 
 export const PlayListModal=({display,setDisplay,video})=>{
 
     const {videosState,videosDispatch}=useVideo()
     const[input,setInput]=useState("")
+    const {authState:{userId}}=useAuth()
 
 
 return <div className="playList-modal" style={{visibility:display?"visible":"hidden"}} >
@@ -21,8 +26,13 @@ return <div className="playList-modal" style={{visibility:display?"visible":"hid
                 <div key={idx}>
                     <input type="checkBox"
                     onChange={()=>{
-                        !isVideoExistInPlayList(videosState,item.name,video)&& videosDispatch({type:"ADD-TO-PLAYLIST",payLoad:{video:video,name:item.name}})
-                            console.log(videosState.videosPlayList)
+                        !isVideoExistInPlayList(videosState,item.name,video)
+                                                && (async()=>{
+                                                    videosDispatch({type:"ADD-TO-PLAYLIST",payLoad:{video:video,name:item.name}})
+                                                    await addingVideoToPlayListOnServerFn(item.name,video._id,userId)
+                                                })()
+                                                
+                            
                             }} />
                     <label> {item.name}</label><br/>
                 </div>
@@ -32,8 +42,13 @@ return <div className="playList-modal" style={{visibility:display?"visible":"hid
                     <input onChange={(e)=>setInput(e.target.value)} className="input-box" type="text" placeholder="enter new playlist name"/>
                     <div className="btn btn-md" 
                         onClick={()=>{
-                        !isPlayListAlreadyExist(videosState,input)&&(input!=="") &&videosDispatch({type:"CREATE-NEW-PLAYLIST",payLoad:{playList:input,video:video}})
-                                }}>create&add
+                        !isPlayListAlreadyExist(videosState,input)&&(input!=="")
+                                                &&(async()=>{
+                                                await createNewPlayListOnServerFn(video,input,userId)
+                                                videosDispatch({type:"CREATE-NEW-PLAYLIST",payLoad:{playList:input,video:video}})
+                                                })()
+
+                         }}>create&add
                     </div>
                 </div><br/>
                 

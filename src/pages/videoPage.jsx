@@ -24,10 +24,10 @@ export const VideoPlayer=()=>{
     const similarVideos=videosState.videosData.filter(vid=>vid.platform===item?.platform)
 // custom functions
     const videoHandler=async(item)=>{
-    await addVideoToHistoryVidsOnServerFn(item,userId)
-    videosDispatch({type:"ADD-TO-HISTORY",payLoad:{video:item}});
-    videoStatisticsDispatch({type:"INCREMENT-VIEW",payLoad:{id:item._id}})
-    navigate(`/video/${item._id}`)
+        navigate(`/video/${item._id}`)
+        await addVideoToHistoryVidsOnServerFn(item,userId)
+        videosDispatch({type:"ADD-TO-HISTORY",payLoad:{video:item}});
+        videoStatisticsDispatch({type:"INCREMENT-VIEW",payLoad:{id:item._id}})
 }
 
    

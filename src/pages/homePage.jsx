@@ -23,11 +23,10 @@ const [filter,setFilter]=useState("videosData")
 
 // custom functions
 const videoHandler= async(item)=>{
+    navigate(`/video/${item._id}`)
     await addVideoToHistoryVidsOnServerFn(item,userId)
     videosDispatch({type:"ADD-TO-HISTORY",payLoad:{video:item}});
     videoStatisticsDispatch({type:"INCREMENT-VIEW",payLoad:{id:item._id}})
-    console.log("vid id from homepage",item._id)
-    navigate(`/video/${item._id}`)
 }
 const channelFilterHandler=(item)=>{
     navigate(`/channel/${item.creator}`)

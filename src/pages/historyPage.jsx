@@ -22,7 +22,6 @@ export const History=()=>{
     const removeButton=async(item)=>{
         removeVideoFromHistoryVidsOnServerFn(item,userId)
         videosDispatch({type:"REMOVE-FROM-HISTORY",payLoad:{video:item}})
-
     }
     
 

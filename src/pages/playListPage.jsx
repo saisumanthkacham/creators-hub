@@ -3,7 +3,7 @@ import { useNavigate,useParams } from "react-router"
 import { useVideoStatistics } from "../contexts/videosStatisticsContext.jsx"
 import { VideoCardPlayList } from "../components/indexOfComponents"
 import { useAuth } from "../contexts/authContext"
-import { addVideoToHistoryVidsOnServerFn } from "../apiCalls"
+import { addVideoToHistoryVidsOnServerFn, removeVideoFromPlayListOnServerFn } from "../apiCalls"
 
 export const PlayList=()=>{
 
@@ -26,6 +26,7 @@ export const PlayList=()=>{
     }
     const removePlayListButton=(item)=>{
         videosDispatch({type:"REMOVE-FROM-PLAYLIST",payLoad:{video:item,name:name}})
+        removeVideoFromPlayListOnServerFn(name,item._id,userId)
     }
 
 
