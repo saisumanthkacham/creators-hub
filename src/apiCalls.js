@@ -97,7 +97,7 @@ import {toast} from "react-toastify"
 export const addVideoToSavedVidsOnServerFn=async(item,userId)=>{
       try{
          toast.info("saving video...",{position:"bottom-right",autoClose:2000})
-         const {data,status}= await axios({
+         const {status}= await axios({
             method:"post",
             url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/videosSaved`,
             data:{
@@ -119,7 +119,7 @@ export const addVideoToSavedVidsOnServerFn=async(item,userId)=>{
 export const removeVideoFromSavedVidsOnServerFn= async(item,userId)=>{
    try{
       toast.info("removing video...",{position:"bottom-right",autoClose:2000})
-      const {data,status}= await axios({
+      const {status}= await axios({
          method:"delete",
          url:`https://creators-hub-backend.sumanth5234.repl.co/users/${userId}/videosSaved`,
          data:{
