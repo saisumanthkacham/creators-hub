@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { videoReducerFn } from "./reducerFunctions/videoReducerFn";
 import { getVideosDataFromServerFn } from "../apiCalls.js";
+import { useData } from "./dataContext";
 
 const VideoContext = createContext();
 
@@ -16,10 +17,14 @@ export const VideoProvider = ({ children }) => {
     videosData:[]
   };
   const [state, dispatch] = useReducer(videoReducerFn, intialState);
+  const {dataDispatch}=useData()
   videoReducerFn(state, dispatch);
 
   useEffect(()=>{
-    getVideosDataFromServerFn(dispatch)
+          (async()=>{
+            const data= await getVideosDataFromServerFn(dispatch)
+            dataDispatch({type:"DATA-STATE-UPLIFTING",payLoad:{data:data?.videosData}})
+          })()
     
   },[])
 

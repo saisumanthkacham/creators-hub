@@ -3,7 +3,7 @@ import {toast} from "react-toastify"
 
 
  export const  getVideosDataFromServerFn= async(videosDispatch)=>{
-
+         
     try{
         toast.info("Fetching data from server...",{position:"bottom-right"})
         const {data,status}=await axios({
@@ -13,6 +13,7 @@ import {toast} from "react-toastify"
         status===200
                      ? videosDispatch({type:"FETCH-VIDEOS-DATA-FROM-SERVER",payLoad:{data:data.videosData}})
                      :toast.error("error in fetching data from server",{position:"bottom-right"})
+         return data
     }
     catch(err){
         console.log("error in fetching videos data from server", {error:err.message})

@@ -1,18 +1,19 @@
 import { createContext, useContext,useReducer } from "react";
 import { statisticsReducerFn } from "./reducerFunctions/videoStatisticsReducerFn";
-import { useVideo } from "./videosContext";
+import { useData } from "./dataContext";
 
 
 const VideoStatisticsContext=createContext()
 
 export const VideoStatisticsProvider=({children})=>{
   
-    const {videosState}=useVideo()
+    const {dataState}=useData()
+    console.log("liked init data",dataState.videosData.map(item=> {return {id:item._id,count:0}}))
     let initialData={
         // intialising these below variables with similar arrays [{id:Id1,likesCount:0},{id:Id2,likesCount:0},{...},...]
-        likes: videosState.videosData.map(item=> {return {id:item._id,count:0}}),
-        disLikes: videosState.videosData.map(item=> {return {id:item._id,count:0}}),
-        views: videosState.videosData.map(item=> {return {id:item._id,count:0}}),
+        likes: dataState.videosData.map(item=> {return {id:item._id,count:0}}),
+        disLikes: dataState.videosData.map(item=> {return {id:item._id,count:0}}),
+        views: dataState.videosData.map(item=> {return {id:item._id,count:0}}),
         saved:[],
     }
   

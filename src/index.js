@@ -7,22 +7,23 @@ import { VideoStatisticsProvider } from './contexts/videosStatisticsContext';
 import { AuthProvider } from './contexts/authContext';
 import {BrowserRouter as Router} from "react-router-dom"
 import {ScrollToTop} from "./components/scrollToTop"
+import {DataProvider} from "./contexts/dataContext"
 
 
 ReactDOM.render(
-    <React.StrictMode>
-      
-        <AuthProvider>
-          <Router>
+  <React.StrictMode>
+    <DataProvider>
+      <AuthProvider>
+        <Router>
           <ScrollToTop/>
-            <VideoProvider>
-              <VideoStatisticsProvider>
+            <VideoStatisticsProvider>
+              <VideoProvider>
                 <App />
-              </VideoStatisticsProvider>
-            </VideoProvider>
+              </VideoProvider>
+            </VideoStatisticsProvider>
           </Router>
         </AuthProvider>
-      
+      </DataProvider>
     </React.StrictMode>,
   document.getElementById('root')
 );

@@ -12,6 +12,7 @@ import { useVideo } from './contexts/videosContext';
 import {SideBar,PrivateRoute} from "./components/indexOfComponents"
 import {ToastContainer} from "react-toastify"
 import {getIntialUserDataFromServerFn} from "./apiCalls"
+import { useData } from './contexts/dataContext';
 
 
 
@@ -24,7 +25,7 @@ function App() {
   const id= authState.userId
 
   useEffect(()=>{
-    login&& getIntialUserDataFromServerFn(id,videosDispatch)
+    login&& getIntialUserDataFromServerFn(id,videosDispatch)            
   },[])
 
 return (<div className="App">

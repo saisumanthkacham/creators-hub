@@ -2,6 +2,7 @@ export const statisticsReducerFn=(prevState,{type,payLoad})=>{
 
     switch(type){
         case "INCREMENT-LIKE":
+            console.log("state and payload",prevState,payLoad)
             return {...prevState,likes:prevState.likes.map(item=>item.id===payLoad.id ?{...item,count:item.count+1} :{...item})}
 
         case "DECREMENT-LIKE":

@@ -21,6 +21,7 @@ export const LikeButton=({item})=>{
         videoStatisticsDispatch({type:"DECREMENT-LIKE",payLoad:{id:item._id}})
     }
     const nonActiveLikeButtonHandler=async()=>{
+        console.log("stats",videoStatisticsState)
         await addVideoToLikedVidsOnServerFn(item,userId)
         videoStatisticsDispatch({type:"INCREMENT-LIKE",payLoad:{id:item._id}})
         videosDispatch({type:"ADD-TO-LIKED-VIDEOS",payLoad:{video:item}})
