@@ -185,6 +185,7 @@ p {
   justify-content: center;
   align-items: center;
   background-color: #f3f4f6;
+  cursor: pointer;
 }
 
 .icon-lg {
@@ -395,6 +396,7 @@ p {
 .burger-btn-nav {
   color: white;
   margin: 0.9rem 0 0 0.2rem;
+  cursor: pointer;
 }
 /* text */
 

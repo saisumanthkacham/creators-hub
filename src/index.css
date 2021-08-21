@@ -192,6 +192,7 @@ code {
 .burger-btn {
   color: white;
   margin: 2rem 10rem 0 0;
+  cursor: pointer;
 }
 
 .side-bar-wrapper {
