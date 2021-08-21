@@ -15,11 +15,11 @@ ReactDOM.render(
         <AuthProvider>
           <Router>
           <ScrollToTop/>
-            <VideoStatisticsProvider>
-              <VideoProvider>
+            <VideoProvider>
+              <VideoStatisticsProvider>
                 <App />
-              </VideoProvider>
-            </VideoStatisticsProvider>
+              </VideoStatisticsProvider>
+            </VideoProvider>
           </Router>
         </AuthProvider>
       
