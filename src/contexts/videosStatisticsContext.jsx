@@ -8,7 +8,6 @@ const VideoStatisticsContext=createContext()
 export const VideoStatisticsProvider=({children})=>{
   
     const {dataState}=useData()
-    console.log("liked init data",dataState.videosData.map(item=> {return {id:item._id,count:0}}))
     let initialData={
         // intialising these below variables with similar arrays [{id:Id1,likesCount:0},{id:Id2,likesCount:0},{...},...]
         likes: dataState.videosData.map(item=> {return {id:item._id,count:0}}),
