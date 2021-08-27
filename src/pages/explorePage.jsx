@@ -28,7 +28,7 @@ const channelFilterHandler=(item)=>{
     navigate(`/channel/${item.creator}`)
 }
 
-
+              
 
 // data filtering
 const platforms= [...new Set(videosState.videosData.map(item=>item.platform))]
@@ -49,14 +49,14 @@ return (<section className="body">
         <>
             <img className="explore-img" src={home} alt="homepage-img" />
             <div className="text-over-explore-img">
-                <h1 style={{fontSize:50}}>welcome to Creators-Hub </h1>
-                <p style={{fontSize:20}}>watch the latest videos of your 
-                favourite creators <br/> from all over the social Media</p><br/>
+                <h1 style={{fontSize:50}}>Welcome to Creators-Hub </h1>
+                <p style={{fontSize:20}}>Watch the latest videos of famous 
+                creators <br/> from all over the Social Media.</p><br/>
             <div className="white-font primary-bg btn" onClick={()=>navigate("/home")}>Explore</div>
             </div>
         </>
 
-
+       
         {platforms?.map((category,idx)=>
                             <div key={idx}>
                                 <h1 className="primary-font">{category}</h1><hr/>

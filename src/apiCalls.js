@@ -5,7 +5,7 @@ import {toast} from "react-toastify"
  export const  getVideosDataFromServerFn= async(videosDispatch)=>{
          
     try{
-        toast.info("Fetching data from server...",{position:"bottom-right"})
+        toast.info("Fetching data from server...",{position:"bottom-right",autoClose:8000})
         const {data,status}=await axios({
             method:"get",
             url:`https://creators-hub-backend.sumanth5234.repl.co/videos`

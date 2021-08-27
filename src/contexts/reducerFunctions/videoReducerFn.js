@@ -56,10 +56,7 @@ export const videoReducerFn=(prevState,{type,payLoad})=>{
 
         case "SET-NEW-USER-ENVIRONMENT-AFTER-SIGNUP":
             return {...prevState,videosSaved:[],videosLiked:[],videosDisLiked:[],videosHistory:[],videosPlayList:[]}
-
-
-        case "FETCH-LIKED-VIDEOS-FROM-SERVER":
-            return {...prevState,videosLiked:[payLoad.vidsLiked]}
+            
             
         default: return {...prevState}
 

@@ -9,6 +9,7 @@ import { useAuth } from "../contexts/authContext.jsx"
 
 export const Channel=()=>{
 
+// custom hooks
 const {videosState,videosDispatch}=useVideo()
 const {videoStatisticsDispatch}=useVideoStatistics()
 const {authState:{userId}}=useAuth()
@@ -27,7 +28,7 @@ const filteredData= videosState.videosData.filter(item=>item.creator===name)
 
 
 return (<section className="body">
-    <br/><h1>home page</h1>
+    <br/><h1>channel page</h1>
     
     <div className="productsListing main">
         {filteredData?.map(item=> 
@@ -35,4 +36,4 @@ return (<section className="body">
     </div>
 
     </section>)
-}
+} 

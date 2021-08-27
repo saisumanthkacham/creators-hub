@@ -12,7 +12,6 @@ import { useVideo } from './contexts/videosContext';
 import {SideBar,PrivateRoute} from "./components/indexOfComponents"
 import {ToastContainer} from "react-toastify"
 import {getIntialUserDataFromServerFn} from "./apiCalls"
-import { useData } from './contexts/dataContext';
 
 
 
