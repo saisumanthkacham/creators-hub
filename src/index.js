@@ -4,18 +4,27 @@ import './index.css';
 import App from './App';
 import {VideoProvider} from "./contexts/videosContext"
 import { VideoStatisticsProvider } from './contexts/videosStatisticsContext';
+import { AuthProvider } from './contexts/authContext';
 import {BrowserRouter as Router} from "react-router-dom"
+import {ScrollToTop} from "./components/scrollToTop"
+import {DataProvider} from "./contexts/dataContext"
+
 
 ReactDOM.render(
   <React.StrictMode>
-     <Router>
-        <VideoStatisticsProvider>
-            <VideoProvider>
+    <DataProvider>
+      <AuthProvider>
+        <Router>
+          <ScrollToTop/>
+            <VideoStatisticsProvider>
+              <VideoProvider>
                 <App />
-            </VideoProvider>
-        </VideoStatisticsProvider>
-    </Router>
-  </React.StrictMode>,
+              </VideoProvider>
+            </VideoStatisticsProvider>
+          </Router>
+        </AuthProvider>
+      </DataProvider>
+    </React.StrictMode>,
   document.getElementById('root')
 );
 

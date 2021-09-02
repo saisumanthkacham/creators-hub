@@ -1,33 +1,44 @@
 import {useVideo} from "../contexts/videosContext"
 import { useNavigate } from "react-router"
+import { useVideoStatistics } from "../contexts/videosStatisticsContext.jsx"
+import { VideoCardSaved } from "../components/indexOfComponents"
+import { addVideoToHistoryVidsOnServerFn, removeVideoFromLikedVidsOnServerFn } from "../apiCalls"
+import { useAuth } from "../contexts/authContext"
+// import { fetchLikedVideosDataFromServerFn } from "../apiCalls"
+// import { useEffect } from "react"
+
 
 export const LikedVideos=()=>{
+
+    // hooks
     const {videosState,videosDispatch}=useVideo()
+    const {videoStatisticsDispatch}=useVideoStatistics()
+    const {authState:{userId}}=useAuth()
     const navigate=useNavigate()
 
+    // custom functions
+    const videoHandler=async(item)=>{
+        navigate(`/video/${item._id}`)
+        await addVideoToHistoryVidsOnServerFn(item,userId)
+        videosDispatch({type:"ADD-TO-HISTORY",payLoad:{video:item}});
+        videoStatisticsDispatch({type:"INCREMENT-VIEW",payLoad:{id:item._id}})
+    }
+    const removeButton=(item)=>{
+        videosDispatch({type:"REMOVE-FROM-LIKED-VIDEOS",payLoad:{video:item}})
+        removeVideoFromLikedVidsOnServerFn(item,userId)
+    }
+
+    // useEffect(()=>{
+    //     fetchLikedVideosDataFromServerFn()
+    // },[])
+
 return <>
-<br/>
-            {console.log(videosState.videosSaved)}
+            
+        <br/>
+       
         <div className="productsListing saved-page">
-
-            {videosState.videosLiked?.map(item=><div key={item.id} className="cd"> 
-   
-                <img className="cd-img" onClick={()=> navigate(`/video/${item.id}`)} src={item.thumbnail} alt={item.vName} />
-   
-  
-                <div className="cd-text">
-                    <img className="cd-profile" src={item.profileUrl} alt={item.creator}/>
-                     <div className="cd-overflow-text">{item.vName}</div>
-                    <i style={{cursor:"pointer"}} onClick={()=>videosDispatch({type:"REMOVE-FROM-LIKED-VIDEOS",payLoad:{video:item}})} className="fas fa-times saved-cd-wrong"></i>
-                </div>
-
-                <div>
-                <small className="grey-font cd-creator">{item.creator}</small>
-                </div>
-
-            </div> )}
-
+            {videosState.videosLiked?.map(item=> 
+            <VideoCardSaved item={item} function1={videoHandler} Button={removeButton}/>)}
         </div>
-    
     </>
 }

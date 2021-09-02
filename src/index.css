@@ -1,279 +1,415 @@
-
 /* @import url("https://dunzo-ui.netlify.app/Ecom-components.css"); */
-  
+
 /* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap'); */
+@import "react-toastify/dist/ReactToastify.css";
 
 body {
-   margin: 0;
-    /* font-family: 'Lato', sans-serif; */
-    font-family: 'Montserrat', sans-serif;
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
- }
- 
- code {
-   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-     monospace;
-   }
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  .productsListing {
-   display: flex;
-   flex-direction: row !important;
-   flex-wrap: wrap;
-   justify-content:center; 
-   }
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
 
-   .bold{
-   font-weight: bold;
-   }
+.productsListing {
+  display: flex;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-   .wide-row{
-   display: flex;
-   justify-content: space-between;
-   padding: 0.5rem 1rem;
-   align-items: center;
-   }
-   
- 
-   .btn{ 
-     padding: 0.5rem;
-     text-decoration: none;
-     color: rgb(207, 205, 205);
-     margin: 1rem 0.2rem 3rem 0.2rem;
+.bold {
+  font-weight: bold;
+}
 
-   }
+.wide-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  align-items: center;
+}
 
-   .active-btn{
-     color:var(--primary-color);
-     font-size: bold;
-   }
+.wide-row-margin-zero {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  align-items: center;
+}
 
-   .name-link{ 
-     text-decoration: none;
-     color: black;
-     
-   }
+.margin-zero {
+  margin: 0;
+}
 
-   .active-name-link{
-     color:var(--primary-color);
-     font-size: bold;
-   }
-  
-   
-   /* cart page */
-   .bill-section{
-     width:25rem ;
-     height: 16rem;
-     border-radius: 0.5rem;
-     box-shadow: 1px 5px 5px #ccc;
-     position: absolute;
-     top:10.5rem;
-     right: 5rem;
-   }
-   .bill-section >.btn{
-     margin-left:1rem ;
-   }
+.btn {
+  padding: 0.5rem;
+  text-decoration: none;
+  color: rgb(207, 205, 205);
+  margin: 1rem 0.2rem 3rem 0.2rem;
+}
 
-   .bottom-border{
-     border-bottom: 4px solid var(--primary-color);
-   }
+.active-btn {
+  color: var(--primary-color);
+  font-size: bold;
+  background-color: rgb(207, 205, 205);
+}
 
-   /* this class is for whenever the cart or wishlist is empty */
-   .empty-bin{
-     width:25rem ;
-     padding: 1rem;
-     border-radius: 0.5rem;
-     box-shadow: 0px 5px 10px  #ccc;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     position: absolute;
-     top:12rem;
-     left:28rem;
-   }
+#activated-btn {
+  color: #bd0517;
+}
 
-   .login-page{
-     width:25rem ;
-     padding: 1rem;
-     border-radius: 0.5rem;
-     box-shadow: 0px 5px 10px  #ccc;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     position: absolute;
-     top:9rem;
-     left:28rem;
-   }
-  
+.name-link {
+  text-decoration: none;
+  color: black;
+}
 
-   .input-box{
-     box-shadow: 0px 5px 10px  #ccc;
-     border-radius: 0.5rem;
-     border: none;
-     width: 13rem;
-     height:2rem;
-     padding-left:1rem;
-   }
+.active-name-link {
+  color: var(--primary-color);
+  font-size: bold;
+}
 
-   /* playList-page */
-   .playList-img-text{
-     position: absolute;
-     top: 8rem;
-     width: 100%;
-     height: 2rem;
-     background-color: black;
-     color: white;
-     opacity: 0.9;
-     padding-top: 0.6rem;
-   }
+/* home-page */
 
-   .playList-modal{
-     visibility: visible;
-     position: absolute;
-     z-index: 7;
-     top: 30%;
-     right: 35%;
-     background-color:var(--secondary-color);
-     color: white;
-     opacity: 1;
-     border-radius: 0.4rem;
-     overflow: auto;
-     width: 20rem;
-     min-height: 10rem;
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-   }
+.filtering-btn {
+  border-radius: 1.5rem;
+  background-color: #f3f4f6;
+  color: var(--primary-color);
+  padding: 0.5rem;
+  text-align: center;
+  margin: 0.5rem;
+  cursor: pointer;
+}
 
-   .playList-modal-text{
-     display: flex;
-     flex-direction: column;
-     justify-content: flex-start;
-     
-   }
-   .video-page{
-    filter: blur(5px);
-     pointer-events: none;
-     user-select: none;
-   }
+.filtering-btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
 
-   /* history-page */
-   .history-page{
-     margin-top: 3rem;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-   }
-   .history-cd{
-     display: flex;
-     align-items: center;
-     width: 50vw;
-     margin: 1rem;
-     position: relative;
-     border: 1px solid rgb(243, 243, 243);
-     border-radius: 0.4rem;
-   }
-   .history-cd-text{
-    margin: 1rem;
-   }
-  
+.filtersListing {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 3em;
+}
 
-  
+/* explore-page */
+.explore-page {
+  margin: 0 2rem;
+}
 
-   /* saved-page */
-   .saved-page{
-     margin: 6rem 0rem 0 0rem;
-   }
-   .saved-cd-wrong:hover{
-      color: red;
-   }
-  
-  
+.productsListingExplore {
+  display: flex;
+  flex-direction: row !important;
+  overflow-x: scroll;
+}
 
-   /* homepage */  
-   
-   .home-footer{
-     position: absolute;
-     bottom: 0;
-     width: 100%;
-     display: flex;
-     flex-direction: column;
-     top: 60rem;
-     align-items: center;
-     background-color: var(--secondary-color);
-     height: 9rem;
-     text-align: center;
-     justify-content: center;
-     margin: 10rem 0 0 0 ;
-   }
-   .wide-icons{
-     width: 30rem;
-   }
+.explore-img {
+  width: 100%;
+  height: 23rem;
+  margin: 0 0rem;
+  filter: blur(2px) contrast(200%) brightness(30%);
+  position: relative;
+}
 
-   /* user-page */
-   .user-page{
-     position: absolute;
-     top: 30vh;
-     left: 90vh;
-     display: flex;
-   }
-   .user-text{
-     display: flex;
-     flex-direction: column;
-     justify-content: flex-start;
-   }
+.text-over-explore-img {
+  position: absolute;
+  top: 7rem;
+  left: 5rem;
+  color: white;
+}
 
-   /* grids */
-   .body{
-     display: grid;
-     grid-template-columns:  0.05fr 1fr;
-     grid-template-rows:0.1vw 1fr ;
-     grid-template-areas:
-      "nav nav"
-      "aside main"
-      
-     
-   }
+/* .productsListingExplore::-webkit-scrollbar-track {
+      background:var(--primary-color);
+    }
 
-   /* nav style is taken from component library */
+    .productsListingExplore::-webkit-scrollbar-thumb {
+      background-color: red !;    
+      border-radius: 8px;      
+       } */
 
-   .aside{
-     grid-area:aside;
-     text-align:left;
-     align-items: flex-start;
-     border-radius: 0.5rem;
-     background-color: white;
-     box-shadow: 1px 5px 5px #ccc;
-     display: flex;
-     flex-direction: column;
-     margin-top:6rem ;
-   }
+/* this class is for whenever the cart or wishlist is empty */
+.empty-bin {
+  width: 25rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 5px 10px #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 12rem;
+  left: 28rem;
+}
 
-   .main {
-     grid-area: main;
-     
-     margin-top:6rem ;
-   }
+.login-page {
+  width: 22rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 5px 10px #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 30%;
+  right: 35%;
+}
 
-   
-   .aside .btn{
-       margin: 0 0 0 1rem;
-   }
+.login-input-box {
+  box-shadow: 0px 5px 10px #ccc;
+  border-radius: 0.5rem;
+  border: none;
+  width: 13rem;
+  height: 2rem;
+  padding-left: 1rem;
+}
 
-  
-   
-   .aside li{
-     display: flex;
-     justify-content: flex-start;
-     align-items: center;
-   }
+.login-btn{ 
+  padding: 0.5rem;
+  text-decoration: none;
+  color: white;
+  margin: 1rem 0.2rem 0.2rem 0.2rem;
+  border-radius: 0.5rem;
+  width: 11.7rem;
+  height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+}
 
- .aside hr{
-   border: 2px solid var(--primary-color);
-   width: 99%;
-   
-   }
-   
+.input-box {
+  border-radius: 0.25rem;
+  border: none;
+  width: 10rem;
+  height: 2rem;
+  margin: 0.5rem;
+}
 
-  
+/* sidebar */
+.burger-btn {
+  color: white;
+  margin: 2rem 10rem 0 0;
+  cursor: pointer;
+}
+
+.side-bar-wrapper {
+  background-color: rgb(65, 65, 65);
+  width: 23%;
+  height: 100%;
+  z-index: 6;
+  position: fixed;
+}
+
+.side-bar {
+  background-color: rgb(65, 65, 65);
+  z-index: 7;
+  position: fixed;
+  width: 23%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.App-blur {
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+  width: 100%;
+}
+.logo-wrapper {
+  display: flex;
+  padding: 0 5rem 0 3rem;
+  width: 20rem;
+  align-items: center;
+}
+
+/* playList-page */
+.playList-img-text {
+  position: absolute;
+  top: 8rem;
+  width: 100%;
+  height: 2rem;
+  background-color: black;
+  color: white;
+  opacity: 0.9;
+  padding-top: 0.6rem;
+  cursor: pointer;
+}
+
+.playList-modal {
+  visibility: visible;
+  position: absolute;
+  z-index: 4;
+  top: 30%;
+  right: 35%;
+  background-color: var(--secondary-color);
+  color: white;
+  opacity: 1;
+  border-radius: 0.4rem;
+  overflow: auto;
+  width: 25rem;
+  min-height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1rem 0 1rem;
+}
+
+.playList-modal-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.overflow-text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  padding: 0rem 0.5rem 0 0.5rem;
+}
+
+/* video-page */
+
+.video-page-blur {
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.video-page {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.video-bar {
+  width: 30%;
+}
+
+.player-wrapper {
+  height: 22rem;
+  width: 50%;
+  margin-right: 3rem;
+}
+
+.similar-videos {
+  width: 38%;
+  padding: 0;
+}
+
+.similar-videos-cd {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 1rem 0 1rem 0;
+  border: 1px solid rgb(243, 243, 243);
+  border-radius: 0.4rem;
+}
+
+hr {
+  border: 2px solid #bd0517;
+  width: 99%;
+}
+
+/* history-page */
+.history-page {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.history-cd {
+  display: flex;
+  align-items: center;
+  width: 50vw;
+  margin: 1rem;
+  position: relative;
+  border: 1px solid rgb(243, 243, 243);
+  border-radius: 0.4rem;
+}
+.history-cd-text {
+  margin: 1rem;
+}
+
+/* saved-page */
+.saved-page {
+  margin: 5rem 0rem 0 0rem;
+}
+
+.saved-cd-wrong {
+  color: grey;
+}
+.saved-cd-wrong:hover {
+  color: #bd0517;
+}
+
+/* user-page */
+.user-page {
+  position: absolute;
+  top: 30%;
+  right: 43%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* grids */
+.body {
+  display: grid;
+  grid-template-columns: 0.05fr 1fr;
+  grid-template-rows: 0.1vw 1fr;
+  grid-template-areas:
+    "nav nav"
+    "main main";
+}
+
+/* nav style is taken from component library */
+
+.aside {
+  grid-area: aside;
+  text-align: left;
+  align-items: flex-start;
+  border-radius: 0.5rem;
+  background-color: white;
+  box-shadow: 1px 5px 5px #ccc;
+  display: flex;
+  flex-direction: column;
+  margin-top: 6rem;
+}
+
+.main {
+  grid-area: main;
+
+  margin-top: 6rem;
+}
+
+.aside .btn {
+  margin: 0 0 0 1rem;
+}
+
+.aside li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.aside hr {
+  border: 2px solid var(--primary-color);
+  width: 100%;
+}
